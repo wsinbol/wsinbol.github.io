@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="要记得除草、浇水、喷药哦^_^">
+  <meta name="description" content="链表通过“指针”将一组零散的内存块串联起来，所以它的底层结构是由两部分构成的：  结点结点用来存储数据，可以是int、string等 指针指针用来记录下一个结点的地址  所以我们先构建链表的“核心单元”：Node类 1234567#-*-coding:utf-8-*-class Node(object):    def __init__(self, data, next_node=None):">
 <meta name="keywords" content="小菠菜，编程技术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="菠菜屋">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单链表SinglyLinkedList">
+<meta property="og:url" content="http://yoursite.com/2019/05/20/单链表SinglyLinkedList/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="要记得除草、浇水、喷药哦^_^">
+<meta property="og:description" content="链表通过“指针”将一组零散的内存块串联起来，所以它的底层结构是由两部分构成的：  结点结点用来存储数据，可以是int、string等 指针指针用来记录下一个结点的地址  所以我们先构建链表的“核心单元”：Node类 1234567#-*-coding:utf-8-*-class Node(object):    def __init__(self, data, next_node=None):">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-20T13:13:09.935Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="菠菜屋">
-<meta name="twitter:description" content="要记得除草、浇水、喷药哦^_^">
+<meta name="twitter:title" content="单链表SinglyLinkedList">
+<meta name="twitter:description" content="链表通过“指针”将一组零散的内存块串联起来，所以它的底层结构是由两部分构成的：  结点结点用来存储数据，可以是int、string等 指针指针用来记录下一个结点的地址  所以我们先构建链表的“核心单元”：Node类 1234567#-*-coding:utf-8-*-class Node(object):    def __init__(self, data, next_node=None):">
 
 
 
@@ -114,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/20/单链表SinglyLinkedList/">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title>菠菜屋</title>
+  <title>单链表SinglyLinkedList | 菠菜屋</title>
   
 
 
@@ -172,8 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -215,7 +215,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -277,9 +277,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -311,10 +311,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/20/单链表SinglyLinkedList/" class="post-title-link" itemprop="url">单链表SinglyLinkedList</a>
+          <h1 class="post-title" itemprop="name headline">单链表SinglyLinkedList
+
               
             
           </h1>
@@ -378,9 +376,7 @@
       
 
       
-        
-          
-            <p>链表通过“指针”将一组零散的内存块串联起来，所以它的底层结构是由两部分构成的：</p>
+        <p>链表通过“指针”将一组零散的内存块串联起来，所以它的底层结构是由两部分构成的：</p>
 <ul>
 <li>结点<br>结点用来存储数据，可以是int、string等</li>
 <li>指针<br>指针用来记录下一个结点的地址</li>
@@ -389,8 +385,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#-*-coding:utf-8-*-</span><br><span class="line"></span><br><span class="line">class Node(object):</span><br><span class="line"></span><br><span class="line">    def __init__(self, data, next_node=None):</span><br><span class="line">        self.data = data</span><br><span class="line">        self._next = next_node</span><br></pre></td></tr></table></figure>
 <p>创建SinglyLinkedList类：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">class SinglyLinkedList(object):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self._head = None</span><br><span class="line"></span><br><span class="line">    def insert_node_to_head(self, new_node):</span><br><span class="line">        if new_node:</span><br><span class="line">            new_node._next = self._head</span><br><span class="line">            self._head = new_node</span><br><span class="line"></span><br><span class="line">    def find_by_index(self, index):</span><br><span class="line">        p = self._head </span><br><span class="line">        position = 0</span><br><span class="line">        while p and position != index:</span><br><span class="line">            p = p._next</span><br><span class="line">            position += 1</span><br><span class="line">        return p</span><br><span class="line"></span><br><span class="line">    def find_by_value(self, value):</span><br><span class="line">        p = self._head</span><br><span class="line">        while p and p.data != value:</span><br><span class="line">            p = p._next</span><br><span class="line">        return p</span><br><span class="line"></span><br><span class="line">    def insert_value_to_head(self, value):</span><br><span class="line">        new_node = Node(value)</span><br><span class="line">        self.insert_node_to_head(new_node)</span><br><span class="line"></span><br><span class="line">    def insert_value_after(self, node, value):</span><br><span class="line">        new_node = Node(value)</span><br><span class="line">        self.insert_node_after(node, new_node)</span><br><span class="line"></span><br><span class="line">    def insert_node_after(self, node, new_node):</span><br><span class="line">        new_node._next = node._next</span><br><span class="line">        node._next = new_node</span><br><span class="line"></span><br><span class="line">    def delete_by_value(self, value):</span><br><span class="line">        current_p = self._head</span><br><span class="line">        next_p = current_p._next</span><br><span class="line">        if current_p and current_p.data == value:</span><br><span class="line">            self._head = next_p</span><br><span class="line">            return</span><br><span class="line">        </span><br><span class="line">        while next_p and next_p.data != value:</span><br><span class="line">            current_p = current_p._next</span><br><span class="line">            next_p = current_p._next</span><br><span class="line">        # return current_p</span><br><span class="line">        if next_p:</span><br><span class="line">            current_p._next = current_p._next._next</span><br><span class="line">        else:</span><br><span class="line">            return</span><br><span class="line"></span><br><span class="line">    # 删除给定节点的后继节点</span><br><span class="line">    def delete_next_node_after_target(self, node):</span><br><span class="line">        if node._next == None:</span><br><span class="line">            return </span><br><span class="line">        else:</span><br><span class="line">            node._next = node._next._next</span><br><span class="line"></span><br><span class="line">    # 删除当前节点</span><br><span class="line">    def delete_current_node(self, node):</span><br><span class="line">        p = self._head</span><br><span class="line">        if p == node:</span><br><span class="line">            self._head = p._next</span><br><span class="line">        while p and p._next == node:</span><br><span class="line">            p._next = p._next._next</span><br><span class="line">            </span><br><span class="line">    def print_all(self):</span><br><span class="line">        current = self._head</span><br><span class="line">        if current:</span><br><span class="line">            print(f&quot;&#123;current.data&#125;&quot;, end=&quot;&quot;)</span><br><span class="line">            current = current._next</span><br><span class="line">        while current:</span><br><span class="line">            print(f&quot;-&gt;&#123;current.data&#125;&quot;, end=&quot;&quot;)</span><br><span class="line">            current = current._next</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    l = SinglyLinkedList()</span><br><span class="line">    for i in range(2):</span><br><span class="line">        l.insert_value_to_head(i)</span><br><span class="line">    # node3 = l.find_by_value(1)</span><br><span class="line">    # print(node3.data)</span><br><span class="line">    # l.insert_value_after(node3, 10)</span><br><span class="line">    l.print_all()</span><br><span class="line">    print()</span><br><span class="line">    # print(l.find_by_value(0)</span><br><span class="line">    # l.delete_by_node(l.find_by_value(1))</span><br><span class="line">    l.delete_current_node(l.find_by_value(1))</span><br><span class="line">    l.print_all()</span><br><span class="line">    # l.delete_by_value(4)</span><br><span class="line">    # print()</span><br><span class="line">    # l.print_all()</span><br></pre></td></tr></table></figure>
-          
-        
       
     </div>
 
@@ -413,12 +407,12 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -428,14 +422,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -632,6 +627,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -647,6 +646,8 @@
 
   
 
+
+  
 
 
   
