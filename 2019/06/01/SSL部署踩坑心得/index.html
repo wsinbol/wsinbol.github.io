@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="菠菜屋">
 <meta property="og:description" content="起因学校网络安全整改，要求所有网站部署SSL证书。我负责的项目WEB环境使用的是宝塔，其实宝塔本身是配有部署SSL证书功能的，在学校的服务器试了几次后无果，只能另寻出路。而且，学校的服务器和网络环境不同于市面上的一般情况，对服务器内部的操作我倒是拥有绝对权限，可是涉及到网络、端口，需要各种协同沟通，校园网–你们都懂得！ 生成密钥 安装OpenSSL 创建证书私钥key文件 1openssl gen">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-01T10:34:40.232Z">
+<meta property="og:updated_time" content="2019-06-06T12:15:33.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSL部署踩坑心得">
 <meta name="twitter:description" content="起因学校网络安全整改，要求所有网站部署SSL证书。我负责的项目WEB环境使用的是宝塔，其实宝塔本身是配有部署SSL证书功能的，在学校的服务器试了几次后无果，只能另寻出路。而且，学校的服务器和网络环境不同于市面上的一般情况，对服务器内部的操作我倒是拥有绝对权限，可是涉及到网络、端口，需要各种协同沟通，校园网–你们都懂得！ 生成密钥 安装OpenSSL 创建证书私钥key文件 1openssl gen">
@@ -388,12 +388,24 @@
                 
               
 
-              <time title="创建时间：2019-06-01 16:59:57 / 修改时间：18:34:40" itemprop="dateCreated datePublished" datetime="2019-06-01T16:59:57+08:00">2019-06-01</time>
+              <time title="创建时间：2019-06-01 16:59:57" itemprop="dateCreated datePublished" datetime="2019-06-01T16:59:57+08:00">2019-06-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-06 20:15:33" itemprop="dateModified" datetime="2019-06-06T20:15:33+08:00">2019-06-06</time>
               
             
           </span>
@@ -446,6 +458,7 @@
 </ul>
 <p>这就奇怪了。。。ip访问测试脚本没问题，说明PHP程序没有问题。那访问首页为啥报错呢？然后访问后台登录页面，OK。原来是后台设置的域名和访问地址必须保持一致才可以正常访问。登录后台都设置成IP地址，果然访问都没有问题了，只是HTTPS没有生效。</p>
 <p>既然IP地址访问没有问题，那就是证书配置或者网络中心那边配置出问题了！转了一圈回到原点！</p>
+<h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><p>6月4号，将上述情况汇报给网络中心老师。6月5号，老师通知我，问我做了哪些修改，为什么可以访问了，可事实上我什么都没做。。。</p>
 
       
     </div>
@@ -636,7 +649,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成密钥"><span class="nav-number">2.</span> <span class="nav-text">生成密钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署"><span class="nav-number">3.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析"><span class="nav-number">4.</span> <span class="nav-text">分析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成密钥"><span class="nav-number">2.</span> <span class="nav-text">生成密钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署"><span class="nav-number">3.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析"><span class="nav-number">4.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决"><span class="nav-number">5.</span> <span class="nav-text">解决</span></a></li></ol></div>
             
 
           </div>
