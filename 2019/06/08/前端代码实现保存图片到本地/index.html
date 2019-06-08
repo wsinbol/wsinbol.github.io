@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="起因学校网络安全整改，要求所有网站部署SSL证书。我负责的项目WEB环境使用的是宝塔，其实宝塔本身是配有部署SSL证书功能的，在学校的服务器试了几次后无果，只能另寻出路。而且，学校的服务器和网络环境不同于市面上的一般情况，对服务器内部的操作我倒是拥有绝对权限，可是涉及到网络、端口，需要各种协同沟通，校园网–你们都懂得！ 生成密钥 安装OpenSSL 创建证书私钥key文件 1openssl gen">
-<meta name="keywords" content="心得感悟,SSL部署">
+  <meta name="description" content="需求查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！ html2canvas在google上搜索该功能需求，提到最多的就是 html2canvas。大致看了一下官网文档，使用方法也比较简单：123html2canvas(document.querySelector(&amp;quot;#capture&amp;quot;)).then(canvas =">
+<meta name="keywords" content="html2canvas,保存网页快照到本地图片">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSL部署踩坑心得">
-<meta property="og:url" content="http://yoursite.com/2019/06/01/SSL部署踩坑心得/index.html">
+<meta property="og:title" content="前端代码实现保存图片到本地">
+<meta property="og:url" content="http://yoursite.com/2019/06/08/前端代码实现保存图片到本地/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="起因学校网络安全整改，要求所有网站部署SSL证书。我负责的项目WEB环境使用的是宝塔，其实宝塔本身是配有部署SSL证书功能的，在学校的服务器试了几次后无果，只能另寻出路。而且，学校的服务器和网络环境不同于市面上的一般情况，对服务器内部的操作我倒是拥有绝对权限，可是涉及到网络、端口，需要各种协同沟通，校园网–你们都懂得！ 生成密钥 安装OpenSSL 创建证书私钥key文件 1openssl gen">
+<meta property="og:description" content="需求查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！ html2canvas在google上搜索该功能需求，提到最多的就是 html2canvas。大致看了一下官网文档，使用方法也比较简单：123html2canvas(document.querySelector(&amp;quot;#capture&amp;quot;)).then(canvas =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-06T12:15:33.242Z">
+<meta property="og:updated_time" content="2019-06-08T11:50:18.278Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SSL部署踩坑心得">
-<meta name="twitter:description" content="起因学校网络安全整改，要求所有网站部署SSL证书。我负责的项目WEB环境使用的是宝塔，其实宝塔本身是配有部署SSL证书功能的，在学校的服务器试了几次后无果，只能另寻出路。而且，学校的服务器和网络环境不同于市面上的一般情况，对服务器内部的操作我倒是拥有绝对权限，可是涉及到网络、端口，需要各种协同沟通，校园网–你们都懂得！ 生成密钥 安装OpenSSL 创建证书私钥key文件 1openssl gen">
+<meta name="twitter:title" content="前端代码实现保存图片到本地">
+<meta name="twitter:description" content="需求查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！ html2canvas在google上搜索该功能需求，提到最多的就是 html2canvas。大致看了一下官网文档，使用方法也比较简单：123html2canvas(document.querySelector(&amp;quot;#capture&amp;quot;)).then(canvas =">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/01/SSL部署踩坑心得/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/08/前端代码实现保存图片到本地/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>SSL部署踩坑心得 | 菠菜屋</title>
+  <title>前端代码实现保存图片到本地 | 菠菜屋</title>
   
 
 
@@ -345,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/01/SSL部署踩坑心得/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/前端代码实现保存图片到本地/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小菠菜">
@@ -362,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SSL部署踩坑心得
+          <h1 class="post-title" itemprop="name headline">前端代码实现保存图片到本地
 
               
             
@@ -388,24 +388,12 @@
                 
               
 
-              <time title="创建时间：2019-06-01 16:59:57" itemprop="dateCreated datePublished" datetime="2019-06-01T16:59:57+08:00">2019-06-01</time>
+              <time title="创建时间：2019-06-08 19:32:01 / 修改时间：19:50:18" itemprop="dateCreated datePublished" datetime="2019-06-08T19:32:01+08:00">2019-06-08</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-06 20:15:33" itemprop="dateModified" datetime="2019-06-06T20:15:33+08:00">2019-06-06</time>
               
             
           </span>
@@ -439,26 +427,11 @@
       
 
       
-        <h4 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h4><p>学校网络安全整改，要求所有网站部署SSL证书。我负责的项目WEB环境使用的是宝塔，其实宝塔本身是配有部署SSL证书功能的，在学校的服务器试了几次后无果，只能另寻出路。而且，学校的服务器和网络环境不同于市面上的一般情况，对服务器内部的操作我倒是拥有绝对权限，可是涉及到网络、端口，需要各种协同沟通，校园网–你们都懂得！</p>
-<h4 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h4><ul>
-<li>安装OpenSSL</li>
-<li><p>创建证书私钥key文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out &lt;server&gt;.key 2018</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>生成证书请求csr文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -key &lt;server&gt;.key -out certreq.csr</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>然后将生成的证书请求文件csr提交给数字证书颁发机构，这个过程由网络中心老师负责，然后将服务器证书文件返回给我。</p>
-<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>在宝塔环境下部署很是很容易的，粘贴key文件和pem文件后即可生成。然后将生成的私钥文件又发给网络中心的老师，不详其具体做了些什么。然后通知我HTTPS访问出现502错误。用IP访问，是程序的HttpError错误。</p>
-<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>看到是HttpError的错误，我以为是Nginx的配置问题。然后围绕“HTTPS Nginx 502”这几个关键词开始谷歌、stackoverflow等等，搞了半天无果。然后又去宝塔官网论坛、Q群问了一番，得到了几个不错的反馈：</p>
-<ul>
-<li>访问静态资源是否正常，如果正常说明是程序有问题，准确的说就是配置的问题<br>结果：IP访问正常，域名访问不正常</li>
-<li>写一个简单的测试脚本，运行看是否正常<br>结果：IP访问正常，域名访问不正常</li>
-</ul>
-<p>这就奇怪了。。。ip访问测试脚本没问题，说明PHP程序没有问题。那访问首页为啥报错呢？然后访问后台登录页面，OK。原来是后台设置的域名和访问地址必须保持一致才可以正常访问。登录后台都设置成IP地址，果然访问都没有问题了，只是HTTPS没有生效。</p>
-<p>既然IP地址访问没有问题，那就是证书配置或者网络中心那边配置出问题了！转了一圈回到原点！</p>
-<h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><p>6月4号，将上述情况汇报给网络中心老师。6月5号，老师通知我，问我做了哪些修改，为什么可以访问了，可事实上我什么都没做。。。</p>
+        <h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p>查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！</p>
+<h4 id="html2canvas"><a href="#html2canvas" class="headerlink" title="html2canvas"></a>html2canvas</h4><p>在google上搜索该功能需求，提到最多的就是 <a href="https://html2canvas.hertzen.com/" target="_blank" rel="noopener">html2canvas</a>。大致看了一下官网文档，使用方法也比较简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">html2canvas(document.querySelector(&quot;#capture&quot;)).then(canvas =&gt; &#123;</span><br><span class="line">    document.body.appendChild(canvas)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>然后分别在PC端和手机端查看效果，PC端可以正常显示，但是手机端却无效！继续搜索发现一篇文章 <a href="https://github.com/whinc/blog/issues/8" target="_blank" rel="noopener">H5实现保存图片的踩坑记录</a>。文章内容比较详细，而我要的功能又不需要那么复杂。所以只应用了核心代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function snapshot()&#123;</span><br><span class="line">      	$(&apos;#snapshot&apos;).hide(); # 隐藏“生成图片”按钮，否则会在生成的图片头部有空白区域</span><br><span class="line">    	const el = document.querySelector(&apos;#capture&apos;)</span><br><span class="line">        html2canvas(el).then(canvas =&gt; &#123;</span><br><span class="line">          const img = new Image()</span><br><span class="line">          img.style.display = &quot;block&quot;</span><br><span class="line">          // 将 canvas 导出成 base64</span><br><span class="line">          img.src = canvas.toDataURL(&apos;image/jpeg&apos;)</span><br><span class="line">          // 添加图片到预览</span><br><span class="line">          //document.querySelector(&apos;#preview&apos;).appendChild(img)</span><br><span class="line">          $(&apos;#capture&apos;).html(img);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>其他功能陆续使用的时候再继续更新。。。</p>
 
       
     </div>
@@ -482,9 +455,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/心得感悟/" rel="tag"># 心得感悟</a>
+            <a href="/tags/html2canvas/" rel="tag"># html2canvas</a>
           
-            <a href="/tags/SSL部署/" rel="tag"># SSL部署</a>
+            <a href="/tags/保存网页快照到本地图片/" rel="tag"># 保存网页快照到本地图片</a>
           
         </div>
       
@@ -497,8 +470,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/23/绘图利器Graphviz/" rel="next" title="绘图利器Graphviz">
-                <i class="fa fa-chevron-left"></i> 绘图利器Graphviz
+              <a href="/2019/06/01/SSL部署踩坑心得/" rel="next" title="SSL部署踩坑心得">
+                <i class="fa fa-chevron-left"></i> SSL部署踩坑心得
               </a>
             
           </div>
@@ -506,10 +479,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/08/前端代码实现保存图片到本地/" rel="prev" title="前端代码实现保存图片到本地">
-                前端代码实现保存图片到本地 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -657,7 +626,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成密钥"><span class="nav-number">2.</span> <span class="nav-text">生成密钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署"><span class="nav-number">3.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析"><span class="nav-number">4.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决"><span class="nav-number">5.</span> <span class="nav-text">解决</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#html2canvas"><span class="nav-number">2.</span> <span class="nav-text">html2canvas</span></a></li></ol></div>
             
 
           </div>
