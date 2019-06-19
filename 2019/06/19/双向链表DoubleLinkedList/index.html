@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="需求查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！ html2canvas在google上搜索该功能需求，提到最多的就是 html2canvas。大致看了一下官网文档，使用方法也比较简单：123html2canvas(document.querySelector(&amp;quot;#capture&amp;quot;)).then(canvas =">
-<meta name="keywords" content="html2canvas,保存网页快照到本地图片">
+  <meta name="description" content="双向链表的结点比单链表的结点多一个前驱指针，所以已知某一个结点后，可以很快速的访问其前驱结点和后继结点。 创建Node类：12345class Node(object):	def __init__(self, data, _prev=None, _next=None):		self.data = data		self._prev = _prev		self._next = _next 创建Doub">
+<meta name="keywords" content="数据结构,双向链表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端代码实现保存图片到本地">
-<meta property="og:url" content="http://yoursite.com/2019/06/08/前端代码实现保存图片到本地/index.html">
+<meta property="og:title" content="双向链表DoubleLinkedList">
+<meta property="og:url" content="http://yoursite.com/2019/06/19/双向链表DoubleLinkedList/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="需求查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！ html2canvas在google上搜索该功能需求，提到最多的就是 html2canvas。大致看了一下官网文档，使用方法也比较简单：123html2canvas(document.querySelector(&amp;quot;#capture&amp;quot;)).then(canvas =">
+<meta property="og:description" content="双向链表的结点比单链表的结点多一个前驱指针，所以已知某一个结点后，可以很快速的访问其前驱结点和后继结点。 创建Node类：12345class Node(object):	def __init__(self, data, _prev=None, _next=None):		self.data = data		self._prev = _prev		self._next = _next 创建Doub">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-08T11:50:18.278Z">
+<meta property="og:updated_time" content="2019-06-19T08:46:19.457Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端代码实现保存图片到本地">
-<meta name="twitter:description" content="需求查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！ html2canvas在google上搜索该功能需求，提到最多的就是 html2canvas。大致看了一下官网文档，使用方法也比较简单：123html2canvas(document.querySelector(&amp;quot;#capture&amp;quot;)).then(canvas =">
+<meta name="twitter:title" content="双向链表DoubleLinkedList">
+<meta name="twitter:description" content="双向链表的结点比单链表的结点多一个前驱指针，所以已知某一个结点后，可以很快速的访问其前驱结点和后继结点。 创建Node类：12345class Node(object):	def __init__(self, data, _prev=None, _next=None):		self.data = data		self._prev = _prev		self._next = _next 创建Doub">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/08/前端代码实现保存图片到本地/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/19/双向链表DoubleLinkedList/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>前端代码实现保存图片到本地 | 菠菜屋</title>
+  <title>双向链表DoubleLinkedList | 菠菜屋</title>
   
 
 
@@ -355,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/前端代码实现保存图片到本地/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/19/双向链表DoubleLinkedList/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小菠菜">
@@ -372,7 +372,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">前端代码实现保存图片到本地
+          <h1 class="post-title" itemprop="name headline">双向链表DoubleLinkedList
 
               
             
@@ -398,7 +398,7 @@
                 
               
 
-              <time title="创建时间：2019-06-08 19:32:01" itemprop="dateCreated datePublished" datetime="2019-06-08T19:32:01+08:00">2019-06-08</time>
+              <time title="创建时间：2019-06-19 16:39:17" itemprop="dateCreated datePublished" datetime="2019-06-19T16:39:17+08:00">2019-06-19</time>
             
 
             
@@ -427,7 +427,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">908</span>
+                <span title="本文字数">1.3k</span>
               
 
               
@@ -461,11 +461,14 @@
       
 
       
-        <h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p>查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！</p>
-<h4 id="html2canvas"><a href="#html2canvas" class="headerlink" title="html2canvas"></a>html2canvas</h4><p>在google上搜索该功能需求，提到最多的就是 <a href="https://html2canvas.hertzen.com/" target="_blank" rel="noopener">html2canvas</a>。大致看了一下官网文档，使用方法也比较简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">html2canvas(document.querySelector(&quot;#capture&quot;)).then(canvas =&gt; &#123;</span><br><span class="line">    document.body.appendChild(canvas)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>然后分别在PC端和手机端查看效果，PC端可以正常显示，但是手机端却无效！继续搜索发现一篇文章 <a href="https://github.com/whinc/blog/issues/8" target="_blank" rel="noopener">H5实现保存图片的踩坑记录</a>。文章内容比较详细，而我要的功能又不需要那么复杂。所以只应用了核心代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function snapshot()&#123;</span><br><span class="line">      	$(&apos;#snapshot&apos;).hide(); # 隐藏“生成图片”按钮，否则会在生成的图片头部有空白区域</span><br><span class="line">    	const el = document.querySelector(&apos;#capture&apos;)</span><br><span class="line">        html2canvas(el).then(canvas =&gt; &#123;</span><br><span class="line">          const img = new Image()</span><br><span class="line">          img.style.display = &quot;block&quot;</span><br><span class="line">          // 将 canvas 导出成 base64</span><br><span class="line">          img.src = canvas.toDataURL(&apos;image/jpeg&apos;)</span><br><span class="line">          // 添加图片到预览</span><br><span class="line">          //document.querySelector(&apos;#preview&apos;).appendChild(img)</span><br><span class="line">          $(&apos;#capture&apos;).html(img);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>其他功能陆续使用的时候再继续更新。。。</p>
+        <p>双向链表的结点比单链表的结点多一个前驱指针，所以已知某一个结点后，可以很快速的访问其前驱结点和后继结点。</p>
+<h4 id="创建Node类："><a href="#创建Node类：" class="headerlink" title="创建Node类："></a>创建Node类：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Node(object):</span><br><span class="line">	def __init__(self, data, _prev=None, _next=None):</span><br><span class="line">		self.data = data</span><br><span class="line">		self._prev = _prev</span><br><span class="line">		self._next = _next</span><br></pre></td></tr></table></figure>
+<h4 id="创建DoubleLinkedList类："><a href="#创建DoubleLinkedList类：" class="headerlink" title="创建DoubleLinkedList类："></a>创建DoubleLinkedList类：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class CircularLinkedList(object):</span><br><span class="line">	def __init__(self, node=None):</span><br><span class="line">		self._head = None</span><br></pre></td></tr></table></figure>
+<h4 id="在头部插入新结点："><a href="#在头部插入新结点：" class="headerlink" title="在头部插入新结点："></a>在头部插入新结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def insert_new_value_to_head(self, value):</span><br><span class="line">	new_node = Node(value)</span><br><span class="line">	current = self._head</span><br><span class="line">	if current == None:</span><br><span class="line">		self._head = new_node</span><br><span class="line">	else:</span><br><span class="line">		new_node._next = self._head</span><br><span class="line">		self._head._prev = new_node</span><br><span class="line">		self._head = new_node</span><br><span class="line">		new_node._prev = None</span><br></pre></td></tr></table></figure>
+<h4 id="在给定结点后插入新结点："><a href="#在给定结点后插入新结点：" class="headerlink" title="在给定结点后插入新结点："></a>在给定结点后插入新结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def insert_new_value_after_target_node(self, target_node, value):</span><br><span class="line">	new_node = Node(value)</span><br><span class="line">	new_node._next = target_node._next</span><br><span class="line">	target_node._next._prev = new_node</span><br><span class="line">	target_node._next = new_node</span><br><span class="line">	new_node._prev = target_node</span><br></pre></td></tr></table></figure>
+<h4 id="在给定结点前插入新结点："><a href="#在给定结点前插入新结点：" class="headerlink" title="在给定结点前插入新结点："></a>在给定结点前插入新结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def insert_new_value_before_target_node(self, target_node, value):</span><br><span class="line">	new_node = Node(value)</span><br><span class="line">	new_node._prev = target_node._prev</span><br><span class="line">	target_node._prev._next = new_node</span><br><span class="line">	new_node._next = target_node</span><br><span class="line">	target_node._prev = new_node</span><br></pre></td></tr></table></figure>
+<h4 id="删除给定结点"><a href="#删除给定结点" class="headerlink" title="删除给定结点"></a>删除给定结点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def delete_target_node(self, target_node):</span><br><span class="line">	target_node._next._prev = target_node._prev</span><br><span class="line">	target_node._prev._next = target_node._next</span><br></pre></td></tr></table></figure>
+<h4 id="返回给定值的结点"><a href="#返回给定值的结点" class="headerlink" title="返回给定值的结点"></a>返回给定值的结点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def get_node_by_value(self, value):</span><br><span class="line">	current = self._head</span><br><span class="line">	while current and current.data != value:</span><br><span class="line">		current = current._next</span><br><span class="line"></span><br><span class="line">	if current:</span><br><span class="line">		return current</span><br><span class="line">	else:</span><br><span class="line">		return</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -489,9 +492,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/html2canvas/" rel="tag"># html2canvas</a>
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
           
-            <a href="/tags/保存网页快照到本地图片/" rel="tag"># 保存网页快照到本地图片</a>
+            <a href="/tags/双向链表/" rel="tag"># 双向链表</a>
           
         </div>
       
@@ -504,8 +507,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/01/SSL部署踩坑心得/" rel="next" title="SSL部署踩坑心得">
-                <i class="fa fa-chevron-left"></i> SSL部署踩坑心得
+              <a href="/2019/06/08/前端代码实现保存图片到本地/" rel="next" title="前端代码实现保存图片到本地">
+                <i class="fa fa-chevron-left"></i> 前端代码实现保存图片到本地
               </a>
             
           </div>
@@ -513,10 +516,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/19/双向链表DoubleLinkedList/" rel="prev" title="双向链表DoubleLinkedList">
-                双向链表DoubleLinkedList <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -666,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#html2canvas"><span class="nav-number">2.</span> <span class="nav-text">html2canvas</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建Node类："><span class="nav-number">1.</span> <span class="nav-text">创建Node类：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建DoubleLinkedList类："><span class="nav-number">2.</span> <span class="nav-text">创建DoubleLinkedList类：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在头部插入新结点："><span class="nav-number">3.</span> <span class="nav-text">在头部插入新结点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在给定结点后插入新结点："><span class="nav-number">4.</span> <span class="nav-text">在给定结点后插入新结点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在给定结点前插入新结点："><span class="nav-number">5.</span> <span class="nav-text">在给定结点前插入新结点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除给定结点"><span class="nav-number">6.</span> <span class="nav-text">删除给定结点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#返回给定值的结点"><span class="nav-number">7.</span> <span class="nav-text">返回给定值的结点</span></a></li></ol></div>
             
 
           </div>
