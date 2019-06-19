@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="单向循环链表与普通单链表类似，唯一的区别是单向循环链表的尾结点指向头结点，而普通单链表的尾结点指向None。 此处我们同样保持和普通单链表一样的“核心单元”：Node类 1234567#-*-coding:utf-8-*-class Node(object):    def __init__(self, data, next_node=None):        self.data = data">
+  <meta name="description" content="单向循环链表与普通单链表类似，唯一的区别是单向循环链表的尾结点指向头结点，而普通单链表的尾结点指向None。">
 <meta name="keywords" content="数据结构,单向循环链表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单向循环链表CircularLinkedList">
 <meta property="og:url" content="http://yoursite.com/2019/05/23/单向循环链表CircularLinkedList/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="单向循环链表与普通单链表类似，唯一的区别是单向循环链表的尾结点指向头结点，而普通单链表的尾结点指向None。 此处我们同样保持和普通单链表一样的“核心单元”：Node类 1234567#-*-coding:utf-8-*-class Node(object):    def __init__(self, data, next_node=None):        self.data = data">
+<meta property="og:description" content="单向循环链表与普通单链表类似，唯一的区别是单向循环链表的尾结点指向头结点，而普通单链表的尾结点指向None。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-19T08:36:57.485Z">
+<meta property="og:updated_time" content="2019-06-19T09:36:06.681Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单向循环链表CircularLinkedList">
-<meta name="twitter:description" content="单向循环链表与普通单链表类似，唯一的区别是单向循环链表的尾结点指向头结点，而普通单链表的尾结点指向None。 此处我们同样保持和普通单链表一样的“核心单元”：Node类 1234567#-*-coding:utf-8-*-class Node(object):    def __init__(self, data, next_node=None):        self.data = data">
+<meta name="twitter:description" content="单向循环链表与普通单链表类似，唯一的区别是单向循环链表的尾结点指向头结点，而普通单链表的尾结点指向None。">
 
 
 
@@ -461,8 +461,7 @@
       
 
       
-        <p>单向循环链表与普通单链表类似，唯一的区别是单向循环链表的尾结点指向头结点，而普通单链表的尾结点指向None。</p>
-<p>此处我们同样保持和普通单链表一样的“核心单元”：Node类</p>
+        <p>单向循环链表与普通单链表类似，唯一的区别是单向循环链表的尾结点指向头结点，而普通单链表的尾结点指向None。<br><a id="more"></a><br>此处我们同样保持和普通单链表一样的“核心单元”：Node类</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#-*-coding:utf-8-*-</span><br><span class="line"></span><br><span class="line">class Node(object):</span><br><span class="line"></span><br><span class="line">    def __init__(self, data, next_node=None):</span><br><span class="line">        self.data = data</span><br><span class="line">        self._next = next_node</span><br></pre></td></tr></table></figure>
 <h4 id="构建单向循环链表CircularLinkedList类："><a href="#构建单向循环链表CircularLinkedList类：" class="headerlink" title="构建单向循环链表CircularLinkedList类："></a>构建单向循环链表CircularLinkedList类：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class CircularLinkedList(object):</span><br><span class="line"></span><br><span class="line">	def __init__(self, node=None):</span><br><span class="line">		self._head = None</span><br></pre></td></tr></table></figure>
 <h4 id="在头部添加一个新结点"><a href="#在头部添加一个新结点" class="headerlink" title="在头部添加一个新结点"></a>在头部添加一个新结点</h4><blockquote>

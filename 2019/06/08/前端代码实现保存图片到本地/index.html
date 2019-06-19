@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="需求查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！ html2canvas在google上搜索该功能需求，提到最多的就是 html2canvas。大致看了一下官网文档，使用方法也比较简单：123html2canvas(document.querySelector(&amp;quot;#capture&amp;quot;)).then(canvas =">
+  <meta name="description" content="需求查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！">
 <meta name="keywords" content="html2canvas,保存网页快照到本地图片">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端代码实现保存图片到本地">
 <meta property="og:url" content="http://yoursite.com/2019/06/08/前端代码实现保存图片到本地/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="需求查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！ html2canvas在google上搜索该功能需求，提到最多的就是 html2canvas。大致看了一下官网文档，使用方法也比较简单：123html2canvas(document.querySelector(&amp;quot;#capture&amp;quot;)).then(canvas =">
+<meta property="og:description" content="需求查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-08T11:50:18.278Z">
+<meta property="og:updated_time" content="2019-06-19T09:36:17.121Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端代码实现保存图片到本地">
-<meta name="twitter:description" content="需求查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！ html2canvas在google上搜索该功能需求，提到最多的就是 html2canvas。大致看了一下官网文档，使用方法也比较简单：123html2canvas(document.querySelector(&amp;quot;#capture&amp;quot;)).then(canvas =">
+<meta name="twitter:description" content="需求查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！">
 
 
 
@@ -461,7 +461,7 @@
       
 
       
-        <h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p>查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！</p>
+        <h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p>查看个人简历后，可以点击生成简历图片并保存到本地，也就是根据HTML代码在前端生成图片，而不需要经过后台处理！<br><a id="more"></a></p>
 <h4 id="html2canvas"><a href="#html2canvas" class="headerlink" title="html2canvas"></a>html2canvas</h4><p>在google上搜索该功能需求，提到最多的就是 <a href="https://html2canvas.hertzen.com/" target="_blank" rel="noopener">html2canvas</a>。大致看了一下官网文档，使用方法也比较简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">html2canvas(document.querySelector(&quot;#capture&quot;)).then(canvas =&gt; &#123;</span><br><span class="line">    document.body.appendChild(canvas)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>然后分别在PC端和手机端查看效果，PC端可以正常显示，但是手机端却无效！继续搜索发现一篇文章 <a href="https://github.com/whinc/blog/issues/8" target="_blank" rel="noopener">H5实现保存图片的踩坑记录</a>。文章内容比较详细，而我要的功能又不需要那么复杂。所以只应用了核心代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function snapshot()&#123;</span><br><span class="line">      	$(&apos;#snapshot&apos;).hide(); # 隐藏“生成图片”按钮，否则会在生成的图片头部有空白区域</span><br><span class="line">    	const el = document.querySelector(&apos;#capture&apos;)</span><br><span class="line">        html2canvas(el).then(canvas =&gt; &#123;</span><br><span class="line">          const img = new Image()</span><br><span class="line">          img.style.display = &quot;block&quot;</span><br><span class="line">          // 将 canvas 导出成 base64</span><br><span class="line">          img.src = canvas.toDataURL(&apos;image/jpeg&apos;)</span><br><span class="line">          // 添加图片到预览</span><br><span class="line">          //document.querySelector(&apos;#preview&apos;).appendChild(img)</span><br><span class="line">          $(&apos;#capture&apos;).html(img);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>

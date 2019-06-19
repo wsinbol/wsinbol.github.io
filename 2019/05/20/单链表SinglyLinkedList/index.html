@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="链表通过“指针”将一组零散的内存块串联起来，所以它的底层结构是由两部分构成的：  结点结点用来存储数据，可以是int、string等 指针指针用来记录下一个结点的地址  根据指针与结点的指向关系可以细分链表的类型：单链表、双向链表、循环链表。本文用Python实现单链表的相关操作。 先构建链表的“核心单元”：Node类1234567#-*-coding:utf-8-*-class Node(obj">
+  <meta name="description" content="链表通过“指针”将一组零散的内存块串联起来，所以它的底层结构是由两部分构成的：  结点结点用来存储数据，可以是int、string等 指针指针用来记录下一个结点的地址">
 <meta name="keywords" content="数据结构,单链表,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单链表SinglyLinkedList">
 <meta property="og:url" content="http://yoursite.com/2019/05/20/单链表SinglyLinkedList/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="链表通过“指针”将一组零散的内存块串联起来，所以它的底层结构是由两部分构成的：  结点结点用来存储数据，可以是int、string等 指针指针用来记录下一个结点的地址  根据指针与结点的指向关系可以细分链表的类型：单链表、双向链表、循环链表。本文用Python实现单链表的相关操作。 先构建链表的“核心单元”：Node类1234567#-*-coding:utf-8-*-class Node(obj">
+<meta property="og:description" content="链表通过“指针”将一组零散的内存块串联起来，所以它的底层结构是由两部分构成的：  结点结点用来存储数据，可以是int、string等 指针指针用来记录下一个结点的地址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-23T02:12:28.921Z">
+<meta property="og:updated_time" content="2019-06-19T09:35:56.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单链表SinglyLinkedList">
-<meta name="twitter:description" content="链表通过“指针”将一组零散的内存块串联起来，所以它的底层结构是由两部分构成的：  结点结点用来存储数据，可以是int、string等 指针指针用来记录下一个结点的地址  根据指针与结点的指向关系可以细分链表的类型：单链表、双向链表、循环链表。本文用Python实现单链表的相关操作。 先构建链表的“核心单元”：Node类1234567#-*-coding:utf-8-*-class Node(obj">
+<meta name="twitter:description" content="链表通过“指针”将一组零散的内存块串联起来，所以它的底层结构是由两部分构成的：  结点结点用来存储数据，可以是int、string等 指针指针用来记录下一个结点的地址">
 
 
 
@@ -464,9 +464,9 @@
         <p>链表通过“指针”将一组零散的内存块串联起来，所以它的底层结构是由两部分构成的：</p>
 <ul>
 <li>结点<br>结点用来存储数据，可以是int、string等</li>
-<li>指针<br>指针用来记录下一个结点的地址</li>
+<li>指针<br>指针用来记录下一个结点的地址<a id="more"></a>
+根据指针与结点的指向关系可以细分链表的类型：单链表、双向链表、循环链表。<br>本文用Python实现单链表的相关操作。</li>
 </ul>
-<p>根据指针与结点的指向关系可以细分链表的类型：单链表、双向链表、循环链表。<br>本文用Python实现单链表的相关操作。</p>
 <h4 id="先构建链表的“核心单元”：Node类"><a href="#先构建链表的“核心单元”：Node类" class="headerlink" title="先构建链表的“核心单元”：Node类"></a>先构建链表的“核心单元”：Node类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#-*-coding:utf-8-*-</span><br><span class="line"></span><br><span class="line">class Node(object):</span><br><span class="line"></span><br><span class="line">    def __init__(self, data, next_node=None):</span><br><span class="line">        self.data = data</span><br><span class="line">        self._next = next_node</span><br></pre></td></tr></table></figure>
 <h4 id="创建SinglyLinkedList类："><a href="#创建SinglyLinkedList类：" class="headerlink" title="创建SinglyLinkedList类："></a>创建SinglyLinkedList类：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class SinglyLinkedList(object):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self._head = None</span><br></pre></td></tr></table></figure>
 <p>接下来具体的链表操作：</p>

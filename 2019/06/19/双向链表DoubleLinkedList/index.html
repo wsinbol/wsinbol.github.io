@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="双向链表的结点比单链表的结点多一个前驱指针，所以已知某一个结点后，可以很快速的访问其前驱结点和后继结点。 创建Node类：12345class Node(object):	def __init__(self, data, _prev=None, _next=None):		self.data = data		self._prev = _prev		self._next = _next 创建Doub">
+  <meta name="description" content="双向链表的结点比单链表的结点多一个前驱指针，所以已知某一个结点后，可以很快速的访问其前驱结点和后继结点。">
 <meta name="keywords" content="数据结构,双向链表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="双向链表DoubleLinkedList">
 <meta property="og:url" content="http://yoursite.com/2019/06/19/双向链表DoubleLinkedList/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="双向链表的结点比单链表的结点多一个前驱指针，所以已知某一个结点后，可以很快速的访问其前驱结点和后继结点。 创建Node类：12345class Node(object):	def __init__(self, data, _prev=None, _next=None):		self.data = data		self._prev = _prev		self._next = _next 创建Doub">
+<meta property="og:description" content="双向链表的结点比单链表的结点多一个前驱指针，所以已知某一个结点后，可以很快速的访问其前驱结点和后继结点。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-19T08:46:19.457Z">
+<meta property="og:updated_time" content="2019-06-19T09:35:43.412Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="双向链表DoubleLinkedList">
-<meta name="twitter:description" content="双向链表的结点比单链表的结点多一个前驱指针，所以已知某一个结点后，可以很快速的访问其前驱结点和后继结点。 创建Node类：12345class Node(object):	def __init__(self, data, _prev=None, _next=None):		self.data = data		self._prev = _prev		self._next = _next 创建Doub">
+<meta name="twitter:description" content="双向链表的结点比单链表的结点多一个前驱指针，所以已知某一个结点后，可以很快速的访问其前驱结点和后继结点。">
 
 
 
@@ -461,8 +461,9 @@
       
 
       
-        <p>双向链表的结点比单链表的结点多一个前驱指针，所以已知某一个结点后，可以很快速的访问其前驱结点和后继结点。</p>
+        <p>双向链表的结点比单链表的结点多一个前驱指针，所以已知某一个结点后，可以很快速的访问其前驱结点和后继结点。<br><a id="more"></a></p>
 <h4 id="创建Node类："><a href="#创建Node类：" class="headerlink" title="创建Node类："></a>创建Node类：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Node(object):</span><br><span class="line">	def __init__(self, data, _prev=None, _next=None):</span><br><span class="line">		self.data = data</span><br><span class="line">		self._prev = _prev</span><br><span class="line">		self._next = _next</span><br></pre></td></tr></table></figure>
+<!-- more -->
 <h4 id="创建DoubleLinkedList类："><a href="#创建DoubleLinkedList类：" class="headerlink" title="创建DoubleLinkedList类："></a>创建DoubleLinkedList类：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class CircularLinkedList(object):</span><br><span class="line">	def __init__(self, node=None):</span><br><span class="line">		self._head = None</span><br></pre></td></tr></table></figure>
 <h4 id="在头部插入新结点："><a href="#在头部插入新结点：" class="headerlink" title="在头部插入新结点："></a>在头部插入新结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def insert_new_value_to_head(self, value):</span><br><span class="line">	new_node = Node(value)</span><br><span class="line">	current = self._head</span><br><span class="line">	if current == None:</span><br><span class="line">		self._head = new_node</span><br><span class="line">	else:</span><br><span class="line">		new_node._next = self._head</span><br><span class="line">		self._head._prev = new_node</span><br><span class="line">		self._head = new_node</span><br><span class="line">		new_node._prev = None</span><br></pre></td></tr></table></figure>
 <h4 id="在给定结点后插入新结点："><a href="#在给定结点后插入新结点：" class="headerlink" title="在给定结点后插入新结点："></a>在给定结点后插入新结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def insert_new_value_after_target_node(self, target_node, value):</span><br><span class="line">	new_node = Node(value)</span><br><span class="line">	new_node._next = target_node._next</span><br><span class="line">	target_node._next._prev = new_node</span><br><span class="line">	target_node._next = new_node</span><br><span class="line">	new_node._prev = target_node</span><br></pre></td></tr></table></figure>
