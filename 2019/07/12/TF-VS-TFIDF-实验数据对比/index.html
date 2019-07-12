@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="关于自然语言处理的相关理论知识就不在此细说了，网上的资料非常多，我们直接进入正题，本文主要是通过对同一组样本数据进行分析，定性看一下基于TF得出的主题词和基于TF-IDF得出的主题词情况。">
+<meta name="keywords" content="自然语言处理,TF,TF-IDF,sklearn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TF VS TF-IDF 实验数据对比">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/TF-VS-TFIDF-实验数据对比/index.html">
+<meta property="og:site_name" content="菠菜屋">
+<meta property="og:description" content="关于自然语言处理的相关理论知识就不在此细说了，网上的资料非常多，我们直接进入正题，本文主要是通过对同一组样本数据进行分析，定性看一下基于TF得出的主题词和基于TF-IDF得出的主题词情况。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-12T13:35:27.397Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TF VS TF-IDF 实验数据对比">
+<meta name="twitter:description" content="关于自然语言处理的相关理论知识就不在此细说了，网上的资料非常多，我们直接进入正题，本文主要是通过对同一组样本数据进行分析，定性看一下基于TF得出的主题词和基于TF-IDF得出的主题词情况。">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/07/12/TF-VS-TFIDF-实验数据对比/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>TF VS TF-IDF 实验数据对比 | 菠菜屋</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?e94eb862239a38ae267d69f619e15d83";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">菠菜屋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">小菠菜的成长笔记</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/schedule/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>日程表</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/TF-VS-TFIDF-实验数据对比/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小菠菜">
+      <meta itemprop="description" content="要记得除草、浇水、喷药哦^_^">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菠菜屋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">TF VS TF-IDF 实验数据对比
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-12 20:42:00" itemprop="dateCreated datePublished" datetime="2019-07-12T20:42:00+08:00">2019-07-12</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">4.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>关于自然语言处理的相关理论知识就不在此细说了，网上的资料非常多，我们直接进入正题，本文主要是通过对同一组样本数据进行分析，定性看一下基于TF得出的主题词和基于TF-IDF得出的主题词情况。<br><a id="more"></a></p>
+<h4 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h4><p>采用搜狗实验室新闻样本数据的精简版本，每篇文本内容如下代码所示，正则匹配处理后得到166份文章内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;doc&gt;</span><br><span class="line">&lt;url&gt;http://news.sohu.com/20120612/n345428229.shtml&lt;/url&gt;</span><br><span class="line">&lt;docno&gt;c172394d49da2142-69713306c0bb3300&lt;/docno&gt;</span><br><span class="line">&lt;contenttitle&gt;公安机关销毁１０余万非法枪支　跨国武器走私渐起&lt;/contenttitle&gt;</span><br><span class="line">&lt;content&gt;中广网唐山６月１２日消息（记者汤一亮　庄胜春）据中国之声《新闻晚高峰》报道，今天（１２日）上午，公安机关２０１２年缉枪制爆专项行动“统一销毁非法枪爆物品活动”在河北唐山正式启动，１０万余只非法枪支、２５０余吨炸药在全国１５０个城市被统一销毁。黄明：现在我宣布，全国缉枪制爆统一销毁行动开始！随着公安部副部长黄明一声令下，大量仿制式枪以及猎枪、火药枪、气枪在河北唐山钢铁厂被投入炼钢炉。与此同时，在全国各省区市１５０个城市，破案追缴和群众主动上缴的１０万余支非法枪支被集中销毁，在全国各指定场所，２５０余吨炸药被分别销毁。公安部治安局局长刘绍武介绍，这次销毁的非法枪支来源于三个方面。刘绍武：打击破案包括涉黑、涉恶的团伙犯罪、毒品犯罪，还有从境外非法走私的枪支爆炸物。在销毁现场，记者看到了被追缴和上缴的各式各样的枪支。刘绍武：也包括制式枪，有的是军用枪、仿制的制式抢，还有猎枪、私制的火药枪等等。按照我国的枪支管理法，这些都是严厉禁止个人非法持有的。中国是世界上持枪犯罪的犯罪率最低的国家之一。中美联手破获特大跨国走私武器弹药案近日，中美执法部门联手成功破获特大跨国走私武器弹药案，在中国抓获犯罪嫌疑人２３名，缴获各类枪支９３支、子弹５万余发及大量枪支配件。在美国抓获犯罪嫌疑人３名，缴获各类枪支１２支。这是公安部与美国移民海关执法局通过联合调查方式侦破重大跨国案件的又一成功案例。２０１１年８月２５日，上海浦东国际机场海关在对美国纽约发往浙江台州，申报品名为扩音器（音箱）的快件进行查验时，发现货物内藏有手枪９支，枪支配件９件，长枪部件７件。经检验，这些都是具有杀伤力的制式枪支及其配件。这引起了公安部和海关总署的高度重视。公安部刑侦局局长刘安成：因为是从海关进口的货物中检查出来夹带，说明来源地是境外，或是说国外，这应该是一起特大跨国走私武器弹药的案件。上海市公安局和上海海关缉私局成立联合专案组，迅速开展案件侦查。专案组于８月２６日在浙江台州ＵＰＳ取件处将犯罪嫌疑人王挺（男，３２岁，台州市人）抓获。王挺交代，他通过一境外网站上认识了上家林志富，２００９年１１月以来，林志富长期居住美国，他通过互联网组建了一个走私、贩卖、私藏枪支弹药的群体，通过网络在国内寻找枪支弹药买家，并通过美国ＵＰＳ联邦速递公司将枪支弹药从纽约快递给多名类似王挺的中间人，再通过中间人发送给国内买家。此案中，犯罪分子依托虚拟网络进行犯罪交易，隐蔽性强，涉案人员使用的身份、地址、联系方式都是虚构的，侦查难度很大。刘安成说，此案体现了是新型犯罪，特别是现代犯罪的新特点。刘安成：他不受距离的限制、经常是跨国跨境，甚至是跨一个、数个、甚至数十个国家。这种犯罪手法的改变和新型犯罪的特点，要求我们各国警方充分合作。作者：汤一亮　庄胜春&lt;/content&gt;</span><br><span class="line">&lt;/doc&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="文本预处理"><a href="#文本预处理" class="headerlink" title="文本预处理"></a>文本预处理</h4><p>文本数据预处理一般都是分词，过滤停用词，然后构建特征向量。直接见代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">def text_processing(file_path):</span><br><span class="line">	with open(file_path, &apos;r&apos;, encoding=&apos;utf-8&apos;) as f:</span><br><span class="line">		dataset = f.read()</span><br><span class="line"></span><br><span class="line">	pattern = re.compile(r&apos;&lt;content&gt;(.*?)&lt;/content&gt;&apos;, re.S)</span><br><span class="line">	content_list = re.findall(pattern, dataset)</span><br><span class="line">	content_data = []</span><br><span class="line">	for item in content_list:</span><br><span class="line">		if len(item) &gt; 1:</span><br><span class="line">			content_data.append(item)</span><br><span class="line">	</span><br><span class="line">	clean_words = []</span><br><span class="line">	for item in content_data:</span><br><span class="line">		words = list(jieba.cut(item))</span><br><span class="line">		clean_words.append([word for word in words if word not in stopwords_set and not word.isdigit() and len(word) &gt; 1])</span><br><span class="line"></span><br><span class="line">	corpus = []</span><br><span class="line">	for word in clean_words:</span><br><span class="line">		corpus.append(&apos; &apos;.join(word))</span><br><span class="line"></span><br><span class="line">	return corpus</span><br></pre></td></tr></table></figure>
+<h4 id="构建特征向量"><a href="#构建特征向量" class="headerlink" title="构建特征向量"></a>构建特征向量</h4><p>将经过文本预处理后的语料数据传入下面方法中，利用sklearn工具分别构建TF矩阵和TF-IDF矩阵，特别说明的是在整个过程中，未进行归一化操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def make_count_vectorizer(corpus):</span><br><span class="line">	vectorizer = CountVectorizer(stop_words=None)</span><br><span class="line">	# 计算词频，未进行归一化</span><br><span class="line">	tf = vectorizer.fit_transform(corpus)</span><br><span class="line">	feature_names = vectorizer.get_feature_names()</span><br><span class="line">	return tf,feature_names</span><br><span class="line"></span><br><span class="line">def make_tfidf(tf):</span><br><span class="line">	transformer = TfidfTransformer()</span><br><span class="line">	tfidf = transformer.fit_transform(tf)</span><br><span class="line">	return tfidf</span><br></pre></td></tr></table></figure></p>
+<h4 id="保存查看结果"><a href="#保存查看结果" class="headerlink" title="保存查看结果"></a>保存查看结果</h4><p>分别存储TF矩阵和TF-IDF矩阵中每一行TOP10的词语（即每一篇文章的前10个特征词），并记录对应词频或者权重<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">corpus = text_processing(origin_data_path)</span><br><span class="line">tf, feature_names = make_count_vectorizer(corpus)</span><br><span class="line">tfidf = make_tfidf(tf)</span><br><span class="line"></span><br><span class="line">rs = tf.toarray()</span><br><span class="line">rows, cols = np.shape(rs)</span><br><span class="line"></span><br><span class="line">tfidf_rs = tfidf.toarray()</span><br><span class="line"></span><br><span class="line">with open(&apos;test.txt&apos;, &apos;w&apos;, encoding=&apos;utf-8&apos;) as f:</span><br><span class="line">	for row in range(rows):</span><br><span class="line">		f.write(&apos;\n---&apos;+str(row)+&quot;---\n&quot;)</span><br><span class="line"></span><br><span class="line">		index_list_tf = rs[row].argsort()[:-11:-1]</span><br><span class="line">		index_list_tfidf = tfidf_rs[row].argsort()[:-11:-1]</span><br><span class="line">		f.write(&apos;   tf:&apos;)</span><br><span class="line">		for index in index_list_tf:</span><br><span class="line">			f.write(feature_names[index]+str(rs[row][index]))</span><br><span class="line">		</span><br><span class="line">		f.write(&quot;\ntfidf:&quot;)</span><br><span class="line">		for index in index_list_tfidf:</span><br><span class="line">			f.write(feature_names[index]+str(tfidf_rs[row][index])[:5])</span><br></pre></td></tr></table></figure></p>
+<h4 id="分析结果"><a href="#分析结果" class="headerlink" title="分析结果"></a>分析结果</h4><p>取前10篇文章，结合文本内容和算法计算得出的主题词。可以看出两种方式都较好的提取出文章内容的关键词，但通过对主题词降序查看可以大致看出TF-IDF要做的更好。TF-IDF会降低一些副词或介词的权重，比如“通过”、“表示”、“之后”等等叫常用词，同时，也挖掘出一些更具代表性的词，如“非你莫属”、“丹麦”、“唐山”等。耳听为虚，眼见为实，程序跑一跑才知道哪个会更好！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">---0---</span><br><span class="line">   tf:犯罪11枪支11销毁7通过6非法6走私5跨国5公安部5全国4配件3</span><br><span class="line">tfidf:枪支0.372犯罪0.328销毁0.271走私0.179公安部0.179跨国0.179非法0.173唐山0.116绍武0.116刘安0.116</span><br><span class="line">---1---</span><br><span class="line">   tf:张绍10网友8了解5问题5道歉5学生4节目组3时候3没有3群体3</span><br><span class="line">tfidf:张绍0.529网友0.305道歉0.219学生0.184了解0.169非你莫属0.158节目组0.158问题0.154群体0.131硬挺0.105</span><br><span class="line">---2---</span><br><span class="line">   tf:麦客5小麦5收割机4夫妻3麦收3收割3郯城县3驾驶3联合3郯城2</span><br><span class="line">tfidf:小麦0.346麦客0.346收割机0.277郯城县0.208收割0.208麦收0.208夫妻0.192驾驶0.181联合0.142辛勤0.138</span><br><span class="line">---3---</span><br><span class="line">   tf:比赛8荷兰7葡萄牙6葡萄牙队6德国5球队5之后5输球5提前4今天4</span><br><span class="line">tfidf:比赛0.344荷兰0.301葡萄牙0.258葡萄牙队0.258输球0.215球队0.215德国0.215丹麦0.172提前0.143之后0.141</span><br><span class="line">---4---</span><br><span class="line">   tf:伯格7扎克7妻子4报道3夫妇3中国3一位2创始人2警察2脸谱2</span><br><span class="line">tfidf:扎克0.465伯格0.465妻子0.212夫妇0.184脸谱0.133创始人0.133英镑0.133台阶0.133街边0.133镜头0.123</span><br><span class="line">---5---</span><br><span class="line">   tf:文化39投资13胶南市12万元10公共8社区7建设7演出6全市6设施6</span><br><span class="line">tfidf:文化0.679胶南市0.271公共0.181投资0.169演出0.135万元0.132社区0.126全市0.125设施0.125分馆0.113</span><br><span class="line">---6---</span><br><span class="line">   tf:金正恩3代表3少年3朝鲜2准备1牛肉1第一书记1日电1中国1坚定1</span><br><span class="line">tfidf:金正恩0.427少年0.395代表0.328朝鲜0.284朝鲜劳动党0.142第一书记0.142坚定0.142送来0.142跟随0.142牛肉0.142</span><br><span class="line">---7---</span><br><span class="line">   tf:企业10审计8问题6表示5中央5管理5审计署5整改4相关4国资委4</span><br><span class="line">tfidf:审计0.420企业0.326审计署0.283国资委0.227中央0.218整改0.210问题0.199管理0.160完善0.123表示0.116</span><br><span class="line">---8---</span><br><span class="line">   tf:交易7证监会5股票4异常4上市公司4信息3资产重组3重大3本次2核查2</span><br><span class="line">tfidf:交易0.411证监会0.347上市公司0.309异常0.309股票0.278资产重组0.232重大0.172内幕0.154重组0.145核查0.145</span><br><span class="line">---9---</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/自然语言处理/" rel="tag"># 自然语言处理</a>
+          
+            <a href="/tags/TF/" rel="tag"># TF</a>
+          
+            <a href="/tags/TF-IDF/" rel="tag"># TF-IDF</a>
+          
+            <a href="/tags/sklearn/" rel="tag"># sklearn</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/11/链式队列LinkedQueue/" rel="next" title="链式队列LinkedQueue">
+                <i class="fa fa-chevron-left"></i> 链式队列LinkedQueue
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">小菠菜</p>
+              <div class="site-description motion-element" itemprop="description">要记得除草、浇水、喷药哦^_^</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据来源"><span class="nav-number">1.</span> <span class="nav-text">数据来源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本预处理"><span class="nav-number">2.</span> <span class="nav-text">文本预处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建特征向量"><span class="nav-number">3.</span> <span class="nav-text">构建特征向量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保存查看结果"><span class="nav-number">4.</span> <span class="nav-text">保存查看结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析结果"><span class="nav-number">5.</span> <span class="nav-text">分析结果</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小菠菜</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">15k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">13 分钟</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
