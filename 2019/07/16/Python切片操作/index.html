@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="身为IT人士，代码分享在日常工作中实在是再寻常不过了。比起发送文件的方式，一个代码分享链接工具是再好不过的了！简便又快捷。尤其在寻求帮助的时候，大段大段代码发在群里实在让人难以接受，而且还有被聊天工具转义的风险。">
-<meta name="keywords" content="代码分享,实用工具">
+  <meta name="description" content="切片是Python语言的特性之一。无论是字符串还是数组都可以使用切片操作快速高效的获得目标值。使用起来也比较简单:  object[ start_index : end_index : step ]  start_index是起始索引，可正可负可省略，取值时包含该索引的值 end_index是终止索引，可正可负可省略，取值时不包含该索引的值 step是取值步长，可正可负可省略，正数时表示从左向右取">
+<meta name="keywords" content="切片">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码分享工具">
-<meta property="og:url" content="http://yoursite.com/2019/06/21/代码分享链接/index.html">
+<meta property="og:title" content="Python切片操作">
+<meta property="og:url" content="http://yoursite.com/2019/07/16/Python切片操作/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="身为IT人士，代码分享在日常工作中实在是再寻常不过了。比起发送文件的方式，一个代码分享链接工具是再好不过的了！简便又快捷。尤其在寻求帮助的时候，大段大段代码发在群里实在让人难以接受，而且还有被聊天工具转义的风险。">
+<meta property="og:description" content="切片是Python语言的特性之一。无论是字符串还是数组都可以使用切片操作快速高效的获得目标值。使用起来也比较简单:  object[ start_index : end_index : step ]  start_index是起始索引，可正可负可省略，取值时包含该索引的值 end_index是终止索引，可正可负可省略，取值时不包含该索引的值 step是取值步长，可正可负可省略，正数时表示从左向右取">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-21T04:22:00.144Z">
+<meta property="og:updated_time" content="2019-07-16T10:08:48.226Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码分享工具">
-<meta name="twitter:description" content="身为IT人士，代码分享在日常工作中实在是再寻常不过了。比起发送文件的方式，一个代码分享链接工具是再好不过的了！简便又快捷。尤其在寻求帮助的时候，大段大段代码发在群里实在让人难以接受，而且还有被聊天工具转义的风险。">
+<meta name="twitter:title" content="Python切片操作">
+<meta name="twitter:description" content="切片是Python语言的特性之一。无论是字符串还是数组都可以使用切片操作快速高效的获得目标值。使用起来也比较简单:  object[ start_index : end_index : step ]  start_index是起始索引，可正可负可省略，取值时包含该索引的值 end_index是终止索引，可正可负可省略，取值时不包含该索引的值 step是取值步长，可正可负可省略，正数时表示从左向右取">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/21/代码分享链接/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/16/Python切片操作/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>代码分享工具 | 菠菜屋</title>
+  <title>Python切片操作 | 菠菜屋</title>
   
 
 
@@ -355,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/代码分享链接/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/16/Python切片操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小菠菜">
@@ -372,7 +372,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">代码分享工具
+          <h1 class="post-title" itemprop="name headline">Python切片操作
 
               
             
@@ -398,7 +398,7 @@
                 
               
 
-              <time title="创建时间：2019-06-21 10:58:00" itemprop="dateCreated datePublished" datetime="2019-06-21T10:58:00+08:00">2019-06-21</time>
+              <time title="创建时间：2019-07-16 18:06:58" itemprop="dateCreated datePublished" datetime="2019-07-16T18:06:58+08:00">2019-07-16</time>
             
 
             
@@ -427,7 +427,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">475</span>
+                <span title="本文字数">908</span>
               
 
               
@@ -461,24 +461,73 @@
       
 
       
-        <p>身为IT人士，代码分享在日常工作中实在是再寻常不过了。比起发送文件的方式，一个代码分享链接工具是再好不过的了！简便又快捷。尤其在寻求帮助的时候，大段大段代码发在群里实在让人难以接受，而且还有被聊天工具转义的风险。<br><a id="more"></a></p>
-<h4 id="首推工具"><a href="#首推工具" class="headerlink" title="首推工具"></a>首推工具</h4><ul>
-<li><a href="https://pastebin.com/" target="_blank" rel="noopener">https://pastebin.com/</a></li>
-</ul>
-<p>pastebin 工具非常强大，支持多种语言、过期时间、是否加密、代码下载、在线打印、新旧文件参照对比等等，部分功能需要登录使用。另外，谷歌插件版用起来更方便哦！</p>
-<h4 id="小巧实用"><a href="#小巧实用" class="headerlink" title="小巧实用"></a>小巧实用</h4><ul>
-<li><a href="https://paste.ubuntu.com/" target="_blank" rel="noopener">https://paste.ubuntu.com/</a><br>ubuntu 社区推出的分享工具，支持语言选择、过期时间、文件下载。界面简洁，无需注册。</li>
-</ul>
-<h4 id="大材小用"><a href="#大材小用" class="headerlink" title="大材小用"></a>大材小用</h4><ul>
-<li><a href="https://gist.github.com/" target="_blank" rel="noopener">https://gist.github.com/</a><br>Github 旗下工具，功能也很强大，有点像单独分支，只是单纯用来分享代码觉得有点大材小用了。</li>
-</ul>
-<h4 id="极致精简"><a href="#极致精简" class="headerlink" title="极致精简"></a>极致精简</h4><ul>
-<li><a href="https://hastebin.com" target="_blank" rel="noopener">https://hastebin.com</a><br>非常精简的代码分享工具</li>
-</ul>
-<h4 id="中规中矩"><a href="#中规中矩" class="headerlink" title="中规中矩"></a>中规中矩</h4><ul>
-<li><a href="http://pasted.co/" target="_blank" rel="noopener">http://pasted.co/</a><br>代码分享倒不是很友好，文字分享倒觉得还可以吧</li>
-</ul>
-<p><strong>PS：工具不在多，选择适合自己的就好！</strong></p>
+        <p>切片是Python语言的特性之一。无论是字符串还是数组都可以使用切片操作快速高效的获得目标值。使用起来也比较简单:</p>
+<blockquote>
+<p><code>object[ start_index : end_index : step ]</code></p>
+</blockquote>
+<p><code>start_index</code>是起始索引，可正可负可省略，取值时包含该索引的值</p>
+<p><code>end_index</code>是终止索引，可正可负可省略，取值时不包含该索引的值</p>
+<p><code>step</code>是取值步长，可正可负可省略，正数时表示从左向右取值，负数时表示从右向左取值，省略时表示<code>+1</code></p>
+<p>越简单的东西越容易忽略，也就越容易犯错误，对，说的就是我！下面结合下方的例子，看一下几个切片操作。</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">num_list = [i for i range(10)]</span><br></pre></td></tr></table></figure>
+<p>则这10个数的索引情况为：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正索引</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>负索引</td>
+<td>-10</td>
+<td>-9</td>
+<td>-8</td>
+<td>-7</td>
+<td>-6</td>
+<td>-5</td>
+<td>-4</td>
+<td>-3</td>
+<td>-2</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+<p>在写切片或者分析切片的时候，按照以下流程分析：</p>
+<ol>
+<li><p>先看<code>step</code>正负决定方向，再看<code>step</code>数字决定步长</p>
+</li>
+<li><p>锁定<code>start_index</code>，正数走正索引，负数走负索引</p>
+</li>
+<li><p>锁定<code>end_index</code>，正数走正索引，负数走负索引；同时从<code>start_index</code>出发，沿步骤1中的方向能否走到<code>end_index</code>。若能，执行切片操作；若不能，返回空。</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">num_list[1:-6:1]</span><br><span class="line"># 向右走，初始值[1]:1,终止值[-6]:4，可完成切片操作</span><br><span class="line"># 若step=-1,则无法完成切片操作</span><br><span class="line"></span><br><span class="line">num_list[1:-10:-1]</span><br><span class="line"># 向左走，初始值[1]:1，终止值[-10]:0，可完成切片操作</span><br><span class="line"># 向右走，则无法完成切片操作</span><br><span class="line"></span><br><span class="line">num_list[:-5:-1]</span><br><span class="line"># 向左走，初始值省略，直接定位到右边</span><br><span class="line"># 在最右边后，是按照正索引走呢？还是按照负索引走？（即：初始值是下标[9]还是下标[-1]?）</span><br><span class="line"># 记住：和step保持正负一致！</span><br><span class="line"># 答案：[-1]到[-5],向左走，可完成切片操作</span><br><span class="line"></span><br><span class="line">num_list[:-5:1]</span><br><span class="line"># 按照上例的分析，分析一下？</span><br><span class="line"># 答案：[0]到[-5]，向右走，没问题</span><br></pre></td></tr></table></figure>
+<p>再复杂的切片我也不怕了！(插个腰)</p>
 
       
     </div>
@@ -502,9 +551,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/代码分享/" rel="tag"># 代码分享</a>
-          
-            <a href="/tags/实用工具/" rel="tag"># 实用工具</a>
+            <a href="/tags/切片/" rel="tag"># 切片</a>
           
         </div>
       
@@ -517,8 +564,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/19/双向链表DoubleLinkedList/" rel="next" title="双向链表DoubleLinkedList">
-                <i class="fa fa-chevron-left"></i> 双向链表DoubleLinkedList
+              <a href="/2019/07/12/TF-VS-TFIDF-实验数据对比/" rel="next" title="TF VS TF-IDF 实验数据对比">
+                <i class="fa fa-chevron-left"></i> TF VS TF-IDF 实验数据对比
               </a>
             
           </div>
@@ -526,10 +573,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/26/双向循环链表DoubleCircularLinkedList/" rel="prev" title="双向循环链表DoubleCircularLinkedList">
-                双向循环链表DoubleCircularLinkedList <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -573,17 +616,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -686,23 +720,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#首推工具"><span class="nav-number">1.</span> <span class="nav-text">首推工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小巧实用"><span class="nav-number">2.</span> <span class="nav-text">小巧实用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#大材小用"><span class="nav-number">3.</span> <span class="nav-text">大材小用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#极致精简"><span class="nav-number">4.</span> <span class="nav-text">极致精简</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中规中矩"><span class="nav-number">5.</span> <span class="nav-text">中规中矩</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
