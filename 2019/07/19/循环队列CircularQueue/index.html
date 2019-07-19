@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="从结构上来说，栈是“后进者先出，先出者后进”；从操作上来说，栈是一种“操作受限”的线性表，只允许在一端插入和删除数据；从实现上来说，用数组实现的栈称为顺序栈，用链表实现的栈，称为链式栈。">
-<meta name="keywords" content="栈">
+  <meta name="description" content="循环队列可以看作是顺序队列的拓展。顺序队列在经过一系列的入队、出队操作之后，即使队列容量尚有空余，但因为队尾指针已经“走到尽头”，也要进行一些扩容操作，这样就浪费了许多空间。而“循环队列”可以充分利用空间，减少扩容操作。一般情况，循环列表都是基于数组实现的。">
+<meta name="keywords" content="循环队列">
 <meta property="og:type" content="article">
-<meta property="og:title" content="链式栈LinkedStack">
-<meta property="og:url" content="http://yoursite.com/2019/06/30/链式栈LinkedStack/index.html">
+<meta property="og:title" content="循环队列CircularQueue">
+<meta property="og:url" content="http://yoursite.com/2019/07/19/循环队列CircularQueue/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="从结构上来说，栈是“后进者先出，先出者后进”；从操作上来说，栈是一种“操作受限”的线性表，只允许在一端插入和删除数据；从实现上来说，用数组实现的栈称为顺序栈，用链表实现的栈，称为链式栈。">
+<meta property="og:description" content="循环队列可以看作是顺序队列的拓展。顺序队列在经过一系列的入队、出队操作之后，即使队列容量尚有空余，但因为队尾指针已经“走到尽头”，也要进行一些扩容操作，这样就浪费了许多空间。而“循环队列”可以充分利用空间，减少扩容操作。一般情况，循环列表都是基于数组实现的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-19T12:34:41.766Z">
+<meta property="og:updated_time" content="2019-07-19T12:35:09.657Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="链式栈LinkedStack">
-<meta name="twitter:description" content="从结构上来说，栈是“后进者先出，先出者后进”；从操作上来说，栈是一种“操作受限”的线性表，只允许在一端插入和删除数据；从实现上来说，用数组实现的栈称为顺序栈，用链表实现的栈，称为链式栈。">
+<meta name="twitter:title" content="循环队列CircularQueue">
+<meta name="twitter:description" content="循环队列可以看作是顺序队列的拓展。顺序队列在经过一系列的入队、出队操作之后，即使队列容量尚有空余，但因为队尾指针已经“走到尽头”，也要进行一些扩容操作，这样就浪费了许多空间。而“循环队列”可以充分利用空间，减少扩容操作。一般情况，循环列表都是基于数组实现的。">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/30/链式栈LinkedStack/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/19/循环队列CircularQueue/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>链式栈LinkedStack | 菠菜屋</title>
+  <title>循环队列CircularQueue | 菠菜屋</title>
   
 
 
@@ -355,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/30/链式栈LinkedStack/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/循环队列CircularQueue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小菠菜">
@@ -372,7 +372,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">链式栈LinkedStack
+          <h1 class="post-title" itemprop="name headline">循环队列CircularQueue
 
               
             
@@ -398,7 +398,7 @@
                 
               
 
-              <time title="创建时间：2019-06-30 14:07:03" itemprop="dateCreated datePublished" datetime="2019-06-30T14:07:03+08:00">2019-06-30</time>
+              <time title="创建时间：2019-07-19 19:47:18" itemprop="dateCreated datePublished" datetime="2019-07-19T19:47:18+08:00">2019-07-19</time>
             
 
             
@@ -427,7 +427,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">565</span>
+                <span title="本文字数">1.2k</span>
               
 
               
@@ -461,12 +461,12 @@
       
 
       
-        <p>从结构上来说，栈是“后进者先出，先出者后进”；从操作上来说，栈是一种“操作受限”的线性表，只允许在一端插入和删除数据；从实现上来说，用数组实现的栈称为顺序栈，用链表实现的栈，称为链式栈。<br><a id="more"></a></p>
-<h4 id="链式栈的结点结构："><a href="#链式栈的结点结构：" class="headerlink" title="链式栈的结点结构："></a>链式栈的结点结构：</h4><p>根据链式栈的特点，单链表的结构就可以满足栈的结构，所以链式栈的结点结构和单链表的结点结构式相同的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Node(object):</span><br><span class="line">	def __init__(self, data=None, _next=None):</span><br><span class="line">		self.data = data</span><br><span class="line">		self._next = _next</span><br></pre></td></tr></table></figure></p>
-<h4 id="链式栈："><a href="#链式栈：" class="headerlink" title="链式栈："></a>链式栈：</h4><p>为了更好体现出链式栈在栈顶的操作，我们将头指针_head换成顶指针_top<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class LinkedStack(object):</span><br><span class="line">	def __init__(self, _top=None):</span><br><span class="line">		self._top = _top</span><br></pre></td></tr></table></figure></p>
-<h4 id="入栈操作："><a href="#入栈操作：" class="headerlink" title="入栈操作："></a>入栈操作：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def push(self, value):</span><br><span class="line">	new_top = Node(value)</span><br><span class="line">	new_top._next = self._top</span><br><span class="line">	self._top = new_top</span><br></pre></td></tr></table></figure>
-<h4 id="出栈操作："><a href="#出栈操作：" class="headerlink" title="出栈操作："></a>出栈操作：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def pop(self):</span><br><span class="line">	top = self._top</span><br><span class="line">	if top:</span><br><span class="line">		value = top.data</span><br><span class="line">		self._top = top._next</span><br><span class="line">		return value</span><br></pre></td></tr></table></figure>
-
+        <p>循环队列可以看作是顺序队列的拓展。顺序队列在经过一系列的入队、出队操作之后，即使队列容量尚有空余，但因为队尾指针已经“走到尽头”，也要进行一些扩容操作，这样就浪费了许多空间。而“循环队列”可以充分利用空间，减少扩容操作。一般情况，循环列表都是基于数组实现的。<br><a id="more"></a></p>
+<h4 id="循环队列类"><a href="#循环队列类" class="headerlink" title="循环队列类"></a>循环队列类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class CircularQueue(object):</span><br><span class="line"></span><br><span class="line">	def __init__(self, capacity):</span><br><span class="line">		self._items = [] # 基于列表实现</span><br><span class="line">		self._capacity = capacity + 1</span><br><span class="line">		self._head = 0</span><br><span class="line">		self._tail = 0</span><br></pre></td></tr></table></figure>
+<p>需要指出的是，<code>根据循环队列的特性，循环队列在队满的时候，队尾指针tail指向的位置实际上是不存储数据的。</code>在同等条件下，顺序队列可以比循环队列多存储一个数据。但是为了方便调用者使用，我们在初始化容量时自动将<code>capacity + 1</code>，保证确实能存储传入进来的capacity个数据。</p>
+<h4 id="入队操作"><a href="#入队操作" class="headerlink" title="入队操作"></a>入队操作</h4><p>入队操作要注意队满以及队尾指针的条件，<code>(self._tail + 1) % self._capacity == self._head</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def enqueue(self, value):</span><br><span class="line">	if (self._tail + 1) % self._capacity == self._head:</span><br><span class="line">		print(&apos;The queue is full! The data %s ignored!&apos; % value)</span><br><span class="line">		return False</span><br><span class="line">	self._items.append(value)</span><br><span class="line">	self._tail = (self._tail + 1) % self._capacity</span><br></pre></td></tr></table></figure></p>
+<h4 id="出队操作"><a href="#出队操作" class="headerlink" title="出队操作"></a>出队操作</h4><p>注意队空的条件<code>self._head == self._tail</code>，更新队首指针<code>self._head = (self._head + 1) % self._capacity</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def dequeue(self):</span><br><span class="line">	if self._head == self._tail:</span><br><span class="line">		print(&apos;The queue is empty&apos;)</span><br><span class="line">		return False</span><br><span class="line">	value = self._items[self._head]</span><br><span class="line">	self._head = (self._head + 1) % self._capacity</span><br></pre></td></tr></table></figure></p>
+<h4 id="查看队列"><a href="#查看队列" class="headerlink" title="查看队列"></a>查看队列</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def printQueue(self):</span><br><span class="line">	current = self._head</span><br><span class="line">	while current != self._tail:</span><br><span class="line">		print(self._items[current], end=&apos;,&apos;)</span><br><span class="line">		current = (current + 1) % self._capacity</span><br><span class="line">	print()</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -489,7 +489,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/栈/" rel="tag"># 栈</a>
+            <a href="/tags/循环队列/" rel="tag"># 循环队列</a>
           
         </div>
       
@@ -502,8 +502,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/26/双向循环链表DoubleCircularLinkedList/" rel="next" title="双向循环链表DoubleCircularLinkedList">
-                <i class="fa fa-chevron-left"></i> 双向循环链表DoubleCircularLinkedList
+              <a href="/2019/07/16/Python切片操作/" rel="next" title="Python切片操作">
+                <i class="fa fa-chevron-left"></i> Python切片操作
               </a>
             
           </div>
@@ -511,10 +511,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/11/链式队列LinkedQueue/" rel="prev" title="链式队列LinkedQueue">
-                链式队列LinkedQueue <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -676,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#链式栈的结点结构："><span class="nav-number">1.</span> <span class="nav-text">链式栈的结点结构：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链式栈："><span class="nav-number">2.</span> <span class="nav-text">链式栈：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#入栈操作："><span class="nav-number">3.</span> <span class="nav-text">入栈操作：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#出栈操作："><span class="nav-number">4.</span> <span class="nav-text">出栈操作：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#循环队列类"><span class="nav-number">1.</span> <span class="nav-text">循环队列类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#入队操作"><span class="nav-number">2.</span> <span class="nav-text">入队操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#出队操作"><span class="nav-number">3.</span> <span class="nav-text">出队操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看队列"><span class="nav-number">4.</span> <span class="nav-text">查看队列</span></a></li></ol></div>
             
 
           </div>
