@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="菠菜屋">
 <meta property="og:description" content="循环队列可以看作是顺序队列的拓展。顺序队列在经过一系列的入队、出队操作之后，即使队列容量尚有空余，但因为队尾指针已经“走到尽头”，也要进行一些扩容操作，这样就浪费了许多空间。而“循环队列”可以充分利用空间，减少扩容操作。一般情况，循环列表都是基于数组实现的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-19T12:35:09.657Z">
+<meta property="og:updated_time" content="2019-07-23T02:56:27.907Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="循环队列CircularQueue">
 <meta name="twitter:description" content="循环队列可以看作是顺序队列的拓展。顺序队列在经过一系列的入队、出队操作之后，即使队列容量尚有空余，但因为队尾指针已经“走到尽头”，也要进行一些扩容操作，这样就浪费了许多空间。而“循环队列”可以充分利用空间，减少扩容操作。一般情况，循环列表都是基于数组实现的。">
@@ -427,7 +427,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.2k</span>
+                <span title="本文字数">1.4k</span>
               
 
               
@@ -467,6 +467,9 @@
 <h4 id="入队操作"><a href="#入队操作" class="headerlink" title="入队操作"></a>入队操作</h4><p>入队操作要注意队满以及队尾指针的条件，<code>(self._tail + 1) % self._capacity == self._head</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def enqueue(self, value):</span><br><span class="line">	if (self._tail + 1) % self._capacity == self._head:</span><br><span class="line">		print(&apos;The queue is full! The data %s ignored!&apos; % value)</span><br><span class="line">		return False</span><br><span class="line">	self._items.append(value)</span><br><span class="line">	self._tail = (self._tail + 1) % self._capacity</span><br></pre></td></tr></table></figure></p>
 <h4 id="出队操作"><a href="#出队操作" class="headerlink" title="出队操作"></a>出队操作</h4><p>注意队空的条件<code>self._head == self._tail</code>，更新队首指针<code>self._head = (self._head + 1) % self._capacity</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def dequeue(self):</span><br><span class="line">	if self._head == self._tail:</span><br><span class="line">		print(&apos;The queue is empty&apos;)</span><br><span class="line">		return False</span><br><span class="line">	value = self._items[self._head]</span><br><span class="line">	self._head = (self._head + 1) % self._capacity</span><br></pre></td></tr></table></figure></p>
 <h4 id="查看队列"><a href="#查看队列" class="headerlink" title="查看队列"></a>查看队列</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def printQueue(self):</span><br><span class="line">	current = self._head</span><br><span class="line">	while current != self._tail:</span><br><span class="line">		print(self._items[current], end=&apos;,&apos;)</span><br><span class="line">		current = (current + 1) % self._capacity</span><br><span class="line">	print()</span><br></pre></td></tr></table></figure>
+<h4 id="代码纠错"><a href="#代码纠错" class="headerlink" title="代码纠错"></a>代码纠错</h4><p>上述代码在程序执行存在错误！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">q = CircularQueue(5)</span><br><span class="line"># 先入队5个</span><br><span class="line">for i in range(5):</span><br><span class="line">	q.enqueue(i)</span><br><span class="line"># 此时队列：0,1,2,3,4,</span><br><span class="line"></span><br><span class="line"># 再出队3个</span><br><span class="line">for _ in range(3):</span><br><span class="line">	q.dequeue()</span><br><span class="line">#此时队列：3,4,</span><br><span class="line"></span><br><span class="line">#再入队3个</span><br><span class="line">for i in range(5,8):</span><br><span class="line">	q.enqueue(i)</span><br><span class="line"># 此时队列:3,4,5,0,1</span><br><span class="line"># 6,7并没有写入进去，而且遍历数据时依旧是原来的数据</span><br><span class="line"># 5写入成功是因为_tail在队满时本来就是None</span><br></pre></td></tr></table></figure></p>
+<p>更新后的代码见<a href="https://github.com/wsinbol/DataStructure/blob/master/Queue/CircularQueue.py" target="_blank" rel="noopener">这里</a></p>
+
       
     </div>
 
@@ -672,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#循环队列类"><span class="nav-number">1.</span> <span class="nav-text">循环队列类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#入队操作"><span class="nav-number">2.</span> <span class="nav-text">入队操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#出队操作"><span class="nav-number">3.</span> <span class="nav-text">出队操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看队列"><span class="nav-number">4.</span> <span class="nav-text">查看队列</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#循环队列类"><span class="nav-number">1.</span> <span class="nav-text">循环队列类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#入队操作"><span class="nav-number">2.</span> <span class="nav-text">入队操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#出队操作"><span class="nav-number">3.</span> <span class="nav-text">出队操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看队列"><span class="nav-number">4.</span> <span class="nav-text">查看队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码纠错"><span class="nav-number">5.</span> <span class="nav-text">代码纠错</span></a></li></ol></div>
             
 
           </div>
