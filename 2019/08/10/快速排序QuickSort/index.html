@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="快速排序是一种基于比较的排序算法。快速排序依据的核心是二分法，预先设定一个基准位，从左右两端依次遍历，将所有小于基准位的元素都放在其左侧，将所有大于基准位的元素都放在其右侧，然后在分别对左侧区间和右侧区间进行上述操作。">
+  <meta name="description" content="快速排序是一种基于比较的排序算法。快速排序预先设定一个基准位，从左右两端轮次遍历，将所有小于基准位的元素都放在其左侧，将所有大于基准位的元素都放在其右侧，然后在分别对左侧区间和右侧区间进行上述操作。">
 <meta name="keywords" content="快速排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速排序QuickSort">
 <meta property="og:url" content="http://yoursite.com/2019/08/10/快速排序QuickSort/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="快速排序是一种基于比较的排序算法。快速排序依据的核心是二分法，预先设定一个基准位，从左右两端依次遍历，将所有小于基准位的元素都放在其左侧，将所有大于基准位的元素都放在其右侧，然后在分别对左侧区间和右侧区间进行上述操作。">
+<meta property="og:description" content="快速排序是一种基于比较的排序算法。快速排序预先设定一个基准位，从左右两端轮次遍历，将所有小于基准位的元素都放在其左侧，将所有大于基准位的元素都放在其右侧，然后在分别对左侧区间和右侧区间进行上述操作。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-10T01:11:23.912Z">
+<meta property="og:updated_time" content="2019-08-10T01:13:39.925Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速排序QuickSort">
-<meta name="twitter:description" content="快速排序是一种基于比较的排序算法。快速排序依据的核心是二分法，预先设定一个基准位，从左右两端依次遍历，将所有小于基准位的元素都放在其左侧，将所有大于基准位的元素都放在其右侧，然后在分别对左侧区间和右侧区间进行上述操作。">
+<meta name="twitter:description" content="快速排序是一种基于比较的排序算法。快速排序预先设定一个基准位，从左右两端轮次遍历，将所有小于基准位的元素都放在其左侧，将所有大于基准位的元素都放在其右侧，然后在分别对左侧区间和右侧区间进行上述操作。">
 
 
 
@@ -427,7 +427,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">673</span>
+                <span title="本文字数">663</span>
               
 
               
@@ -461,7 +461,7 @@
       
 
       
-        <p>快速排序是一种基于比较的排序算法。快速排序依据的核心是二分法，预先设定一个基准位，从左右两端依次遍历，将所有小于基准位的元素都放在其左侧，将所有大于基准位的元素都放在其右侧，然后在分别对左侧区间和右侧区间进行上述操作。<br><a id="more"></a></p>
+        <p>快速排序是一种基于比较的排序算法。快速排序预先设定一个基准位，从左右两端轮次遍历，将所有小于基准位的元素都放在其左侧，将所有大于基准位的元素都放在其右侧，然后在分别对左侧区间和右侧区间进行上述操作。<br><a id="more"></a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">def QuickSort(arr, left, right): </span><br><span class="line"></span><br><span class="line">	if left &gt; right:</span><br><span class="line">		return </span><br><span class="line"></span><br><span class="line">	l, r = left, right</span><br><span class="line">	pivot = int((l+r)/2)</span><br><span class="line">	pivotValue = arr[pivot]</span><br><span class="line"></span><br><span class="line">	while l &lt; r:</span><br><span class="line">		# while句中不添加 l &lt; r条件，会出现 l &gt; r 情况，与上面的while冲突！</span><br><span class="line">		while arr[l] &lt; pivotValue and l &lt; r:</span><br><span class="line">			l += 1</span><br><span class="line">		arr[pivot] = arr[l]</span><br><span class="line">		pivot = l</span><br><span class="line"></span><br><span class="line">		while arr[r] &gt; pivotValue and l &lt; r:</span><br><span class="line">			r -= 1</span><br><span class="line">		arr[pivot] = arr[r]</span><br><span class="line">		pivot = r</span><br><span class="line"></span><br><span class="line">	arr[pivot] = pivotValue</span><br><span class="line">	# 不需要再对pivot位进行操作</span><br><span class="line">	QuickSort(arr, left, pivot-1)</span><br><span class="line">	QuickSort(arr,pivot+1, right)</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">	arr = [3,1,4,2,5,0]</span><br><span class="line">	QuickSort(arr,0,len(arr)-1)</span><br><span class="line">	print(arr)</span><br></pre></td></tr></table></figure>
       
     </div>
