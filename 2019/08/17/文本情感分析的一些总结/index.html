@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="插入排序是一种基于比较的排序算法，将整个数据集分为已排区间和未排区间，从未排区间中取出首个元素，按逆序方式遍历已排区间，将其插入到合适位置">
-<meta name="keywords" content="插入排序">
+  <meta name="description" content="情感分析：情感分析的定义有多个版本，通俗理解就是通过对大量文本进行分析，挖掘出用户的情感倾向，最终目的是运用到现实生活中，或辅助决策，或科学研究。  情感分析 ( Sentiment Analysis) ，也称为倾向性分析，是指采用自动化或半自动化手段对基于微博、论坛等在线社交网络产生的主观评论文本内容进行分析、处理、归纳和推导，从中挖掘出用户 ( 个人或群体、组织等) 针对主题、人物、事件等表达">
+<meta name="keywords" content="情感分析,文本分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="插入排序InsertionSort">
-<meta property="og:url" content="http://yoursite.com/2019/08/03/插入排序InsertionSort/index.html">
+<meta property="og:title" content="文本情感分析的一些总结">
+<meta property="og:url" content="http://yoursite.com/2019/08/17/文本情感分析的一些总结/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="插入排序是一种基于比较的排序算法，将整个数据集分为已排区间和未排区间，从未排区间中取出首个元素，按逆序方式遍历已排区间，将其插入到合适位置">
+<meta property="og:description" content="情感分析：情感分析的定义有多个版本，通俗理解就是通过对大量文本进行分析，挖掘出用户的情感倾向，最终目的是运用到现实生活中，或辅助决策，或科学研究。  情感分析 ( Sentiment Analysis) ，也称为倾向性分析，是指采用自动化或半自动化手段对基于微博、论坛等在线社交网络产生的主观评论文本内容进行分析、处理、归纳和推导，从中挖掘出用户 ( 个人或群体、组织等) 针对主题、人物、事件等表达">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-10T14:14:15.372Z">
+<meta property="og:updated_time" content="2019-08-17T13:44:28.199Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="插入排序InsertionSort">
-<meta name="twitter:description" content="插入排序是一种基于比较的排序算法，将整个数据集分为已排区间和未排区间，从未排区间中取出首个元素，按逆序方式遍历已排区间，将其插入到合适位置">
+<meta name="twitter:title" content="文本情感分析的一些总结">
+<meta name="twitter:description" content="情感分析：情感分析的定义有多个版本，通俗理解就是通过对大量文本进行分析，挖掘出用户的情感倾向，最终目的是运用到现实生活中，或辅助决策，或科学研究。  情感分析 ( Sentiment Analysis) ，也称为倾向性分析，是指采用自动化或半自动化手段对基于微博、论坛等在线社交网络产生的主观评论文本内容进行分析、处理、归纳和推导，从中挖掘出用户 ( 个人或群体、组织等) 针对主题、人物、事件等表达">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/08/03/插入排序InsertionSort/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/17/文本情感分析的一些总结/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>插入排序InsertionSort | 菠菜屋</title>
+  <title>文本情感分析的一些总结 | 菠菜屋</title>
   
 
 
@@ -355,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/03/插入排序InsertionSort/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/17/文本情感分析的一些总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小菠菜">
@@ -372,7 +372,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">插入排序InsertionSort
+          <h1 class="post-title" itemprop="name headline">文本情感分析的一些总结
 
               
             
@@ -398,7 +398,7 @@
                 
               
 
-              <time title="创建时间：2019-08-03 18:49:40" itemprop="dateCreated datePublished" datetime="2019-08-03T18:49:40+08:00">2019-08-03</time>
+              <time title="创建时间：2019-08-17 20:56:18" itemprop="dateCreated datePublished" datetime="2019-08-17T20:56:18+08:00">2019-08-17</time>
             
 
             
@@ -416,14 +416,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/总结/" itemprop="url" rel="index"><span itemprop="name">总结</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/排序/" itemprop="url" rel="index"><span itemprop="name">排序</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/总结/文本情感分析/" itemprop="url" rel="index"><span itemprop="name">文本情感分析</span></a></span>
 
                 
                 
@@ -452,7 +452,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">313</span>
+                <span title="本文字数">1.3k</span>
               
 
               
@@ -486,8 +486,32 @@
       
 
       
-        <p>插入排序是一种基于比较的排序算法，将整个数据集分为已排区间和未排区间，从未排区间中取出首个元素，按逆序方式遍历已排区间，将其插入到合适位置<br><a id="more"></a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def InsertionSort(arr):</span><br><span class="line">	length = len(arr)</span><br><span class="line">	for i in range(1, length):</span><br><span class="line">		val = arr[i]</span><br><span class="line">		j = i - 1</span><br><span class="line">		while j &gt;= 0 and arr[j] &gt; value: # 也可以用其他循环方式，不过while是最简洁的形式</span><br><span class="line">			arr[j+1] = arr[j]</span><br><span class="line">			j -= 1</span><br><span class="line">		arr[j+1] = val # 为什么还是要赋值给j+1呢？因为while循环已经提前-1操作了！</span><br></pre></td></tr></table></figure>
+        <h3 id="情感分析："><a href="#情感分析：" class="headerlink" title="情感分析："></a>情感分析：</h3><p>情感分析的定义有多个版本，通俗理解就是通过对大量文本进行分析，挖掘出用户的情感倾向，最终目的是运用到现实生活中，或辅助决策，或科学研究。</p>
+<blockquote>
+<p>情感分析 ( Sentiment Analysis) ，也称为倾向性分析，是指采用自动化或半自动化手段对基于微博、论坛等在线社交网络产生的主观评论文本内容进行分析、处理、归纳和推导，从中挖掘出用户 ( 个人或群体、组织等) 针对主题、人物、事件等表达的评论、观点和意见的过程。情感倾向性分析的主要对象是网民自主发布的与网络舆情事件相关的文本。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="研究内容"><a href="#研究内容" class="headerlink" title="研究内容"></a>研究内容</h3><p>目前情感分析的研究主要有 <code>情感的主客观分析、情感极性分析和多情感分类</code> 等。</p>
+<p><code>主客观情感分析</code> 主要是从大量数据集中识别主观的文本信息。</p>
+<p><code>情感极性分析</code> 将情感态度分为正向情感和负向情感两极或者正、中、负三级，并通过打分形式计算情感强度。</p>
+<p><code>多情感分类</code> 在情感极性分析的不足中提出“乐、哀、怒、惊、惧、好、恶”7种情感维度，力争从更高的维度揭示用户的情感状况。</p>
+<h3 id="研究流程"><a href="#研究流程" class="headerlink" title="研究流程"></a>研究流程</h3><p>较常见的研究流程：信息源选择-&gt;文本预处理-&gt;情感倾向性识别-&gt;情感可视化</p>
+<h3 id="分析方法"><a href="#分析方法" class="headerlink" title="分析方法"></a>分析方法</h3><p>常用的情感分析方法包括无监督的基于情感词典的分析方法和有监督的机器学习方法。</p>
+<h4 id="基于情感词典"><a href="#基于情感词典" class="headerlink" title="基于情感词典"></a>基于情感词典</h4><p>基于词典的分析方法将情感标注任务看作已具有明确情感标注的情感词典与评论语料之间的匹配问题。该类方法不需要预先进行训练，情感词典通常基于 Word Net，How Net等知识资源建立，情感词典的质量在很大程度上决定了网络评论情感极性识别的效果，该方法对情感词典的依赖性太强，如果情感词典中没有收录重要的情感词，就无法对评论的情感倾向进行判断。</p>
+<p>所以除了通用的情感字典外，研究者还需要引入特定领域的专用字典来保证更好的识别效果！</p>
+<h4 id="基于机器学习"><a href="#基于机器学习" class="headerlink" title="基于机器学习"></a>基于机器学习</h4><p>基于机器学习的情感识别方法利用训练好的分类器对待分析评论进行情感倾向性识别。在此类任务中，可将情感分析看作一个分类问题，也就是对相关的情感表达对象进行正负情感的二类分类，或具有情感强度级别的多类分类。此方法中运用的比较常见的技术有：</p>
+<ul>
+<li>朴素贝叶斯</li>
+<li>支持向量机</li>
+<li>最大熵</li>
+</ul>
+<p>基于机器学习的方法只要通过训练集构造好了分类器，就可以对未知的情感表达文本进行分类。与基于词典的情感识别方法相比，此类方法减少了对特定情感词语料资源的依赖。但是该类方法要事先花费一定的时间进行训练集语料标注，且分类器的训练效果很大程度上决定了情感标注效果。在针对不同的研究目的时，选择合适的机器学习方法可以提升分析结果的准确率和效率。</p>
+<h3 id="情感可视化"><a href="#情感可视化" class="headerlink" title="情感可视化"></a>情感可视化</h3><h4 id="基于词频统计的情感可视化分析"><a href="#基于词频统计的情感可视化分析" class="headerlink" title="基于词频统计的情感可视化分析"></a>基于词频统计的情感可视化分析</h4><p>基于词频统计的情感可视化分析方法利用能够表达文本评论核心内容的关键词或主题词出现的频次高低来确定评论的情感倾向性和程度强弱。</p>
+<h4 id="基于空间的情感可视化分析"><a href="#基于空间的情感可视化分析" class="headerlink" title="基于空间的情感可视化分析"></a>基于空间的情感可视化分析</h4><p>基于空间的情感可视化分析就是以带有地理位置信息的网络评论数据为语料，将大量数据按照对应的空间维度展示，令数据的呈现更加直观。</p>
+<h4 id="基于时间的情感可视化分析"><a href="#基于时间的情感可视化分析" class="headerlink" title="基于时间的情感可视化分析"></a>基于时间的情感可视化分析</h4><p>基于时间的情感可视化分析就是以带有时间标签信息的网络评论数据为语料，将大量数据按照对应的时间维度展示。</p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
+<li>朱琳琳,徐健. 网络评论情感分析关键技术及应用研究[J]. 情报理论与实践, 2017, 40(1): 121-126, 131.</li>
+</ul>
 
       
     </div>
@@ -511,7 +535,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/插入排序/" rel="tag"># 插入排序</a>
+            <a href="/tags/情感分析/" rel="tag"># 情感分析</a>
+          
+            <a href="/tags/文本分析/" rel="tag"># 文本分析</a>
           
         </div>
       
@@ -524,8 +550,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/29/冒泡排序BubbleSort/" rel="next" title="冒泡排序BubbleSort">
-                <i class="fa fa-chevron-left"></i> 冒泡排序BubbleSort
+              <a href="/2019/08/10/快速排序QuickSort/" rel="next" title="快速排序QuickSort">
+                <i class="fa fa-chevron-left"></i> 快速排序QuickSort
               </a>
             
           </div>
@@ -533,10 +559,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/06/选择排序SelectionSort/" rel="prev" title="选择排序SelectionSort">
-                选择排序SelectionSort <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,8 +602,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -735,6 +766,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#情感分析："><span class="nav-number">1.</span> <span class="nav-text">情感分析：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#研究内容"><span class="nav-number">2.</span> <span class="nav-text">研究内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#研究流程"><span class="nav-number">3.</span> <span class="nav-text">研究流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析方法"><span class="nav-number">4.</span> <span class="nav-text">分析方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于情感词典"><span class="nav-number">4.1.</span> <span class="nav-text">基于情感词典</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于机器学习"><span class="nav-number">4.2.</span> <span class="nav-text">基于机器学习</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#情感可视化"><span class="nav-number">5.</span> <span class="nav-text">情感可视化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于词频统计的情感可视化分析"><span class="nav-number">5.1.</span> <span class="nav-text">基于词频统计的情感可视化分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于空间的情感可视化分析"><span class="nav-number">5.2.</span> <span class="nav-text">基于空间的情感可视化分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于时间的情感可视化分析"><span class="nav-number">5.3.</span> <span class="nav-text">基于时间的情感可视化分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献"><span class="nav-number">6.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
