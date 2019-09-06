@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="起因书写数据结构博文的过程中，觉得光有文字、代码还是不够形象，若能加上对应的示意图就十分完美了。考虑到自己手绘实在不堪入目，所以Google了一下，发现了这个绘图利器：Graphviz">
-<meta name="keywords" content="画图工具,Graphviz">
+  <meta name="description" content="同样是基于有序数据的二分查找，但是当数据中存在相同数据的时候，用上一版的二分查找找到的索引可能不是你想要的，所以存在以下二分查找的四类变形：  查找第一个等于给定值的索引 查找最后一个等于给定值的索引 查找第一个大于等于给定值的索引 查找最后一个小于等于给定值的索引">
+<meta name="keywords" content="二分查找">
 <meta property="og:type" content="article">
-<meta property="og:title" content="绘图利器Graphviz">
-<meta property="og:url" content="http://yoursite.com/2019/05/23/绘图利器Graphviz/index.html">
+<meta property="og:title" content="二分查找的变形">
+<meta property="og:url" content="http://yoursite.com/2019/09/06/二分查找的变形/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="起因书写数据结构博文的过程中，觉得光有文字、代码还是不够形象，若能加上对应的示意图就十分完美了。考虑到自己手绘实在不堪入目，所以Google了一下，发现了这个绘图利器：Graphviz">
+<meta property="og:description" content="同样是基于有序数据的二分查找，但是当数据中存在相同数据的时候，用上一版的二分查找找到的索引可能不是你想要的，所以存在以下二分查找的四类变形：  查找第一个等于给定值的索引 查找最后一个等于给定值的索引 查找第一个大于等于给定值的索引 查找最后一个小于等于给定值的索引">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-06T00:50:26.367Z">
+<meta property="og:updated_time" content="2019-09-06T11:51:36.442Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="绘图利器Graphviz">
-<meta name="twitter:description" content="起因书写数据结构博文的过程中，觉得光有文字、代码还是不够形象，若能加上对应的示意图就十分完美了。考虑到自己手绘实在不堪入目，所以Google了一下，发现了这个绘图利器：Graphviz">
+<meta name="twitter:title" content="二分查找的变形">
+<meta name="twitter:description" content="同样是基于有序数据的二分查找，但是当数据中存在相同数据的时候，用上一版的二分查找找到的索引可能不是你想要的，所以存在以下二分查找的四类变形：  查找第一个等于给定值的索引 查找最后一个等于给定值的索引 查找第一个大于等于给定值的索引 查找最后一个小于等于给定值的索引">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/23/绘图利器Graphviz/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/06/二分查找的变形/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>绘图利器Graphviz | 菠菜屋</title>
+  <title>二分查找的变形 | 菠菜屋</title>
   
 
 
@@ -372,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/23/绘图利器Graphviz/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/06/二分查找的变形/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小菠菜">
@@ -389,7 +389,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">绘图利器Graphviz
+          <h1 class="post-title" itemprop="name headline">二分查找的变形
 
               
             
@@ -415,7 +415,7 @@
                 
               
 
-              <time title="创建时间：2019-05-23 20:13:10" itemprop="dateCreated datePublished" datetime="2019-05-23T20:13:10+08:00">2019-05-23</time>
+              <time title="创建时间：2019-09-06 16:25:23" itemprop="dateCreated datePublished" datetime="2019-09-06T16:25:23+08:00">2019-09-06</time>
             
 
             
@@ -433,7 +433,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工具/" itemprop="url" rel="index"><span itemprop="name">工具</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
 
                 
                 
@@ -462,7 +462,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">603</span>
+                <span title="本文字数">1.5k</span>
               
 
               
@@ -496,16 +496,18 @@
       
 
       
-        <h4 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h4><p>书写数据结构博文的过程中，觉得光有文字、代码还是不够形象，若能加上对应的示意图就十分完美了。考虑到自己手绘实在不堪入目，所以Google了一下，发现了这个绘图利器：Graphviz<br><a id="more"></a></p>
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>Graphviz是支持跨平台的，更多信息可以访问其<a href="http://www.graphviz.org/" target="_blank" rel="noopener">官网</a>。我是在Windows环境下操作的，下载的是<strong><em>2.38 Stable Release的msi格式</em></strong></p>
-<blockquote>
-<p>特别提醒：想在命令行模式下使用Graphviz，需要手动添加环境变量。我添加了dot命令，所以在PATH变量中加入了：D:\Program Files (x86)\Graphviz2.38\bin\ (具体路径取决于你安装的位置)</p>
-</blockquote>
-<p>基础工作都搞定后，我们来写一个脚本看看效果。</p>
-<h4 id="小试牛刀"><a href="#小试牛刀" class="headerlink" title="小试牛刀"></a>小试牛刀</h4><p>编写DOT源代码文件，且文件后缀为’.dot’(在Windows下，Office自作多情的把刚创建的’.dot’文件识别为word打开文件，大可不必理会):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph demo &#123;</span><br><span class="line">	a -- b -- c;</span><br><span class="line">	b -- d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>然后执行编译命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 完整命令为：cmd inputFileName -T imgageType -o outputFileName</span><br><span class="line">dot demo.dot -T png -o demo.png</span><br></pre></td></tr></table></figure></p>
-<p>命令终端不会返回任何信息，但是你会发现在当前路径下生成上述命令指定格式的图片文件。大功告成，接下来就是深入学习如何绘制高级别的图了！</p>
-
+        <p>同样是基于有序数据的二分查找，但是当数据中存在相同数据的时候，用<a href="https://wsinbol.github.io/2019/08/26/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BEBinarySearch/#more" target="_blank" rel="noopener">上一版</a>的二分查找找到的索引可能不是你想要的，所以存在以下二分查找的四类变形：</p>
+<ul>
+<li>查找第一个等于给定值的索引</li>
+<li>查找最后一个等于给定值的索引</li>
+<li>查找第一个大于等于给定值的索引</li>
+<li>查找最后一个小于等于给定值的索引</li>
+</ul>
+<a id="more"></a>
+<h2 id="查找第一个等于给定值的索引"><a href="#查找第一个等于给定值的索引" class="headerlink" title="查找第一个等于给定值的索引"></a>查找第一个等于给定值的索引</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">def main(arr, value):</span><br><span class="line">	low = 0</span><br><span class="line">	high = len(arr) - 1</span><br><span class="line"></span><br><span class="line">	while low &lt;= high:</span><br><span class="line">		mid = low + ((high - low)&gt;&gt; 1)</span><br><span class="line">		if arr[mid] &gt; value:</span><br><span class="line">			high = mid - 1</span><br><span class="line">		elif arr[mid] &lt; value:</span><br><span class="line">			low = mid + 1</span><br><span class="line">		else: </span><br><span class="line">			# 在所有等于给定值得数据中再进行处理</span><br><span class="line">			# mid = 0肯定是第一个索引了，所以直接返回</span><br><span class="line">			# 当mid的前一位不等于目标值时，mid满足条件</span><br><span class="line">			if mid == 0 or arr[mid-1] != value:</span><br><span class="line">				return mid</span><br><span class="line">			else:</span><br><span class="line">				high = mid - 1</span><br></pre></td></tr></table></figure>
+<h2 id="查找最后一个等于给定值的索引"><a href="#查找最后一个等于给定值的索引" class="headerlink" title="查找最后一个等于给定值的索引"></a>查找最后一个等于给定值的索引</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">def main(arr, value):</span><br><span class="line">	low = 0</span><br><span class="line">	high = len(arr) - 1</span><br><span class="line"></span><br><span class="line">	while low &lt;= high:</span><br><span class="line">		mid = low + ((high - low)&gt;&gt; 1)</span><br><span class="line">		if arr[mid] &gt; value:</span><br><span class="line">			high = mid - 1</span><br><span class="line">		elif arr[mid] &lt; value:</span><br><span class="line">			low = mid + 1</span><br><span class="line">		else:</span><br><span class="line">			# 当mid 等于最大索引时，满足条件，可以直接返回</span><br><span class="line">			# 当mid的下一位不等于给定值时，mid肯定是最后一个满足给定值得索引，所以返回</span><br><span class="line">			if mid == len(arr) - 1 or arr[mid+1] != value:</span><br><span class="line">				return mid</span><br><span class="line">			else:</span><br><span class="line">				low = mid + 1</span><br><span class="line">	return -1</span><br></pre></td></tr></table></figure>
+<h2 id="查找第一个大于等于给定值的索引"><a href="#查找第一个大于等于给定值的索引" class="headerlink" title="查找第一个大于等于给定值的索引"></a>查找第一个大于等于给定值的索引</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def main(arr, value):</span><br><span class="line">	low = 0</span><br><span class="line">	high = len(arr) - 1</span><br><span class="line"></span><br><span class="line">	while low &lt;= high:</span><br><span class="line">		mid = low + ((high - low) &gt;&gt; 1)</span><br><span class="line">		if arr[mid] &lt; value:</span><br><span class="line">			low = mid + 1</span><br><span class="line">		else:</span><br><span class="line">			# 在所有大于等于给定值的数据中再行处理</span><br><span class="line">			# 前一位小于给定值时，当前索引肯定是第一个大于等于给定值得索引</span><br><span class="line">			if mid == 0 or arr[mid-1] &lt; value:</span><br><span class="line">				return mid </span><br><span class="line">			else:</span><br><span class="line">				high = mid - 1</span><br><span class="line">	return -1</span><br></pre></td></tr></table></figure>
+<h2 id="查找最后一个小于等于给定值的索引"><a href="#查找最后一个小于等于给定值的索引" class="headerlink" title="查找最后一个小于等于给定值的索引"></a>查找最后一个小于等于给定值的索引</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def main(arr, value):</span><br><span class="line">	low = 0</span><br><span class="line">	high = len(arr) - 1</span><br><span class="line"></span><br><span class="line">	while low &lt;= high:</span><br><span class="line">		mid = low + ((high - low) &gt;&gt; 1)</span><br><span class="line">		if arr[mid] &gt; value:</span><br><span class="line">			high = mid - 1</span><br><span class="line">		else:</span><br><span class="line">			# 在所有小于等于给定值的元素中操作，当找出的mid的后一个大于给定元素，则此mid为最终目标</span><br><span class="line">			if mid == len(arr) - 1 or arr[mid+1] &gt; value:</span><br><span class="line">				return mid</span><br><span class="line">			else:</span><br><span class="line">				low = mid + 1</span><br><span class="line">	return -1</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -528,9 +530,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/画图工具/" rel="tag"># 画图工具</a>
-          
-            <a href="/tags/Graphviz/" rel="tag"># Graphviz</a>
+            <a href="/tags/二分查找/" rel="tag"># 二分查找</a>
           
         </div>
       
@@ -543,8 +543,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/23/单向循环链表CircularLinkedList/" rel="next" title="单向循环链表CircularLinkedList">
-                <i class="fa fa-chevron-left"></i> 单向循环链表CircularLinkedList
+              <a href="/2019/08/29/写在爬取新浪微博之前/" rel="next" title="写在爬取新浪微博之前">
+                <i class="fa fa-chevron-left"></i> 写在爬取新浪微博之前
               </a>
             
           </div>
@@ -552,10 +552,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/01/SSL部署踩坑心得/" rel="prev" title="SSL部署踩坑心得">
-                SSL部署踩坑心得 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -764,7 +760,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小试牛刀"><span class="nav-number">3.</span> <span class="nav-text">小试牛刀</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查找第一个等于给定值的索引"><span class="nav-number">1.</span> <span class="nav-text">查找第一个等于给定值的索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找最后一个等于给定值的索引"><span class="nav-number">2.</span> <span class="nav-text">查找最后一个等于给定值的索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找第一个大于等于给定值的索引"><span class="nav-number">3.</span> <span class="nav-text">查找第一个大于等于给定值的索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找最后一个小于等于给定值的索引"><span class="nav-number">4.</span> <span class="nav-text">查找最后一个小于等于给定值的索引</span></a></li></ol></div>
             
 
           </div>
