@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="双向循环链表和双向链表类似，不同的地方在于双向循环链表尾结点的后继指针指向头结点，而头结点的前驱指针指向尾结点。">
-<meta name="keywords" content="双向循环链表">
+  <meta name="description" content="递归（英语：Recursion），又译为递回，在数学与计算机科学中，是指在函数的定义中使用函数自身的方法。递归一词还较常用于描述以自相似方法重复事物的过程。例如，当两面镜子相互之间近似平行时，镜中嵌套的图像是以无限递归的形式出现的。也可以理解为自我复制的过程。">
+<meta name="keywords" content="递归">
 <meta property="og:type" content="article">
-<meta property="og:title" content="双向循环链表DoubleCircularLinkedList">
-<meta property="og:url" content="http://yoursite.com/2019/06/26/双向循环链表DoubleCircularLinkedList/index.html">
+<meta property="og:title" content="Python的递归函数">
+<meta property="og:url" content="http://yoursite.com/2019/09/08/Python的递归函数/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="双向循环链表和双向链表类似，不同的地方在于双向循环链表尾结点的后继指针指向头结点，而头结点的前驱指针指向尾结点。">
+<meta property="og:description" content="递归（英语：Recursion），又译为递回，在数学与计算机科学中，是指在函数的定义中使用函数自身的方法。递归一词还较常用于描述以自相似方法重复事物的过程。例如，当两面镜子相互之间近似平行时，镜中嵌套的图像是以无限递归的形式出现的。也可以理解为自我复制的过程。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-06T00:52:11.360Z">
+<meta property="og:updated_time" content="2019-09-08T00:26:21.087Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="双向循环链表DoubleCircularLinkedList">
-<meta name="twitter:description" content="双向循环链表和双向链表类似，不同的地方在于双向循环链表尾结点的后继指针指向头结点，而头结点的前驱指针指向尾结点。">
+<meta name="twitter:title" content="Python的递归函数">
+<meta name="twitter:description" content="递归（英语：Recursion），又译为递回，在数学与计算机科学中，是指在函数的定义中使用函数自身的方法。递归一词还较常用于描述以自相似方法重复事物的过程。例如，当两面镜子相互之间近似平行时，镜中嵌套的图像是以无限递归的形式出现的。也可以理解为自我复制的过程。">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/26/双向循环链表DoubleCircularLinkedList/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/08/Python的递归函数/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>双向循环链表DoubleCircularLinkedList | 菠菜屋</title>
+  <title>Python的递归函数 | 菠菜屋</title>
   
 
 
@@ -372,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/26/双向循环链表DoubleCircularLinkedList/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/08/Python的递归函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小菠菜">
@@ -389,7 +389,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">双向循环链表DoubleCircularLinkedList
+          <h1 class="post-title" itemprop="name headline">Python的递归函数
 
               
             
@@ -415,7 +415,7 @@
                 
               
 
-              <time title="创建时间：2019-06-26 14:38:16" itemprop="dateCreated datePublished" datetime="2019-06-26T14:38:16+08:00">2019-06-26</time>
+              <time title="创建时间：2019-09-08 07:12:23" itemprop="dateCreated datePublished" datetime="2019-09-08T07:12:23+08:00">2019-09-08</time>
             
 
             
@@ -433,7 +433,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
 
                 
                 
@@ -462,7 +462,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.9k</span>
+                <span title="本文字数">2.8k</span>
               
 
               
@@ -476,7 +476,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -496,16 +496,38 @@
       
 
       
-        <p>双向循环链表和双向链表类似，不同的地方在于双向循环链表尾结点的后继指针指向头结点，而头结点的前驱指针指向尾结点。<br><a id="more"></a></p>
-<h4 id="结点Node类："><a href="#结点Node类：" class="headerlink" title="结点Node类："></a>结点Node类：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Node(object):</span><br><span class="line">	def __init__(self, data, _prev=None, _next=None):</span><br><span class="line">		self.data = data</span><br><span class="line">		self._prev = _prev</span><br><span class="line">		self._next = _next</span><br></pre></td></tr></table></figure>
-<h4 id="双向循环链表类："><a href="#双向循环链表类：" class="headerlink" title="双向循环链表类："></a>双向循环链表类：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class DoubleCircularLinkedList(object):</span><br><span class="line">	def __init__(self, node=None):</span><br><span class="line">		self._head = node</span><br></pre></td></tr></table></figure>
-<h4 id="在头部插入新结点："><a href="#在头部插入新结点：" class="headerlink" title="在头部插入新结点："></a>在头部插入新结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">def insert_new_value_to_head(self, value):</span><br><span class="line">	new_node = Node(value)</span><br><span class="line">	current = self._head</span><br><span class="line"></span><br><span class="line">	if current == None:</span><br><span class="line">		new_node._next = new_node</span><br><span class="line">		new_node._prev = new_node</span><br><span class="line">		self._head = new_node</span><br><span class="line">	else:</span><br><span class="line">		# self._head._prev # 指向尾结点</span><br><span class="line">		# 先记录尾结点</span><br><span class="line">		tail = self._head._prev</span><br><span class="line">		# 新结点后继指向头结点的位置</span><br><span class="line">		new_node._next = self._head</span><br><span class="line">		# 头结点前驱指向新结点</span><br><span class="line">		self._head._prev = new_node</span><br><span class="line">		# 新结点的前驱指向尾结点</span><br><span class="line">		new_node._prev = tail</span><br><span class="line">		# 尾结点的后继指向新结点</span><br><span class="line">		tail._next = new_node</span><br><span class="line">		# 更新头结点</span><br><span class="line">		self._head = new_node</span><br></pre></td></tr></table></figure>
-<h4 id="给定结点后插入新结点："><a href="#给定结点后插入新结点：" class="headerlink" title="给定结点后插入新结点："></a>给定结点后插入新结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def insert_new_value_after_target_node(self, value, node):</span><br><span class="line">	new_node = Node(value)</span><br><span class="line">	new_node._next = node._next</span><br><span class="line">	node._next._prev = new_node</span><br><span class="line">	new_node._prev = node</span><br><span class="line">	node._next = new_node</span><br></pre></td></tr></table></figure>
-<h4 id="给定结点前插入新结点："><a href="#给定结点前插入新结点：" class="headerlink" title="给定结点前插入新结点："></a>给定结点前插入新结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def insert_new_value_before_target_node(self, value, node):</span><br><span class="line">	</span><br><span class="line">	# 判断基准结点是否为头结点</span><br><span class="line">	if self._head == node:</span><br><span class="line">		self.insert_new_value_to_head(value)</span><br><span class="line">	else:</span><br><span class="line">		new_node = Node(value)</span><br><span class="line"></span><br><span class="line">		node._prev._next = new_node</span><br><span class="line">		new_node._prev = node._prev</span><br><span class="line">		new_node._next = node</span><br><span class="line">		node._prev = new_node</span><br></pre></td></tr></table></figure>
-<h4 id="判断链表是否为空："><a href="#判断链表是否为空：" class="headerlink" title="判断链表是否为空："></a>判断链表是否为空：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def is_empty(self):</span><br><span class="line">	if self._head == None:</span><br><span class="line">		return True</span><br><span class="line">	else:</span><br><span class="line">		return False</span><br></pre></td></tr></table></figure>
-<h4 id="删除给定结点："><a href="#删除给定结点：" class="headerlink" title="删除给定结点："></a>删除给定结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def delete_target_node(self, node):</span><br><span class="line">	if self._head == node:</span><br><span class="line">		tail = self._head._prev</span><br><span class="line">		node._next._prev = tail</span><br><span class="line">		tail._next = node._next</span><br><span class="line">		self._head = self._head._next</span><br><span class="line">	else:</span><br><span class="line">		node._prev._next = node._next</span><br><span class="line">		node._next._prev = node._prev</span><br></pre></td></tr></table></figure>
-<h4 id="根据值查找给定结点："><a href="#根据值查找给定结点：" class="headerlink" title="根据值查找给定结点："></a>根据值查找给定结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def find_by_value(self, value):</span><br><span class="line">	current = self._head</span><br><span class="line">	while current.data != value and current._next != self._head:</span><br><span class="line">		current = current._next</span><br><span class="line"></span><br><span class="line">	if current:</span><br><span class="line">		return current</span><br><span class="line">	else:</span><br><span class="line">		return</span><br></pre></td></tr></table></figure>
-<h4 id="获取链表长度："><a href="#获取链表长度：" class="headerlink" title="获取链表长度："></a>获取链表长度：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def get_linked_list_length(self):</span><br><span class="line"></span><br><span class="line">	current = self._head</span><br><span class="line">	length = 0</span><br><span class="line">	if current:</span><br><span class="line">		length += 1</span><br><span class="line">		current = current._next</span><br><span class="line"></span><br><span class="line">	while current != self._head:</span><br><span class="line">		length += 1</span><br><span class="line">		current = current._next</span><br><span class="line"></span><br><span class="line">	return length</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>递归（英语：Recursion），又译为递回，在数学与计算机科学中，是指在函数的定义中使用函数自身的方法。递归一词还较常用于描述以自相似方法重复事物的过程。例如，当两面镜子相互之间近似平行时，镜中嵌套的图像是以无限递归的形式出现的。也可以理解为自我复制的过程。</p>
+</blockquote>
+<a id="more"></a>
+<p>我们先来看一个简单的例子：</p>
+<h3 id="阶乘"><a href="#阶乘" class="headerlink" title="阶乘"></a>阶乘</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def fact(n):</span><br><span class="line">	if n == 1:</span><br><span class="line">		return 1</span><br><span class="line">	return n * fact(n - 1) # 不要忘记return</span><br></pre></td></tr></table></figure>
+<p>计算过程为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fact(5)</span><br><span class="line">5 * fact(4)</span><br><span class="line">5 * (4 * fact(3))</span><br><span class="line">5 * (4 * (3 * fact(2)))</span><br><span class="line">5 * (4 * (3 * (2 * fact(1))))</span><br></pre></td></tr></table></figure>
+<p>上面的例子存在一个容易错误的地方，可能受函数调用的习惯，第4行程序<code>return n * fact(n - 1)</code>容易丢掉return，这样的程序会返回None，而不是想要的值。</p>
+<blockquote>
+<p>理论上，所有的递归函数都可以写成循环的方式，但循环的逻辑不如递归清晰。使用递归函数需要注意防止栈溢出。在计算机中，函数调用是通过栈（stack）这种数据结构实现的，每当进入一个函数调用，栈就会加一层栈帧，每当函数返回，栈就会减一层栈帧。由于栈的大小不是无限的，所以，递归调用的次数过多，会导致栈溢出。</p>
+</blockquote>
+<p>解决递归调用栈溢出的方法是通过尾递归优化，尾递归是指 <code>在函数返回的时候，调用自身本身，并且，return语句不能包含表达式</code>。这样，编译器或者解释器就可以把尾递归做优化，使递归本身无论调用多少次，都只占用一个栈帧，不会出现栈溢出的情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def fact(n):</span><br><span class="line">    return fact_iter(n, 1)</span><br><span class="line"></span><br><span class="line">def fact_iter(num, product):</span><br><span class="line">    if num == 1:</span><br><span class="line">        return product</span><br><span class="line">    return fact_iter(num - 1, num * product)</span><br></pre></td></tr></table></figure>
+<p>但是：</p>
+<blockquote>
+<p>Python标准的解释器没有针对尾递归做优化，任何递归函数都存在栈溢出的问题。</p>
+</blockquote>
+<p>上面的例子还存在一个问题，如果同一层存在多个需要递归调用的情况，要怎么处理呢？看下面的例子！</p>
+<h3 id="莱文斯坦距离"><a href="#莱文斯坦距离" class="headerlink" title="莱文斯坦距离"></a>莱文斯坦距离</h3><blockquote>
+<p>莱文斯坦距离是衡量两个字符串编辑距离的一种方式。编辑距离值的是，将一个字符串转化成另一个字符串，需要的最少编辑操作次数（比如增加一个字符，删除一个字符，替换一个字符）。编辑距离越大，说明两个字符串的相似程度越小；相反，编辑距离就越小，说明两个字符串的相似程度越大。两个完全相同的字符串，其编辑距离就是0。莱文斯坦距离允许增加、删除、替换这三种编辑方式，从两个字符串差异的大小角度出发。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">stra = &apos;a&apos;</span><br><span class="line">strb = &apos;b&apos;</span><br><span class="line">min_edit_num = 999</span><br><span class="line">def distance(i,j,edit_num):</span><br><span class="line">	global min_edit_num</span><br><span class="line">	if i == len(stra) or j == len(strb):</span><br><span class="line">		print(i,j)</span><br><span class="line">		if i &lt; len(stra):</span><br><span class="line">			edit_num += len(stra) - i</span><br><span class="line">		if j &lt; len(strb):</span><br><span class="line">			edit_num += len(strb) - j</span><br><span class="line">		if min_edit_num &gt; edit_num:</span><br><span class="line">			edit_num = min_edit_num</span><br><span class="line">		return edit_num</span><br><span class="line"></span><br><span class="line">	if stra[i] == strb[j]:</span><br><span class="line">		return distance(i+1, j+1, edit_num)</span><br><span class="line">	else:</span><br><span class="line">		return distance(i+1, j, edit_num+1)</span><br><span class="line">		return distance(i, j+1, edit_num+1)</span><br><span class="line">		return distance(i+1, j+1, edit_num+1)</span><br><span class="line"></span><br><span class="line">print(distance(0,0,0))</span><br></pre></td></tr></table></figure>
+<p>注意，上面这个程序执行的结果是错误的！因为在执行<code>stra[i] != strb[j]</code>时，永远只会返回第一个<code>return distance(i+1, j, edit_num+1)</code>，程序就结束了，而后续的两个return语句不会被执行。那要怎么处理呢？我采用的方式是不添加ruturn语句，用一个list来存储每次计算的结果。</p>
+<p><em>修改后的代码：</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">stra = &apos;a&apos;</span><br><span class="line">strb = &apos;bc&apos;</span><br><span class="line">result = []</span><br><span class="line"></span><br><span class="line">def distance(i,j,edit_num):</span><br><span class="line">	if i == len(stra) or j == len(strb):</span><br><span class="line">		if i &lt; len(stra):</span><br><span class="line">			edit_num += len(stra) - i</span><br><span class="line">		if j &lt; len(strb):</span><br><span class="line">			edit_num += len(strb) - j</span><br><span class="line">		result.append(edit_num)</span><br><span class="line">		return # 这个ruturn不可省略</span><br><span class="line"></span><br><span class="line">	if stra[i] == strb[j]:</span><br><span class="line">		distance(i+1, j+1, edit_num)</span><br><span class="line">	else:</span><br><span class="line">		distance(i+1, j, edit_num+1)</span><br><span class="line">		distance(i, j+1, edit_num+1)</span><br><span class="line">		distance(i+1, j+1, edit_num+1)</span><br><span class="line"></span><br><span class="line">distance(0,0,0)</span><br><span class="line">print(min(result))</span><br></pre></td></tr></table></figure>
+<p>或者，当不需要记录每次执行修改的次数可以用全局变量的方式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">stra = &apos;a&apos;</span><br><span class="line">strb = &apos;c&apos;</span><br><span class="line">result = 999</span><br><span class="line"></span><br><span class="line">def distance(i,j,edit_num):</span><br><span class="line">	global result</span><br><span class="line">	if i == len(stra) or j == len(strb):</span><br><span class="line">		if i &lt; len(stra):</span><br><span class="line">			edit_num += len(stra) - i</span><br><span class="line">		if j &lt; len(strb):</span><br><span class="line">			edit_num += len(strb) - j</span><br><span class="line">		if edit_num &lt; result:</span><br><span class="line">			result = edit_num</span><br><span class="line">		return # 这个ruturn不可省略</span><br><span class="line"></span><br><span class="line">	if stra[i] == strb[j]:</span><br><span class="line">		distance(i+1, j+1, edit_num)</span><br><span class="line">	else:</span><br><span class="line">		distance(i+1, j, edit_num+1)</span><br><span class="line">		distance(i, j+1, edit_num+1)</span><br><span class="line">		distance(i+1, j+1, edit_num+1)</span><br><span class="line"></span><br><span class="line">distance(0,0,0)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017268131039072" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/1016959663602400/1017268131039072</a></li>
+</ul>
+
       
     </div>
 
@@ -528,7 +550,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/双向循环链表/" rel="tag"># 双向循环链表</a>
+            <a href="/tags/递归/" rel="tag"># 递归</a>
           
         </div>
       
@@ -541,8 +563,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/21/代码分享链接/" rel="next" title="代码分享工具">
-                <i class="fa fa-chevron-left"></i> 代码分享工具
+              <a href="/2019/09/06/二分查找的变形/" rel="next" title="二分查找的变形">
+                <i class="fa fa-chevron-left"></i> 二分查找的变形
               </a>
             
           </div>
@@ -550,10 +572,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/30/链式栈LinkedStack/" rel="prev" title="链式栈LinkedStack">
-                链式栈LinkedStack <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -764,7 +782,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#结点Node类："><span class="nav-number">1.</span> <span class="nav-text">结点Node类：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#双向循环链表类："><span class="nav-number">2.</span> <span class="nav-text">双向循环链表类：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在头部插入新结点："><span class="nav-number">3.</span> <span class="nav-text">在头部插入新结点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给定结点后插入新结点："><span class="nav-number">4.</span> <span class="nav-text">给定结点后插入新结点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给定结点前插入新结点："><span class="nav-number">5.</span> <span class="nav-text">给定结点前插入新结点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断链表是否为空："><span class="nav-number">6.</span> <span class="nav-text">判断链表是否为空：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除给定结点："><span class="nav-number">7.</span> <span class="nav-text">删除给定结点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据值查找给定结点："><span class="nav-number">8.</span> <span class="nav-text">根据值查找给定结点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取链表长度："><span class="nav-number">9.</span> <span class="nav-text">获取链表长度：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#阶乘"><span class="nav-number">1.</span> <span class="nav-text">阶乘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#莱文斯坦距离"><span class="nav-number">2.</span> <span class="nav-text">莱文斯坦距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
