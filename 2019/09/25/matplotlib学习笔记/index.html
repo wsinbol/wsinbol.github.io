@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="菠菜屋">
 <meta property="og:description" content="网上关于matplotlib的教程一搜一大堆，看完之后仍是一脸蒙逼，虽然有部分资料确实能解决当下问题，但仍是不知所以然。该系列文章因此诞生，从最核心的功能开始讲起，争取涵盖我能想到的常见图形和业务需求。更多信息请访问官网。本节官网出处。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-25T13:49:31.305Z">
+<meta property="og:updated_time" content="2019-09-26T01:17:43.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="matplotlib学习笔记 - pyplot.plot">
 <meta name="twitter:description" content="网上关于matplotlib的教程一搜一大堆，看完之后仍是一脸蒙逼，虽然有部分资料确实能解决当下问题，但仍是不知所以然。该系列文章因此诞生，从最核心的功能开始讲起，争取涵盖我能想到的常见图形和业务需求。更多信息请访问官网。本节官网出处。">
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">922</span>
+                <span title="本文字数">1.1k</span>
               
 
               
@@ -510,7 +510,7 @@
       
         <p>网上关于matplotlib的教程一搜一大堆，看完之后仍是一脸蒙逼，虽然有部分资料确实能解决当下问题，但仍是不知所以然。该系列文章因此诞生，从最核心的功能开始讲起，争取涵盖我能想到的常见图形和业务需求。更多信息请访问官网。本节<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot" target="_blank" rel="noopener">官网出处</a>。</p>
 <a id="more"></a>
-<p>plot主要用来画折线图或者散点图，其函数的定义为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">matplotlib.pyplot.plot(*args, scalex=True, scaley=True, data=None, **kwargs)</span><br></pre></td></tr></table></figure></p>
+<h1 id="plot函数的定义与调用"><a href="#plot函数的定义与调用" class="headerlink" title="plot函数的定义与调用"></a>plot函数的定义与调用</h1><p>plot主要用来画折线图或者散点图，其函数的定义为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">matplotlib.pyplot.plot(*args, scalex=True, scaley=True, data=None, **kwargs)</span><br></pre></td></tr></table></figure></p>
 <p>调用形式有两种：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plot([x], y, [fmt], *, data=None, **kwargs)</span><br><span class="line">plot([x], y, [fmt], [x2], y2, [fmt2], ..., **kwargs)</span><br></pre></td></tr></table></figure></p>
 <p>x和y确定结点的坐标，fmt以缩略的形式控制颜色color、结点形状marker和线型linestyle。当然，你也可以通过关键字参数形式进行设置：</p>
 <ul>
@@ -521,8 +521,8 @@
 <li>marker: 结点形状</li>
 </ul>
 <p><code>若fmt方式与关键字参数形式冲突，以后者为准!</code></p>
-<p>fmt的格式：<code>fmt = &#39;[marker][line][color]&#39;</code>，其中每一项都需要手动指定，顺序随意，如果不指定默认是蓝色实线，没有结点形状。</p>
-<p>marker:</p>
+<h1 id="fmt格式与参数"><a href="#fmt格式与参数" class="headerlink" title="fmt格式与参数"></a>fmt格式与参数</h1><p>fmt的格式：<code>fmt = &#39;[marker][line][color]&#39;</code>，其中每一项都需要手动指定，顺序随意，如果不指定默认是蓝色实线，没有结点形状。</p>
+<p>marker:结点形状</p>
 <ul>
 <li>‘.’ 实心圆点</li>
 <li>‘,’ 啥也没显示</li>
@@ -544,6 +544,12 @@
 <li>‘–’ 虚线</li>
 <li>‘-.’ 虚线点</li>
 <li>‘:’ 点<br>Color:<br>b-blue,g-green,r-red,c-cyan青色,m-magenta暗红色,y-yellow,k-black,w-white</li>
+</ul>
+<h1 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h1><p>仅罗列一些比较常用的关键字参数，更多信息请访问官网。</p>
+<ul>
+<li>label：图例，需要调用plt.legend()才会显示</li>
+<li>alpha: float，透明度，值越小越透明，常用在突出某部分内容或者弱化某部分内容</li>
+<li>drawstyle/ds: [‘default’,’steps’,’steps-pre’,’steps-mid’,’steps-post’]，画线风格</li>
 </ul>
 
       
@@ -633,8 +639,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -784,6 +799,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#plot函数的定义与调用"><span class="nav-number">1.</span> <span class="nav-text">plot函数的定义与调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fmt格式与参数"><span class="nav-number">2.</span> <span class="nav-text">fmt格式与参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关键字参数"><span class="nav-number">3.</span> <span class="nav-text">关键字参数</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
