@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="双向循环链表和双向链表类似，不同的地方在于双向循环链表尾结点的后继指针指向头结点，而头结点的前驱指针指向尾结点。">
-<meta name="keywords" content="双向循环链表">
+  <meta name="description" content="pyplot.pie是画饼图的，本节官网地址">
+<meta name="keywords" content="pie">
 <meta property="og:type" content="article">
-<meta property="og:title" content="双向循环链表DoubleCircularLinkedList">
-<meta property="og:url" content="http://yoursite.com/2019/06/26/双向循环链表DoubleCircularLinkedList/index.html">
+<meta property="og:title" content="matplotlib学习笔记 - pyplot.pie">
+<meta property="og:url" content="http://yoursite.com/2019/09/27/matplotlib学习笔记(二)/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="双向循环链表和双向链表类似，不同的地方在于双向循环链表尾结点的后继指针指向头结点，而头结点的前驱指针指向尾结点。">
+<meta property="og:description" content="pyplot.pie是画饼图的，本节官网地址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-06T00:52:11.360Z">
+<meta property="og:updated_time" content="2019-09-27T12:57:17.223Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="双向循环链表DoubleCircularLinkedList">
-<meta name="twitter:description" content="双向循环链表和双向链表类似，不同的地方在于双向循环链表尾结点的后继指针指向头结点，而头结点的前驱指针指向尾结点。">
+<meta name="twitter:title" content="matplotlib学习笔记 - pyplot.pie">
+<meta name="twitter:description" content="pyplot.pie是画饼图的，本节官网地址">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/26/双向循环链表DoubleCircularLinkedList/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/27/matplotlib学习笔记(二)/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>双向循环链表DoubleCircularLinkedList | 菠菜屋</title>
+  <title>matplotlib学习笔记 - pyplot.pie | 菠菜屋</title>
   
 
 
@@ -372,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/26/双向循环链表DoubleCircularLinkedList/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/matplotlib学习笔记(二)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小菠菜">
@@ -389,7 +389,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">双向循环链表DoubleCircularLinkedList
+          <h2 class="post-title" itemprop="name headline">matplotlib学习笔记 - pyplot.pie
 
               
             
@@ -415,7 +415,7 @@
                 
               
 
-              <time title="创建时间：2019-06-26 14:38:16" itemprop="dateCreated datePublished" datetime="2019-06-26T14:38:16+08:00">2019-06-26</time>
+              <time title="创建时间：2019-09-27 16:39:08" itemprop="dateCreated datePublished" datetime="2019-09-27T16:39:08+08:00">2019-09-27</time>
             
 
             
@@ -433,7 +433,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/matplotlib/" itemprop="url" rel="index"><span itemprop="name">matplotlib</span></a></span>
 
                 
                 
@@ -448,7 +448,7 @@
 
           
           
-            <span id="/2019/06/26/双向循环链表DoubleCircularLinkedList/" class="leancloud_visitors" data-flag-title="双向循环链表DoubleCircularLinkedList">
+            <span id="/2019/09/27/matplotlib学习笔记(二)/" class="leancloud_visitors" data-flag-title="matplotlib学习笔记 - pyplot.pie">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.9k</span>
+                <span title="本文字数">1.2k</span>
               
 
               
@@ -488,7 +488,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -508,16 +508,27 @@
       
 
       
-        <p>双向循环链表和双向链表类似，不同的地方在于双向循环链表尾结点的后继指针指向头结点，而头结点的前驱指针指向尾结点。<br><a id="more"></a></p>
-<h4 id="结点Node类："><a href="#结点Node类：" class="headerlink" title="结点Node类："></a>结点Node类：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Node(object):</span><br><span class="line">	def __init__(self, data, _prev=None, _next=None):</span><br><span class="line">		self.data = data</span><br><span class="line">		self._prev = _prev</span><br><span class="line">		self._next = _next</span><br></pre></td></tr></table></figure>
-<h4 id="双向循环链表类："><a href="#双向循环链表类：" class="headerlink" title="双向循环链表类："></a>双向循环链表类：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class DoubleCircularLinkedList(object):</span><br><span class="line">	def __init__(self, node=None):</span><br><span class="line">		self._head = node</span><br></pre></td></tr></table></figure>
-<h4 id="在头部插入新结点："><a href="#在头部插入新结点：" class="headerlink" title="在头部插入新结点："></a>在头部插入新结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">def insert_new_value_to_head(self, value):</span><br><span class="line">	new_node = Node(value)</span><br><span class="line">	current = self._head</span><br><span class="line"></span><br><span class="line">	if current == None:</span><br><span class="line">		new_node._next = new_node</span><br><span class="line">		new_node._prev = new_node</span><br><span class="line">		self._head = new_node</span><br><span class="line">	else:</span><br><span class="line">		# self._head._prev # 指向尾结点</span><br><span class="line">		# 先记录尾结点</span><br><span class="line">		tail = self._head._prev</span><br><span class="line">		# 新结点后继指向头结点的位置</span><br><span class="line">		new_node._next = self._head</span><br><span class="line">		# 头结点前驱指向新结点</span><br><span class="line">		self._head._prev = new_node</span><br><span class="line">		# 新结点的前驱指向尾结点</span><br><span class="line">		new_node._prev = tail</span><br><span class="line">		# 尾结点的后继指向新结点</span><br><span class="line">		tail._next = new_node</span><br><span class="line">		# 更新头结点</span><br><span class="line">		self._head = new_node</span><br></pre></td></tr></table></figure>
-<h4 id="给定结点后插入新结点："><a href="#给定结点后插入新结点：" class="headerlink" title="给定结点后插入新结点："></a>给定结点后插入新结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def insert_new_value_after_target_node(self, value, node):</span><br><span class="line">	new_node = Node(value)</span><br><span class="line">	new_node._next = node._next</span><br><span class="line">	node._next._prev = new_node</span><br><span class="line">	new_node._prev = node</span><br><span class="line">	node._next = new_node</span><br></pre></td></tr></table></figure>
-<h4 id="给定结点前插入新结点："><a href="#给定结点前插入新结点：" class="headerlink" title="给定结点前插入新结点："></a>给定结点前插入新结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def insert_new_value_before_target_node(self, value, node):</span><br><span class="line">	</span><br><span class="line">	# 判断基准结点是否为头结点</span><br><span class="line">	if self._head == node:</span><br><span class="line">		self.insert_new_value_to_head(value)</span><br><span class="line">	else:</span><br><span class="line">		new_node = Node(value)</span><br><span class="line"></span><br><span class="line">		node._prev._next = new_node</span><br><span class="line">		new_node._prev = node._prev</span><br><span class="line">		new_node._next = node</span><br><span class="line">		node._prev = new_node</span><br></pre></td></tr></table></figure>
-<h4 id="判断链表是否为空："><a href="#判断链表是否为空：" class="headerlink" title="判断链表是否为空："></a>判断链表是否为空：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def is_empty(self):</span><br><span class="line">	if self._head == None:</span><br><span class="line">		return True</span><br><span class="line">	else:</span><br><span class="line">		return False</span><br></pre></td></tr></table></figure>
-<h4 id="删除给定结点："><a href="#删除给定结点：" class="headerlink" title="删除给定结点："></a>删除给定结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def delete_target_node(self, node):</span><br><span class="line">	if self._head == node:</span><br><span class="line">		tail = self._head._prev</span><br><span class="line">		node._next._prev = tail</span><br><span class="line">		tail._next = node._next</span><br><span class="line">		self._head = self._head._next</span><br><span class="line">	else:</span><br><span class="line">		node._prev._next = node._next</span><br><span class="line">		node._next._prev = node._prev</span><br></pre></td></tr></table></figure>
-<h4 id="根据值查找给定结点："><a href="#根据值查找给定结点：" class="headerlink" title="根据值查找给定结点："></a>根据值查找给定结点：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def find_by_value(self, value):</span><br><span class="line">	current = self._head</span><br><span class="line">	while current.data != value and current._next != self._head:</span><br><span class="line">		current = current._next</span><br><span class="line"></span><br><span class="line">	if current:</span><br><span class="line">		return current</span><br><span class="line">	else:</span><br><span class="line">		return</span><br></pre></td></tr></table></figure>
-<h4 id="获取链表长度："><a href="#获取链表长度：" class="headerlink" title="获取链表长度："></a>获取链表长度：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def get_linked_list_length(self):</span><br><span class="line"></span><br><span class="line">	current = self._head</span><br><span class="line">	length = 0</span><br><span class="line">	if current:</span><br><span class="line">		length += 1</span><br><span class="line">		current = current._next</span><br><span class="line"></span><br><span class="line">	while current != self._head:</span><br><span class="line">		length += 1</span><br><span class="line">		current = current._next</span><br><span class="line"></span><br><span class="line">	return length</span><br></pre></td></tr></table></figure>
+        <p>pyplot.pie是画饼图的，本节<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.pie.html?highlight=pie#matplotlib.pyplot.pie" target="_blank" rel="noopener">官网地址</a><br><a id="more"></a></p>
+<h1 id="pie函数的定义与调用"><a href="#pie函数的定义与调用" class="headerlink" title="pie函数的定义与调用"></a>pie函数的定义与调用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pyplot.pie(</span><br><span class="line">	x, explode=None, labels=None, colors=None, autopct=None,</span><br><span class="line">	pctdistance=0.6, shadow=False, labeldistance=1.1,</span><br><span class="line">	startangle=None, radius=None, counterclock=True,</span><br><span class="line">	wedgeprops=None, textprops=None, center=(0, 0), frame=False,</span><br><span class="line">	rotatelabels=False, *, data=None</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>最简单的调用只需要传入x参数就可，matplotlib会自动将参数转换成百分比，然后按照比例绘画出来。但是画出来的只有五颜六色的扇形组成的圆形，是没有太多价值的。所以必须的参数有：</p>
+<ul>
+<li>labels: list; 与<code>x</code>一一对应的文字</li>
+<li>autopct: None (default), string, or function, optional; 在扇形内部显示对应的比例(%1.1f%%),文字(‘string’),或者调用函数制定显示内容</li>
+<li>pctdistance：float, optional, default: 0.6; autopct产生的内容与圆心的比率，比例越小越靠近圆心。</li>
+</ul>
+<h1 id="其他参数"><a href="#其他参数" class="headerlink" title="其他参数"></a>其他参数</h1><ul>
+<li>explode: array-like, optional, default: None; 与<code>x</code>一一对应的数值列表，用于’独显高亮’某个扇形。</li>
+<li>colors: array-like, optional, default: None, 如r或red; 指定扇形的颜色，不指定时在数据量较多时会出现重复颜色。</li>
+<li>shadow: bool, optional, default: False; 是否设置阴影</li>
+<li>labelsdistance: float or None, optional, default: 1.1; labels所产生的文字与圆心的距离，数值越小越靠近圆心。</li>
+<li>startangle: float, optional, default: None; 如果你想让某个扇形在特定的位置就设置这个参数。</li>
+<li>radius: float, optional, default: None; 设置扇形的半径，但是我操作没发生任何变化</li>
+<li>counterclock：bool, optional, default: True; 指定顺时针or逆时针</li>
+<li>wedgeprops : dict, optional, default: None；以字典形式设置线宽等参数</li>
+<li>frame : bool, optional, default: False; 是否显示饼图外面的坐标系</li>
+<li>rotatelabels: bool, optional, default: False; 控制labels的内容与扇形角度是否一致</li>
+</ul>
+
       
     </div>
 
@@ -540,7 +551,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/双向循环链表/" rel="tag"># 双向循环链表</a>
+            <a href="/tags/pie/" rel="tag"># pie</a>
           
         </div>
       
@@ -553,8 +564,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/21/代码分享链接/" rel="next" title="代码分享工具">
-                <i class="fa fa-chevron-left"></i> 代码分享工具
+              <a href="/2019/09/27/推文、博文的数据清洗/" rel="next" title="推文&博文的文本处理-删除URL&HTML标签&话题标签">
+                <i class="fa fa-chevron-left"></i> 推文&博文的文本处理-删除URL&HTML标签&话题标签
               </a>
             
           </div>
@@ -562,10 +573,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/30/链式栈LinkedStack/" rel="prev" title="链式栈LinkedStack">
-                链式栈LinkedStack <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -786,7 +793,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#结点Node类："><span class="nav-number">1.</span> <span class="nav-text">结点Node类：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#双向循环链表类："><span class="nav-number">2.</span> <span class="nav-text">双向循环链表类：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在头部插入新结点："><span class="nav-number">3.</span> <span class="nav-text">在头部插入新结点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给定结点后插入新结点："><span class="nav-number">4.</span> <span class="nav-text">给定结点后插入新结点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给定结点前插入新结点："><span class="nav-number">5.</span> <span class="nav-text">给定结点前插入新结点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断链表是否为空："><span class="nav-number">6.</span> <span class="nav-text">判断链表是否为空：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除给定结点："><span class="nav-number">7.</span> <span class="nav-text">删除给定结点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据值查找给定结点："><span class="nav-number">8.</span> <span class="nav-text">根据值查找给定结点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取链表长度："><span class="nav-number">9.</span> <span class="nav-text">获取链表长度：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pie函数的定义与调用"><span class="nav-number">1.</span> <span class="nav-text">pie函数的定义与调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他参数"><span class="nav-number">2.</span> <span class="nav-text">其他参数</span></a></li></ol></div>
             
 
           </div>
