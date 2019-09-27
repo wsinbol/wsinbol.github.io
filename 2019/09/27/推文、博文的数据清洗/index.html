@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="循环队列可以看作是顺序队列的拓展。顺序队列在经过一系列的入队、出队操作之后，即使队列容量尚有空余，但因为队尾指针已经“走到尽头”，也要进行一些扩容操作，这样就浪费了许多空间。而“循环队列”可以充分利用空间，减少扩容操作。一般情况，循环列表都是基于数组实现的。">
-<meta name="keywords" content="循环队列">
+  <meta name="description" content="推特、微博上的文本没有严格的文本格式，灵活度比较高。文本内容往往包含一些网址URL、HTML标签、话题标签和@某人等内容，对文本的分词及词汇统计都会产生影响，所以在文本分析之前要去掉这些无意义的数据。搜索引擎上搜索一番，没有比较完美的解决方案。故基于搜索基础形成此文，以后再有类似场景，直接调用就好了。需要说明的是，因为实际场景比较复杂，本文的处理方式不能全面覆盖，需要另行修改调整。 删除URL12">
+<meta name="keywords" content="文本清洗">
 <meta property="og:type" content="article">
-<meta property="og:title" content="循环队列CircularQueue">
-<meta property="og:url" content="http://yoursite.com/2019/07/19/循环队列CircularQueue/index.html">
+<meta property="og:title" content="推文&amp;博文的文本处理-删除URL&amp;HTML标签&amp;话题标签">
+<meta property="og:url" content="http://yoursite.com/2019/09/27/推文、博文的数据清洗/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="循环队列可以看作是顺序队列的拓展。顺序队列在经过一系列的入队、出队操作之后，即使队列容量尚有空余，但因为队尾指针已经“走到尽头”，也要进行一些扩容操作，这样就浪费了许多空间。而“循环队列”可以充分利用空间，减少扩容操作。一般情况，循环列表都是基于数组实现的。">
+<meta property="og:description" content="推特、微博上的文本没有严格的文本格式，灵活度比较高。文本内容往往包含一些网址URL、HTML标签、话题标签和@某人等内容，对文本的分词及词汇统计都会产生影响，所以在文本分析之前要去掉这些无意义的数据。搜索引擎上搜索一番，没有比较完美的解决方案。故基于搜索基础形成此文，以后再有类似场景，直接调用就好了。需要说明的是，因为实际场景比较复杂，本文的处理方式不能全面覆盖，需要另行修改调整。 删除URL12">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-06T00:52:06.134Z">
+<meta property="og:updated_time" content="2019-09-27T05:53:09.225Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="循环队列CircularQueue">
-<meta name="twitter:description" content="循环队列可以看作是顺序队列的拓展。顺序队列在经过一系列的入队、出队操作之后，即使队列容量尚有空余，但因为队尾指针已经“走到尽头”，也要进行一些扩容操作，这样就浪费了许多空间。而“循环队列”可以充分利用空间，减少扩容操作。一般情况，循环列表都是基于数组实现的。">
+<meta name="twitter:title" content="推文&amp;博文的文本处理-删除URL&amp;HTML标签&amp;话题标签">
+<meta name="twitter:description" content="推特、微博上的文本没有严格的文本格式，灵活度比较高。文本内容往往包含一些网址URL、HTML标签、话题标签和@某人等内容，对文本的分词及词汇统计都会产生影响，所以在文本分析之前要去掉这些无意义的数据。搜索引擎上搜索一番，没有比较完美的解决方案。故基于搜索基础形成此文，以后再有类似场景，直接调用就好了。需要说明的是，因为实际场景比较复杂，本文的处理方式不能全面覆盖，需要另行修改调整。 删除URL12">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/19/循环队列CircularQueue/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/27/推文、博文的数据清洗/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>循环队列CircularQueue | 菠菜屋</title>
+  <title>推文&博文的文本处理-删除URL&HTML标签&话题标签 | 菠菜屋</title>
   
 
 
@@ -372,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/循环队列CircularQueue/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/推文、博文的数据清洗/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小菠菜">
@@ -389,7 +389,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">循环队列CircularQueue
+          <h2 class="post-title" itemprop="name headline">推文&博文的文本处理-删除URL&HTML标签&话题标签
 
               
             
@@ -415,7 +415,7 @@
                 
               
 
-              <time title="创建时间：2019-07-19 19:47:18" itemprop="dateCreated datePublished" datetime="2019-07-19T19:47:18+08:00">2019-07-19</time>
+              <time title="创建时间：2019-09-27 07:58:51" itemprop="dateCreated datePublished" datetime="2019-09-27T07:58:51+08:00">2019-09-27</time>
             
 
             
@@ -433,7 +433,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
 
                 
                 
@@ -448,7 +448,7 @@
 
           
           
-            <span id="/2019/07/19/循环队列CircularQueue/" class="leancloud_visitors" data-flag-title="循环队列CircularQueue">
+            <span id="/2019/09/27/推文、博文的数据清洗/" class="leancloud_visitors" data-flag-title="推文&博文的文本处理-删除URL&HTML标签&话题标签">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.4k</span>
+                <span title="本文字数">1.8k</span>
               
 
               
@@ -488,7 +488,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -508,14 +508,14 @@
       
 
       
-        <p>循环队列可以看作是顺序队列的拓展。顺序队列在经过一系列的入队、出队操作之后，即使队列容量尚有空余，但因为队尾指针已经“走到尽头”，也要进行一些扩容操作，这样就浪费了许多空间。而“循环队列”可以充分利用空间，减少扩容操作。一般情况，循环列表都是基于数组实现的。<br><a id="more"></a></p>
-<h4 id="循环队列类"><a href="#循环队列类" class="headerlink" title="循环队列类"></a>循环队列类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class CircularQueue(object):</span><br><span class="line"></span><br><span class="line">	def __init__(self, capacity):</span><br><span class="line">		self._items = [] # 基于列表实现</span><br><span class="line">		self._capacity = capacity + 1</span><br><span class="line">		self._head = 0</span><br><span class="line">		self._tail = 0</span><br></pre></td></tr></table></figure>
-<p>需要指出的是，<code>根据循环队列的特性，循环队列在队满的时候，队尾指针tail指向的位置实际上是不存储数据的。</code>在同等条件下，顺序队列可以比循环队列多存储一个数据。但是为了方便调用者使用，我们在初始化容量时自动将<code>capacity + 1</code>，保证确实能存储传入进来的capacity个数据。</p>
-<h4 id="入队操作"><a href="#入队操作" class="headerlink" title="入队操作"></a>入队操作</h4><p>入队操作要注意队满以及队尾指针的条件，<code>(self._tail + 1) % self._capacity == self._head</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def enqueue(self, value):</span><br><span class="line">	if (self._tail + 1) % self._capacity == self._head:</span><br><span class="line">		print(&apos;The queue is full! The data %s ignored!&apos; % value)</span><br><span class="line">		return False</span><br><span class="line">	self._items.append(value)</span><br><span class="line">	self._tail = (self._tail + 1) % self._capacity</span><br></pre></td></tr></table></figure></p>
-<h4 id="出队操作"><a href="#出队操作" class="headerlink" title="出队操作"></a>出队操作</h4><p>注意队空的条件<code>self._head == self._tail</code>，更新队首指针<code>self._head = (self._head + 1) % self._capacity</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def dequeue(self):</span><br><span class="line">	if self._head == self._tail:</span><br><span class="line">		print(&apos;The queue is empty&apos;)</span><br><span class="line">		return False</span><br><span class="line">	value = self._items[self._head]</span><br><span class="line">	self._head = (self._head + 1) % self._capacity</span><br></pre></td></tr></table></figure></p>
-<h4 id="查看队列"><a href="#查看队列" class="headerlink" title="查看队列"></a>查看队列</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def printQueue(self):</span><br><span class="line">	current = self._head</span><br><span class="line">	while current != self._tail:</span><br><span class="line">		print(self._items[current], end=&apos;,&apos;)</span><br><span class="line">		current = (current + 1) % self._capacity</span><br><span class="line">	print()</span><br></pre></td></tr></table></figure>
-<h4 id="代码纠错"><a href="#代码纠错" class="headerlink" title="代码纠错"></a>代码纠错</h4><p>上述代码在程序执行存在错误！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">q = CircularQueue(5)</span><br><span class="line"># 先入队5个</span><br><span class="line">for i in range(5):</span><br><span class="line">	q.enqueue(i)</span><br><span class="line"># 此时队列：0,1,2,3,4,</span><br><span class="line"></span><br><span class="line"># 再出队3个</span><br><span class="line">for _ in range(3):</span><br><span class="line">	q.dequeue()</span><br><span class="line">#此时队列：3,4,</span><br><span class="line"></span><br><span class="line">#再入队3个</span><br><span class="line">for i in range(5,8):</span><br><span class="line">	q.enqueue(i)</span><br><span class="line"># 此时队列:3,4,5,0,1</span><br><span class="line"># 6,7并没有写入进去，而且遍历数据时依旧是原来的数据</span><br><span class="line"># 5写入成功是因为_tail在队满时本来就是None</span><br></pre></td></tr></table></figure></p>
-<p>更新后的代码见<a href="https://github.com/wsinbol/DataStructure/blob/master/Queue/CircularQueue.py" target="_blank" rel="noopener">这里</a></p>
+        <p>推特、微博上的文本没有严格的文本格式，灵活度比较高。文本内容往往包含一些网址URL、HTML标签、话题标签和@某人等内容，对文本的分词及词汇统计都会产生影响，所以在文本分析之前要去掉这些无意义的数据。搜索引擎上搜索一番，没有比较完美的解决方案。故基于搜索基础形成此文，以后再有类似场景，直接调用就好了。需要说明的是，因为实际场景比较复杂，本文的处理方式不能全面覆盖，需要另行修改调整。</p>
+<h1 id="删除URL"><a href="#删除URL" class="headerlink" title="删除URL"></a>删除URL</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def clean_url(text):</span><br><span class="line">    sentences = text.split(&apos; &apos;)</span><br><span class="line">    # 处理http://类链接</span><br><span class="line">    url_pattern = re.compile(r&apos;(https|http)?:\/\/(\w|\.|\/|\?|\=|\&amp;|\%|\-)*\b&apos;, re.S)</span><br><span class="line">    # 处理无http://类链接</span><br><span class="line">    domain_pattern = re.compile(r&apos;(\b)*(.*?)\.(com|cn)&apos;)</span><br><span class="line">    if len(sentences) &gt; 0:</span><br><span class="line">        result = []</span><br><span class="line">        for item in sentences:</span><br><span class="line">            text = re.sub(url_pattern, &apos;&apos;, item)</span><br><span class="line">            text = re.sub(domain_pattern,&apos;&apos;, text)</span><br><span class="line">            result.append(text)</span><br><span class="line">        return &apos; &apos;.join(result)</span><br><span class="line">    else:</span><br><span class="line">        return re.sub(url_pattern, &apos;&apos;, sentences)</span><br></pre></td></tr></table></figure>
+<p>整体思路是先根据空格切分成列表，然后对列表中每一项进行链接替换，最终再组成字符串。</p>
+<h1 id="删除HTML标签"><a href="#删除HTML标签" class="headerlink" title="删除HTML标签"></a>删除HTML标签</h1><p>第一种情况是仅删除HTML标签，不包括标签内的文本。代码直接来自于网络，貌似没有额外需要补充的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def clean_html(text):</span><br><span class="line">    html_pattern = re.compile(&apos;&lt;/?\w+[^&gt;]*&gt;&apos;, re.S)</span><br><span class="line">    text=re.sub(html_pattern,&apos;&apos;, text)</span><br><span class="line">    return text</span><br></pre></td></tr></table></figure></p>
+<p>第二种情况不单单去除HTML文本，也包括HTML标签内的文本。比如’网页链接’、’转推’等文字都是可以直接跳转的，这样的文字采用第一种情况是无法去除的。但是这种方法过于严厉，所以只能对a标签、b标签等使用，而不能用在p标签或者div标签中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def clean_html_strict(text):</span><br><span class="line">    html_pattern = re.compile(&apos;(&lt;a|&lt;b)(.*?)(&lt;/a&gt;|&lt;/b&gt;)&apos;, re.S)</span><br><span class="line">    text = re.sub(html_pattern, &apos;&apos;, text)</span><br><span class="line">    return text.strip()</span><br></pre></td></tr></table></figure></p>
+<p>除了用上述方法处理’网页链接’、’转推’等情况，还可以采用先用第一种情况，再分别处理’网页链接’、’转推’等情况。</p>
+<h1 id="删除话题标签"><a href="#删除话题标签" class="headerlink" title="删除话题标签"></a>删除话题标签</h1><p>推特和微博上的话题一般都用’【】’、’##’、’[]’等符号包起来，所以直接根据这些符号进行过滤即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def clean_tag(text):</span><br><span class="line">    tag_pattern = re.compile(&apos;(\[|\#|【)(.*?)(\#|\]|\】)&apos;, re.S)</span><br><span class="line">    text = re.sub(tag_pattern, &apos;&apos;, text)</span><br><span class="line">    return text.strip()</span><br></pre></td></tr></table></figure></p>
+<h1 id="某人标签"><a href="#某人标签" class="headerlink" title="@某人标签"></a>@某人标签</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def clean_at(text):</span><br><span class="line">    at_pattern = re.compile(&apos;@\S*&apos;, re.S)</span><br><span class="line">    text = re.sub(at_pattern, &apos;&apos;, text)</span><br><span class="line">    return text.strip()</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -539,7 +539,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/循环队列/" rel="tag"># 循环队列</a>
+            <a href="/tags/文本清洗/" rel="tag"># 文本清洗</a>
           
         </div>
       
@@ -552,8 +552,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/16/Python切片操作/" rel="next" title="Python切片操作">
-                <i class="fa fa-chevron-left"></i> Python切片操作
+              <a href="/2019/09/25/matplotlib学习笔记/" rel="next" title="matplotlib学习笔记 - pyplot.plot">
+                <i class="fa fa-chevron-left"></i> matplotlib学习笔记 - pyplot.plot
               </a>
             
           </div>
@@ -561,10 +561,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/29/冒泡排序BubbleSort/" rel="prev" title="冒泡排序BubbleSort">
-                冒泡排序BubbleSort <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -781,7 +777,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#循环队列类"><span class="nav-number">1.</span> <span class="nav-text">循环队列类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#入队操作"><span class="nav-number">2.</span> <span class="nav-text">入队操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#出队操作"><span class="nav-number">3.</span> <span class="nav-text">出队操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看队列"><span class="nav-number">4.</span> <span class="nav-text">查看队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码纠错"><span class="nav-number">5.</span> <span class="nav-text">代码纠错</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#删除URL"><span class="nav-number">1.</span> <span class="nav-text">删除URL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除HTML标签"><span class="nav-number">2.</span> <span class="nav-text">删除HTML标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除话题标签"><span class="nav-number">3.</span> <span class="nav-text">删除话题标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#某人标签"><span class="nav-number">4.</span> <span class="nav-text">@某人标签</span></a></li></ol></div>
             
 
           </div>
