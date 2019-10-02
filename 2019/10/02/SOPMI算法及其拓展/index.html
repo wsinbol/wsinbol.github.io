@@ -16,7 +16,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="网上关于matplotlib的教程一搜一大堆，看完之后仍是一脸蒙逼，虽然有部分资料确实能解决当下问题，但仍是不知所以然。该系列文章因此诞生，从最核心的功能开始讲起，争取涵盖我能想到的常见图形和业务需求。更多信息请访问官网。本节官网出处。">
-<meta name="keywords" content="matplotlib">
+  <meta name="description" content="点互信息PMI点互信息用来衡量两个事物之间的相关性，两个事物同时出现的概率越大，其相关性越大。">
+<meta name="keywords" content="PMI,SO-PMI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="matplotlib学习笔记 - pyplot.plot">
-<meta property="og:url" content="http://yoursite.com/2019/09/25/matplotlib学习笔记/index.html">
+<meta property="og:title" content="SO-PMI算法及其拓展">
+<meta property="og:url" content="http://wsinbol.github.io/2019/10/02/SOPMI算法及其拓展/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="网上关于matplotlib的教程一搜一大堆，看完之后仍是一脸蒙逼，虽然有部分资料确实能解决当下问题，但仍是不知所以然。该系列文章因此诞生，从最核心的功能开始讲起，争取涵盖我能想到的常见图形和业务需求。更多信息请访问官网。本节官网出处。">
+<meta property="og:description" content="点互信息PMI点互信息用来衡量两个事物之间的相关性，两个事物同时出现的概率越大，其相关性越大。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-26T01:17:43.323Z">
+<meta property="og:updated_time" content="2019-10-02T14:27:14.596Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="matplotlib学习笔记 - pyplot.plot">
-<meta name="twitter:description" content="网上关于matplotlib的教程一搜一大堆，看完之后仍是一脸蒙逼，虽然有部分资料确实能解决当下问题，但仍是不知所以然。该系列文章因此诞生，从最核心的功能开始讲起，争取涵盖我能想到的常见图形和业务需求。更多信息请访问官网。本节官网出处。">
+<meta name="twitter:title" content="SO-PMI算法及其拓展">
+<meta name="twitter:description" content="点互信息PMI点互信息用来衡量两个事物之间的相关性，两个事物同时出现的概率越大，其相关性越大。">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/09/25/matplotlib学习笔记/">
+  <link rel="canonical" href="http://wsinbol.github.io/2019/10/02/SOPMI算法及其拓展/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>matplotlib学习笔记 - pyplot.plot | 菠菜屋</title>
+  <title>SO-PMI算法及其拓展 | 菠菜屋</title>
   
 
 
@@ -172,7 +172,7 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
@@ -183,7 +183,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -200,7 +200,7 @@
     </div>
     
       
-        <h1 class="site-subtitle" itemprop="description">小菠菜的成长笔记</h1>
+        <h1 class="site-subtitle" itemprop="description">纸上得来终觉浅</h1>
       
     
     
@@ -344,6 +344,13 @@
     </header>
 
     
+  
+  
+
+  
+
+  <a href="https://github.com/wsinbol" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
 
 
     <main id="main" class="main">
@@ -372,11 +379,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/25/matplotlib学习笔记/">
+    <link itemprop="mainEntityOfPage" href="http://wsinbol.github.io/2019/10/02/SOPMI算法及其拓展/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="小菠菜">
-      <meta itemprop="description" content="要记得除草、浇水、喷药哦^_^">
+      <meta itemprop="name" content="wsinbol">
+      <meta itemprop="description" content="一屋不扫，何以扫天下">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -389,7 +396,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">matplotlib学习笔记 - pyplot.plot
+          <h2 class="post-title" itemprop="name headline">SO-PMI算法及其拓展
 
               
             
@@ -415,7 +422,7 @@
                 
               
 
-              <time title="创建时间：2019-09-25 20:33:41" itemprop="dateCreated datePublished" datetime="2019-09-25T20:33:41+08:00">2019-09-25</time>
+              <time title="创建时间：2019-10-02 20:25:53" itemprop="dateCreated datePublished" datetime="2019-10-02T20:25:53+08:00">2019-10-02</time>
             
 
             
@@ -433,7 +440,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/matplotlib/" itemprop="url" rel="index"><span itemprop="name">matplotlib</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/NLP/" itemprop="url" rel="index"><span itemprop="name">NLP</span></a></span>
 
                 
                 
@@ -448,7 +455,7 @@
 
           
           
-            <span id="/2019/09/25/matplotlib学习笔记/" class="leancloud_visitors" data-flag-title="matplotlib学习笔记 - pyplot.plot">
+            <span id="/2019/10/02/SOPMI算法及其拓展/" class="leancloud_visitors" data-flag-title="SO-PMI算法及其拓展">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -474,7 +481,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.1k</span>
+                <span title="本文字数">1.2k</span>
               
 
               
@@ -508,48 +515,39 @@
       
 
       
-        <p>网上关于matplotlib的教程一搜一大堆，看完之后仍是一脸蒙逼，虽然有部分资料确实能解决当下问题，但仍是不知所以然。该系列文章因此诞生，从最核心的功能开始讲起，争取涵盖我能想到的常见图形和业务需求。更多信息请访问官网。本节<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot" target="_blank" rel="noopener">官网出处</a>。</p>
-<a id="more"></a>
-<h1 id="plot函数的定义与调用"><a href="#plot函数的定义与调用" class="headerlink" title="plot函数的定义与调用"></a>plot函数的定义与调用</h1><p>plot主要用来画折线图或者散点图，其函数的定义为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">matplotlib.pyplot.plot(*args, scalex=True, scaley=True, data=None, **kwargs)</span><br></pre></td></tr></table></figure></p>
-<p>调用形式有两种：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plot([x], y, [fmt], *, data=None, **kwargs)</span><br><span class="line">plot([x], y, [fmt], [x2], y2, [fmt2], ..., **kwargs)</span><br></pre></td></tr></table></figure></p>
-<p>x和y确定结点的坐标，fmt以缩略的形式控制颜色color、结点形状marker和线型linestyle。当然，你也可以通过关键字参数形式进行设置：</p>
+        <h1 id="点互信息PMI"><a href="#点互信息PMI" class="headerlink" title="点互信息PMI"></a>点互信息PMI</h1><p>点互信息用来衡量两个事物之间的相关性，两个事物同时出现的概率越大，其相关性越大。<br><a id="more"></a><br>计算 $word_1$ 和 $word_2$ 的相关性：</p>
+<script type="math/tex; mode=display">
+PMI(word_1,word_2) = log_2\Big[\frac{P(word_1,word_2)}{P(word_1) \times P(word_2)}]</script><p>其中：</p>
 <ul>
-<li>linewidth:线条宽度</li>
-<li>markersize:结点大小</li>
-<li>color：结点和线条的颜色</li>
-<li>linestyle: 线条形状</li>
-<li>marker: 结点形状</li>
+<li><p>P($word_1$, $word_2$) 表示 $word_1$ 和 $word_2$ 共同出现的频率，可转化为 $word_1$ 与 $word_2$ 共同出现的文档数与总文档数的比值</p>
+</li>
+<li><p>P($word_1$) 表示 $word_1$ 单独出现的频率，可转化为 $word_1$ 出现的文档数与总文档数的比值。$word_2$ 类同。</p>
+</li>
 </ul>
-<p><code>若fmt方式与关键字参数形式冲突，以后者为准!</code></p>
-<h1 id="fmt格式与参数"><a href="#fmt格式与参数" class="headerlink" title="fmt格式与参数"></a>fmt格式与参数</h1><p>fmt的格式：<code>fmt = &#39;[marker][line][color]&#39;</code>，其中每一项都需要手动指定，顺序随意，如果不指定默认是蓝色实线，没有结点形状。</p>
-<p>marker:结点形状</p>
+<h1 id="情感倾向点互信息SO-PMI"><a href="#情感倾向点互信息SO-PMI" class="headerlink" title="情感倾向点互信息SO-PMI"></a>情感倾向点互信息SO-PMI</h1><p>情感倾向点互信息基本思想是：分别选取一组正向种子词 $P_w$ 和一组负向种子词 $N_w$。计算候选情感词【word 跟每一个正向种子词$P_w$ 点互信息的总和】与【word 跟每一个负向种子词 $N_w$ 点互信息的总和】之间的差值：</p>
+<script type="math/tex; mode=display">
+SO-PMI(word) = \sum_{P_{word}\,\in {P_{w}}}PMI(word,P_{word}) - \sum_{P_{word}\,\in{P_{w}}}PMI(word,P_{word})</script><p>经计算：</p>
 <ul>
-<li>‘.’ 实心圆点</li>
-<li>‘,’ 啥也没显示</li>
-<li>‘o’小写的o 也是实心圆点</li>
-<li>‘^’,’&gt;’,’&lt;’,’v’小写的v 各个朝向的三角形</li>
-<li>‘1’,’2’,’3’,’4’ 各个朝向的等长Y图案</li>
-<li>‘s’ square 实心正方形</li>
-<li>‘p’ 正五边形</li>
-<li>‘*’ 实心星形</li>
-<li>‘h’ 顶点向下的正六边形</li>
-<li>‘H’ 边向下的正六边形</li>
-<li>‘+’ 加号</li>
-<li>‘x’ 乘号</li>
-<li>‘D’ 顶点向下的正方形</li>
-<li>‘d’ 顶点向下的菱形</li>
-<li>‘|’ 竖线</li>
-<li>‘-‘ 横线<br>Line Styles:</li>
-<li>‘-‘ 实线</li>
-<li>‘–’ 虚线</li>
-<li>‘-.’ 虚线点</li>
-<li>‘:’ 点<br>Color:<br>b-blue,g-green,r-red,c-cyan青色,m-magenta暗红色,y-yellow,k-black,w-white</li>
+<li>SO-PMI(word)&gt;0: 正面倾向，视word为褒义词</li>
+<li>SO-PMI(word)=0：中性倾向，视word为中性词</li>
+<li>SO-PMI(word)&lt;0: 负面倾向，视word为贬义词</li>
 </ul>
-<h1 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h1><p>仅罗列一些比较常用的关键字参数，更多信息请访问官网。</p>
-<ul>
-<li>label：图例，需要调用plt.legend()才会显示</li>
-<li>alpha: float，透明度，值越小越透明，常用在突出某部分内容或者弱化某部分内容</li>
-<li>drawstyle/ds: [‘default’,’steps’,’steps-pre’,’steps-mid’,’steps-post’]，画线风格</li>
+<h1 id="拓展PMI-引入词间距"><a href="#拓展PMI-引入词间距" class="headerlink" title="拓展PMI:引入词间距"></a>拓展PMI:引入词间距</h1><p>当两个词语共现时，可能是彼此相邻，也可能是相距很远。我们认为如果两个共现词距离很近，则关联性越强；反之，关联性越弱。两个词语之间的距离可以用两个词语之间的词语个数表示。重复出现时，取间距最小值。则两个词语之间的共现距离：</p>
+<script type="math/tex; mode=display">
+d = min|d_x - d_y|</script><ul>
+<li>$d_x$表示在每条评论中从评论开始到两个词语总较前面一个词语位置时的词语长度（个数）</li>
+<li>$d_y$表示在每条评论总从评论开始到两个词语中较后面一个词语位置时的词语长度（个数）</li>
+</ul>
+<p>则最新的PMI公式为：</p>
+<script type="math/tex; mode=display">
+PMI(word_1, word_2) = log_2\big(\frac{d \times hit(word_1) \times hit(word_2)}{N \times hit(word_1, word_2)})</script><ul>
+<li>N 表示语料库中所有词语的总次数</li>
+<li>hit表示词语的词频数</li>
+<li>hit($word_1$,$word_2$)表示词语$word_1$和$word_2$在同一篇文档中总计共现的次数</li>
+<li>d表示两个词语之间的共现距离</li>
+</ul>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li>郭顺利, 张向先. 面向中文图书评论的情感词典构建方法研究[J]. 数据分析与知识发现, 2016, 32(2): 67-74.</li>
 </ul>
 
       
@@ -569,12 +567,38 @@
     
 
     
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>wsinbol</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="http://wsinbol.github.io/2019/10/02/SOPMI算法及其拓展/" title="SO-PMI算法及其拓展">http://wsinbol.github.io/2019/10/02/SOPMI算法及其拓展/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/matplotlib/" rel="tag"># matplotlib</a>
+            <a href="/tags/PMI/" rel="tag"># PMI</a>
+          
+            <a href="/tags/SO-PMI/" rel="tag"># SO-PMI</a>
           
         </div>
       
@@ -587,8 +611,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/08/Python的递归函数/" rel="next" title="Python的递归函数">
-                <i class="fa fa-chevron-left"></i> Python的递归函数
+              <a href="/2019/09/27/matplotlib学习笔记(二)/" rel="next" title="matplotlib学习笔记 - pyplot.pie">
+                <i class="fa fa-chevron-left"></i> matplotlib学习笔记 - pyplot.pie
               </a>
             
           </div>
@@ -596,10 +620,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/27/推文、博文的数据清洗/" rel="prev" title="推文&博文的文本处理-删除URL&HTML标签&话题标签">
-                推文&博文的文本处理-删除URL&HTML标签&话题标签 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -657,8 +677,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">小菠菜</p>
-              <div class="site-description motion-element" itemprop="description">要记得除草、浇水、喷药哦^_^</div>
+              <p class="site-author-name" itemprop="name">wsinbol</p>
+              <div class="site-description motion-element" itemprop="description">一屋不扫，何以扫天下</div>
           </div>
 
           
@@ -668,7 +688,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -778,7 +798,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">30</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -816,7 +842,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#plot函数的定义与调用"><span class="nav-number">1.</span> <span class="nav-text">plot函数的定义与调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fmt格式与参数"><span class="nav-number">2.</span> <span class="nav-text">fmt格式与参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关键字参数"><span class="nav-number">3.</span> <span class="nav-text">关键字参数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#点互信息PMI"><span class="nav-number">1.</span> <span class="nav-text">点互信息PMI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#情感倾向点互信息SO-PMI"><span class="nav-number">2.</span> <span class="nav-text">情感倾向点互信息SO-PMI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拓展PMI-引入词间距"><span class="nav-number">3.</span> <span class="nav-text">拓展PMI:引入词间距</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
@@ -851,7 +877,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">32k</span>
+    <span title="站点总字数">34k</span>
   
 
   
@@ -862,7 +888,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">29 分钟</span>
+    <span title="站点阅读时长">31 分钟</span>
   
 </div>
 
@@ -1068,6 +1094,53 @@
   
 
   
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
 
   
 
@@ -1082,7 +1155,24 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(bp, s);
     })();
-  </script>
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
   
