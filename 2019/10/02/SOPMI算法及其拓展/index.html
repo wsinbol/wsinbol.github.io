@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="菠菜屋">
 <meta property="og:description" content="点互信息PMI点互信息用来衡量两个事物之间的相关性，两个事物同时出现的概率越大，其相关性越大。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-02T14:27:14.596Z">
+<meta property="og:updated_time" content="2019-10-06T11:26:53.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SO-PMI算法及其拓展">
 <meta name="twitter:description" content="点互信息PMI点互信息用来衡量两个事物之间的相关性，两个事物同时出现的概率越大，其相关性越大。">
@@ -481,7 +481,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.2k</span>
+                <span title="本文字数">1.9k</span>
               
 
               
@@ -495,7 +495,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -532,7 +532,11 @@ SO-PMI(word) = \sum_{P_{word}\,\in {P_{w}}}PMI(word,P_{word}) - \sum_{P_{word}\,
 <li>SO-PMI(word)=0：中性倾向，视word为中性词</li>
 <li>SO-PMI(word)&lt;0: 负面倾向，视word为贬义词</li>
 </ul>
-<h1 id="拓展PMI-引入词间距"><a href="#拓展PMI-引入词间距" class="headerlink" title="拓展PMI:引入词间距"></a>拓展PMI:引入词间距</h1><p>当两个词语共现时，可能是彼此相邻，也可能是相距很远。我们认为如果两个共现词距离很近，则关联性越强；反之，关联性越弱。两个词语之间的距离可以用两个词语之间的词语个数表示。重复出现时，取间距最小值。则两个词语之间的共现距离：</p>
+<h1 id="基于Good-Turing平滑的SO-PMI："><a href="#基于Good-Turing平滑的SO-PMI：" class="headerlink" title="基于Good-Turing平滑的SO-PMI："></a>基于Good-Turing平滑的SO-PMI：</h1><h2 id="问题引入："><a href="#问题引入：" class="headerlink" title="问题引入："></a>问题引入：</h2><p>在进行短文本情感词生成过程中，词频较高的情感词文档频率不一定高。种子词在短文本文档中出现的频率很低会导致候选情感词与种子词共现的频次较低，出现零概率事件，无法计算候选特征情感词的互信息。</p>
+<h2 id="Good-Turing："><a href="#Good-Turing：" class="headerlink" title="Good-Turing："></a>Good-Turing：</h2><p>核心思想：通过高频计数的N元语法重新估计0计数或者低频计数的N元语法发生的概率。</p>
+<script type="math/tex; mode=display">
+ r^* = (r+1) \frac{N_{r+1}}{N_r}</script><p>关于Good-Turing的具体介绍可以查看<a href="https://blog.csdn.net/hx14301009/article/details/80341095" target="_blank" rel="noopener">这篇博文</a>，这样我们就可以解决零概率的问题了。</p>
+<h1 id="引入词间距，进行多类情感词生成"><a href="#引入词间距，进行多类情感词生成" class="headerlink" title="引入词间距，进行多类情感词生成"></a>引入词间距，进行多类情感词生成</h1><p>当两个词语共现时，可能是彼此相邻，也可能是相距很远。我们认为如果两个共现词距离很近，则关联性越强；反之，关联性越弱。两个词语之间的距离可以用两个词语之间的词语个数表示。重复出现时，取间距最小值。则两个词语之间的共现距离：</p>
 <script type="math/tex; mode=display">
 d = min|d_x - d_y|</script><ul>
 <li>$d_x$表示在每条评论中从评论开始到两个词语总较前面一个词语位置时的词语长度（个数）</li>
@@ -546,8 +550,19 @@ PMI(word_1, word_2) = log_2\big(\frac{d \times hit(word_1) \times hit(word_2)}{N
 <li>hit($word_1$,$word_2$)表示词语$word_1$和$word_2$在同一篇文档中总计共现的次数</li>
 <li>d表示两个词语之间的共现距离</li>
 </ul>
+<p>则最新的SO-PMI公式为：</p>
+<script type="math/tex; mode=display">
+SO-PMI(word_1x, S_i) = \sum_{S_a\,\in S_i}log_2\Big[ \frac{N \times hit(word_x,S_a)}{M_i \times d \times hit(word_x) \times hit(S_a)} \Big]</script><p>其中：</p>
+<ul>
+<li>N 表示语料库中所有词语的总次数</li>
+<li>hit 表示词语的词频数</li>
+<li>$S_a$ 表示第i类情感种子词集合$S_i$中的第a个情感词</li>
+<li>hit($word_x, s_a$) 表示词语$word_x$和$S_a$在同一个文档中为共现窗口中共现的次数</li>
+<li>$M_i$(1&lt;=i&lt;=7) 表示第i类情感种子词集$S_i$中种子词的数量</li>
+</ul>
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
 <li>郭顺利, 张向先. 面向中文图书评论的情感词典构建方法研究[J]. 数据分析与知识发现, 2016, 32(2): 67-74.</li>
+<li>姜伶伶, 何中市, 张航. 基于 Good-Turing 平滑 SO-PMI 算法构建微博情感词典方法的研究[J]. 现代计算机 (专业版), 2018 (10): 5.</li>
 </ul>
 
       
@@ -842,7 +857,7 @@ PMI(word_1, word_2) = log_2\big(\frac{d \times hit(word_1) \times hit(word_2)}{N
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#点互信息PMI"><span class="nav-number">1.</span> <span class="nav-text">点互信息PMI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#情感倾向点互信息SO-PMI"><span class="nav-number">2.</span> <span class="nav-text">情感倾向点互信息SO-PMI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拓展PMI-引入词间距"><span class="nav-number">3.</span> <span class="nav-text">拓展PMI:引入词间距</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#点互信息PMI"><span class="nav-number">1.</span> <span class="nav-text">点互信息PMI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#情感倾向点互信息SO-PMI"><span class="nav-number">2.</span> <span class="nav-text">情感倾向点互信息SO-PMI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基于Good-Turing平滑的SO-PMI："><span class="nav-number">3.</span> <span class="nav-text">基于Good-Turing平滑的SO-PMI：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题引入："><span class="nav-number">3.1.</span> <span class="nav-text">问题引入：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Good-Turing："><span class="nav-number">3.2.</span> <span class="nav-text">Good-Turing：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引入词间距，进行多类情感词生成"><span class="nav-number">4.</span> <span class="nav-text">引入词间距，进行多类情感词生成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">5.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
@@ -877,7 +892,7 @@ PMI(word_1, word_2) = log_2\big(\frac{d \times hit(word_1) \times hit(word_2)}{N
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">34k</span>
+    <span title="站点总字数">35k</span>
   
 
   
@@ -888,7 +903,7 @@ PMI(word_1, word_2) = log_2\big(\frac{d \times hit(word_1) \times hit(word_2)}{N
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">31 分钟</span>
+    <span title="站点阅读时长">32 分钟</span>
   
 </div>
 
