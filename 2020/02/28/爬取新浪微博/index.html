@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="情感分析情感分析的定义有多个版本，通俗理解就是通过对大量文本进行分析，挖掘出用户的情感倾向，最终目的是运用到现实生活中，或辅助决策，或科学研究。  情感分析 ( Sentiment Analysis) ，也称为倾向性分析，是指采用自动化或半自动化手段对基于微博、论坛等在线社交网络产生的主观评论文本内容进行分析、处理、归纳和推导，从中挖掘出用户 ( 个人或群体、组织等) 针对主题、人物、事件等表达的">
-<meta name="keywords" content="情感分析,文本分析">
+  <meta name="description" content="用cookie爬取m.weibo.cn上的数据">
+<meta name="keywords" content="爬虫,新浪微博">
 <meta property="og:type" content="article">
-<meta property="og:title" content="文本情感分析的一些总结">
-<meta property="og:url" content="http://wsinbol.github.io/2019/08/17/文本情感分析的一些总结/index.html">
+<meta property="og:title" content="Python爬取新浪微博及后续处理">
+<meta property="og:url" content="http://wsinbol.github.io/2020/02/28/爬取新浪微博/index.html">
 <meta property="og:site_name" content="菠菜屋">
-<meta property="og:description" content="情感分析情感分析的定义有多个版本，通俗理解就是通过对大量文本进行分析，挖掘出用户的情感倾向，最终目的是运用到现实生活中，或辅助决策，或科学研究。  情感分析 ( Sentiment Analysis) ，也称为倾向性分析，是指采用自动化或半自动化手段对基于微博、论坛等在线社交网络产生的主观评论文本内容进行分析、处理、归纳和推导，从中挖掘出用户 ( 个人或群体、组织等) 针对主题、人物、事件等表达的">
+<meta property="og:description" content="用cookie爬取m.weibo.cn上的数据">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-06T00:52:25.839Z">
+<meta property="og:updated_time" content="2020-02-29T11:51:47.401Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文本情感分析的一些总结">
-<meta name="twitter:description" content="情感分析情感分析的定义有多个版本，通俗理解就是通过对大量文本进行分析，挖掘出用户的情感倾向，最终目的是运用到现实生活中，或辅助决策，或科学研究。  情感分析 ( Sentiment Analysis) ，也称为倾向性分析，是指采用自动化或半自动化手段对基于微博、论坛等在线社交网络产生的主观评论文本内容进行分析、处理、归纳和推导，从中挖掘出用户 ( 个人或群体、组织等) 针对主题、人物、事件等表达的">
+<meta name="twitter:title" content="Python爬取新浪微博及后续处理">
+<meta name="twitter:description" content="用cookie爬取m.weibo.cn上的数据">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://wsinbol.github.io/2019/08/17/文本情感分析的一些总结/">
+  <link rel="canonical" href="http://wsinbol.github.io/2020/02/28/爬取新浪微博/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>文本情感分析的一些总结 | 菠菜屋</title>
+  <title>Python爬取新浪微博及后续处理 | 菠菜屋</title>
   
 
 
@@ -379,7 +379,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wsinbol.github.io/2019/08/17/文本情感分析的一些总结/">
+    <link itemprop="mainEntityOfPage" href="http://wsinbol.github.io/2020/02/28/爬取新浪微博/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wsinbol">
@@ -396,7 +396,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">文本情感分析的一些总结
+          <h2 class="post-title" itemprop="name headline">Python爬取新浪微博及后续处理
 
               
             
@@ -422,31 +422,13 @@
                 
               
 
-              <time title="创建时间：2019-08-17 20:56:18" itemprop="dateCreated datePublished" datetime="2019-08-17T20:56:18+08:00">2019-08-17</time>
+              <time title="创建时间：2020-02-28 20:44:17" itemprop="dateCreated datePublished" datetime="2020-02-28T20:44:17+08:00">2020-02-28</time>
             
 
             
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/NLP/" itemprop="url" rel="index"><span itemprop="name">NLP</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -455,7 +437,7 @@
 
           
           
-            <span id="/2019/08/17/文本情感分析的一些总结/" class="leancloud_visitors" data-flag-title="文本情感分析的一些总结">
+            <span id="/2020/02/28/爬取新浪微博/" class="leancloud_visitors" data-flag-title="Python爬取新浪微博及后续处理">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -481,7 +463,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.2k</span>
+                <span title="本文字数">3.2k</span>
               
 
               
@@ -495,7 +477,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -515,48 +497,14 @@
       
 
       
-        <h3 id="情感分析"><a href="#情感分析" class="headerlink" title="情感分析"></a>情感分析</h3><p>情感分析的定义有多个版本，通俗理解就是通过对大量文本进行分析，挖掘出用户的情感倾向，最终目的是运用到现实生活中，或辅助决策，或科学研究。</p>
-<blockquote>
-<p>情感分析 ( Sentiment Analysis) ，也称为倾向性分析，是指采用自动化或半自动化手段对基于微博、论坛等在线社交网络产生的主观评论文本内容进行分析、处理、归纳和推导，从中挖掘出用户 ( 个人或群体、组织等) 针对主题、人物、事件等表达的评论、观点和意见的过程。情感倾向性分析的主要对象是网民自主发布的与网络舆情事件相关的文本。</p>
-</blockquote>
+        <ul>
+<li>用cookie爬取m.weibo.cn上的数据</li>
+</ul>
 <a id="more"></a>
-<h3 id="研究内容"><a href="#研究内容" class="headerlink" title="研究内容"></a>研究内容</h3><p>目前情感分析的研究主要有 <code>情感的主客观分析、情感极性分析和多情感分类</code> 等。</p>
-<p><code>主客观情感分析</code> 主要是从大量数据集中识别主观的文本信息。</p>
-<p><code>情感极性分析</code> 将情感态度分为正向情感和负向情感两极或者正、中、负三级，并通过打分形式计算情感强度。</p>
-<p><code>多情感分类</code> 在情感极性分析的不足中提出“乐、哀、怒、惊、惧、好、恶”7种情感维度，力争从更高的维度揭示用户的情感状况。</p>
-<h3 id="研究流程"><a href="#研究流程" class="headerlink" title="研究流程"></a>研究流程</h3><p>较常见的研究流程：信息源选择-&gt;文本预处理-&gt;情感倾向性识别-&gt;情感可视化</p>
-<h3 id="分析方法"><a href="#分析方法" class="headerlink" title="分析方法"></a>分析方法</h3><p>常用的情感分析方法包括无监督的基于情感词典的分析方法和有监督的机器学习方法。</p>
-<h4 id="基于情感词典"><a href="#基于情感词典" class="headerlink" title="基于情感词典"></a>基于情感词典</h4><p>基于词典的分析方法将情感标注任务看作已具有明确情感标注的情感词典与评论语料之间的匹配问题。该类方法不需要预先进行训练，情感词典通常基于 Word Net，How Net等知识资源建立，情感词典的质量在很大程度上决定了网络评论情感极性识别的效果，该方法对情感词典的依赖性太强，如果情感词典中没有收录重要的情感词，就无法对评论的情感倾向进行判断。</p>
-<p>所以除了通用的情感字典外，研究者还需要引入特定领域的专用字典来保证更好的识别效果！</p>
-<p>计算文本 <code>情感强度</code> 普遍是基于情感字典的方式实现，而且情感字典不仅要要具备丰富的情感词汇，还要有对应的情感数值。除扩充的情感字典外，还需要程度副词情感表、否定词情感表及连词词表等。在这些条件充分下，通过句法分析等方式计算词语情感强度，汇总得出句子、文本的情感强度。</p>
-<p>那么，如何根据已有情感字典，拓展特定领域或特定语料的情感字典呢？</p>
-<p><code>点互信息(PMI)</code> 算法用来计算两个词的相关度，PMI值越大表示两个词语的相关程度就越强。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PMI(x,y)=log⁡ P(x,y)/P(x)P(y)</span><br></pre></td></tr></table></figure>
-<p>其中，p(x,y)表示x与y一起出现的概率，p(x)是表征词语x在文本中使用的概率，p(y)是表征词语y在文本中使用的频率。PMI(x,y)表示两个词语同时出现的频率。</p>
-<p>在实际应用中，也经常用语料库来统计词语出现的频率。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PMI(x,y)=log⁡ (N*df(x,y))/df(x)df(y)</span><br></pre></td></tr></table></figure>
-<p>df(x)表示在语料中含有词语x的文档数目，N代表为预料数据集中文档总的数目。所以，一个未知情感倾向性词语word的情感倾向强度值计算为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SO-PMI(word) = ∑_(pword ∈ Pwords) PMI(word,pword)-  ∑_(nword ∈ Nwords) PMI(word,nword)</span><br></pre></td></tr></table></figure>
-<p>Pwords是正向情感种子词语的集合，Nwords是负向贬义情感种子的词语集合。情感种子词语集合由人工预先提供，经计算后，当某个词语的SO-PMI值大于0时，将其归为正向情感词，SO-PMI值小于0时，归位负向情感词。</p>
-<p>对于不复杂的句子来说，提取情感词，根据情感词的权重累加就可以得到整个句子的情感强度，但是复杂一点的句子是无法使用的，需要添加一些句法规则。<code>依存句法</code> 一种描述句子中各个词条之间的依存结构的语法，这种语法不仅易于表示，而且保留句子短语的结构信息，细分为14种类型。</p>
-<h4 id="基于机器学习"><a href="#基于机器学习" class="headerlink" title="基于机器学习"></a>基于机器学习</h4><p>基于机器学习的情感识别方法利用训练好的分类器对待分析评论进行情感倾向性识别。在此类任务中，可将情感分析看作一个分类问题，也就是对相关的情感表达对象进行正负情感的二类分类，或具有情感强度级别的多类分类。此方法中运用的比较常见的技术有：</p>
-<ul>
-<li>朴素贝叶斯</li>
-<li>支持向量机</li>
-<li>最大熵</li>
-<li>条件随机场</li>
-</ul>
-<p>基于机器学习的方法只要通过训练集构造好了分类器，就可以对未知的情感表达文本进行分类。与基于词典的情感识别方法相比，此类方法减少了对特定情感词语料资源的依赖。但是该类方法要事先花费一定的时间进行训练集语料标注，且分类器的训练效果很大程度上决定了情感标注效果。在针对不同的研究目的时，选择合适的机器学习方法可以提升分析结果的准确率和效率。</p>
-<h3 id="情感可视化"><a href="#情感可视化" class="headerlink" title="情感可视化"></a>情感可视化</h3><h4 id="基于词频统计的情感可视化分析"><a href="#基于词频统计的情感可视化分析" class="headerlink" title="基于词频统计的情感可视化分析"></a>基于词频统计的情感可视化分析</h4><p>基于词频统计的情感可视化分析方法利用能够表达文本评论核心内容的关键词或主题词出现的频次高低来确定评论的情感倾向性和程度强弱。</p>
-<h4 id="基于空间的情感可视化分析"><a href="#基于空间的情感可视化分析" class="headerlink" title="基于空间的情感可视化分析"></a>基于空间的情感可视化分析</h4><p>基于空间的情感可视化分析就是以带有地理位置信息的网络评论数据为语料，将大量数据按照对应的空间维度展示，令数据的呈现更加直观。</p>
-<h4 id="基于时间的情感可视化分析"><a href="#基于时间的情感可视化分析" class="headerlink" title="基于时间的情感可视化分析"></a>基于时间的情感可视化分析</h4><p>基于时间的情感可视化分析就是以带有时间标签信息的网络评论数据为语料，将大量数据按照对应的时间维度展示。</p>
-<h3 id="工具库"><a href="#工具库" class="headerlink" title="工具库"></a>工具库</h3><ul>
-<li><a href="https://github.com/blmoistawinde/HarvestText" target="_blank" rel="noopener">harvesttext</a></li>
-</ul>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
-<li>朱琳琳,徐健. 网络评论情感分析关键技术及应用研究[J]. 情报理论与实践, 2017, 40(1): 121-126, 131.</li>
-</ul>
-
+<h1 id="爬取列表数据"><a href="#爬取列表数据" class="headerlink" title="爬取列表数据"></a>爬取列表数据</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">'Cookie'</span>: <span class="string">'***'</span>,</span><br><span class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'</span>,</span><br><span class="line">    <span class="string">'X-Requested-With'</span>: <span class="string">'XMLHttpRequest'</span>,</span><br><span class="line">    <span class="string">'x-xsrf-token'</span>: <span class="string">'2c1c0a'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">request_url = <span class="string">'https://m.weibo.cn/api/container/getIndex?containerid=100103type%3D1%26q%3D%E5%AD%99%E6%9D%A8%E5%9B%9E%E5%BA%94%E9%81%AD%E7%A6%81%E8%B5%9B8%E5%B9%B4&amp;page_type=searchall&amp;page=5'</span></span><br><span class="line"></span><br><span class="line">response = requests.get(request_url, headers=headers)</span><br><span class="line">response.encoding = <span class="string">'utf-8'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存文件时将unicode转成utf-8，则中文可直接显示</span></span><br><span class="line">text = response.text.encode(<span class="string">'utf-8'</span>).decode(<span class="string">'unicode-escape'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'weibo.txt'</span>,<span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(text)</span><br></pre></td></tr></table></figure>
+<p>微博返回的数据是json结构的，但是经过上述转码处理后，json的结构被破坏，不方便后续处理。所以正确的思路应该是在unicode编码时进行提取字段工作，然后再转成中文。令 <code>text = response.text</code> 即可。</p>
+<h1 id="提取列表数据"><a href="#提取列表数据" class="headerlink" title="提取列表数据"></a>提取列表数据</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line"># coding:utf-8</span><br><span class="line"></span><br><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line"># 读取文件进行处理</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">with open(&apos;weibo.txt&apos;, &apos;r&apos;) as f:</span><br><span class="line">    json_text = json.load(f)</span><br><span class="line"></span><br><span class="line">cards = json_text[&apos;data&apos;][&apos;cards&apos;]</span><br><span class="line">for card in cards:</span><br><span class="line">	if &apos;mblog&apos; in card:</span><br><span class="line">	    mblog = card[&apos;mblog&apos;]</span><br><span class="line">	    print(&apos;文章ID&apos;, mblog[&apos;id&apos;]) # https://m.weibo.cn/detail/4477074850969438</span><br><span class="line">	    print(&apos;昵称&apos;, mblog[&apos;user&apos;][&apos;screen_name&apos;])</span><br><span class="line">	    print(&apos;userID&apos;, mblog[&apos;user&apos;][&apos;id&apos;]) # https://m.weibo.cn/u/5288553158</span><br><span class="line">	    print(&apos;gender&apos;, mblog[&apos;user&apos;][&apos;gender&apos;])</span><br><span class="line">	    print(&apos;粉丝&apos;, mblog[&apos;user&apos;][&apos;followers_count&apos;])</span><br><span class="line">	    print(&apos;关注&apos;, mblog[&apos;user&apos;][&apos;follow_count&apos;])</span><br><span class="line">	    if &apos;verified_reason&apos; in mblog[&apos;user&apos;]:</span><br><span class="line">	        print(&apos;微博认证&apos;, mblog[&apos;user&apos;][&apos;verified_reason&apos;])</span><br><span class="line">	    print(&apos;微博会员&apos;, mblog[&apos;user&apos;][&apos;mbrank&apos;])</span><br><span class="line">	    print(&apos;来自&apos;,mblog[&apos;source&apos;])</span><br><span class="line">	    print(&apos;转发&apos;, mblog[&apos;reposts_count&apos;])</span><br><span class="line">	    print(&apos;评论&apos;, mblog[&apos;comments_count&apos;])</span><br><span class="line">	    print(&apos;点赞&apos;, mblog[&apos;attitudes_count&apos;])</span><br><span class="line">	    if &apos;longText&apos; in mblog:</span><br><span class="line">	        longText = mblog[&apos;longText&apos;]</span><br><span class="line">	        longTextContent = longText[&apos;longTextContent&apos;]</span><br><span class="line">	        bs = BeautifulSoup(longTextContent, &apos;lxml&apos;)</span><br><span class="line">	        print(bs.get_text())</span><br><span class="line">	    else:</span><br><span class="line">	        text = mblog[&apos;text&apos;]</span><br><span class="line">	        bs = BeautifulSoup(text, &apos;lxml&apos;)</span><br><span class="line">	        print(bs.get_text())</span><br><span class="line">	    </span><br><span class="line">	    if &apos;retweeted_status&apos; in mblog:</span><br><span class="line">	        print(&apos;有转发行为&apos;)</span><br><span class="line">	        text = mblog[&apos;retweeted_status&apos;][&apos;text&apos;]</span><br><span class="line">	        bs = BeautifulSoup(text, &apos;lxml&apos;)</span><br><span class="line">	        print(bs.get_text())</span><br><span class="line">	        print(&apos;ID&apos;, mblog[&apos;retweeted_status&apos;][&apos;user&apos;][&apos;id&apos;]) # https://m.weibo.cn/u/5288553158</span><br><span class="line">	        print(&apos;gender&apos;, mblog[&apos;retweeted_status&apos;][&apos;user&apos;][&apos;gender&apos;])</span><br><span class="line">	        print(&apos;粉丝&apos;, mblog[&apos;retweeted_status&apos;][&apos;user&apos;][&apos;followers_count&apos;])</span><br><span class="line">	        print(&apos;关注&apos;, mblog[&apos;retweeted_status&apos;][&apos;user&apos;][&apos;follow_count&apos;])</span><br><span class="line">	    print()</span><br></pre></td></tr></table></figure>
+<h1 id="爬取文章评论"><a href="#爬取文章评论" class="headerlink" title="爬取文章评论"></a>爬取文章评论</h1>
       
     </div>
 
@@ -590,7 +538,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://wsinbol.github.io/2019/08/17/文本情感分析的一些总结/" title="文本情感分析的一些总结">http://wsinbol.github.io/2019/08/17/文本情感分析的一些总结/</a>
+    <a href="http://wsinbol.github.io/2020/02/28/爬取新浪微博/" title="Python爬取新浪微博及后续处理">http://wsinbol.github.io/2020/02/28/爬取新浪微博/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -603,9 +551,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/情感分析/" rel="tag"># 情感分析</a>
+            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
           
-            <a href="/tags/文本分析/" rel="tag"># 文本分析</a>
+            <a href="/tags/新浪微博/" rel="tag"># 新浪微博</a>
           
         </div>
       
@@ -618,8 +566,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/10/快速排序QuickSort/" rel="next" title="快速排序QuickSort">
-                <i class="fa fa-chevron-left"></i> 快速排序QuickSort
+              <a href="/2020/02/09/宝塔环境下安装swoole/" rel="next" title="宝塔环境下安装swoole">
+                <i class="fa fa-chevron-left"></i> 宝塔环境下安装swoole
               </a>
             
           </div>
@@ -627,10 +575,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/26/二分查找BinarySearch/" rel="prev" title="二分查找BinarySearch">
-                二分查找BinarySearch <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -863,7 +807,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#情感分析"><span class="nav-number">1.</span> <span class="nav-text">情感分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#研究内容"><span class="nav-number">2.</span> <span class="nav-text">研究内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#研究流程"><span class="nav-number">3.</span> <span class="nav-text">研究流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析方法"><span class="nav-number">4.</span> <span class="nav-text">分析方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于情感词典"><span class="nav-number">4.1.</span> <span class="nav-text">基于情感词典</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于机器学习"><span class="nav-number">4.2.</span> <span class="nav-text">基于机器学习</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#情感可视化"><span class="nav-number">5.</span> <span class="nav-text">情感可视化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于词频统计的情感可视化分析"><span class="nav-number">5.1.</span> <span class="nav-text">基于词频统计的情感可视化分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于空间的情感可视化分析"><span class="nav-number">5.2.</span> <span class="nav-text">基于空间的情感可视化分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于时间的情感可视化分析"><span class="nav-number">5.3.</span> <span class="nav-text">基于时间的情感可视化分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工具库"><span class="nav-number">6.</span> <span class="nav-text">工具库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#爬取列表数据"><span class="nav-number">1.</span> <span class="nav-text">爬取列表数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提取列表数据"><span class="nav-number">2.</span> <span class="nav-text">提取列表数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#爬取文章评论"><span class="nav-number">3.</span> <span class="nav-text">爬取文章评论</span></a></li></ol></div>
             
 
           </div>
