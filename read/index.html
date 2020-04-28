@@ -105,7 +105,7 @@
 <meta property="og:description" content="日有所读            2020-04-26 [WEB] 听说，加缓存能提高性能？ 在哪加？  客户端缓存：包括HTTP 缓存、浏览器缓存等 Web 缓存：例如CDN、反向代理服务等 应用层缓存：例如Memcached、Redis等键值存储 数据库缓存：一些数据库提供了内置的缓存支持，比如查询缓存（query cache）   存什么？  Cached Datab">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://symblog.yunmell.com/images/2019/09/15/c054eba877cdf498f2df2686fcaaa187.png">
-<meta property="og:updated_time" content="2020-04-26T15:51:16.983Z">
+<meta property="og:updated_time" content="2020-04-26T15:54:04.897Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日读">
 <meta name="twitter:description" content="日有所读            2020-04-26 [WEB] 听说，加缓存能提高性能？ 在哪加？  客户端缓存：包括HTTP 缓存、浏览器缓存等 Web 缓存：例如CDN、反向代理服务等 应用层缓存：例如Memcached、Redis等键值存储 数据库缓存：一些数据库提供了内置的缓存支持，比如查询缓存（query cache）   存什么？  Cached Datab">
@@ -432,7 +432,7 @@
 <li><p>存什么？</p>
 <ul>
 <li><p>Cached Database Queries：缓存原始查库结果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">key = &quot;user.%s&quot; % user_id</span><br><span class="line">user_blob = memcache.get(key)</span><br><span class="line">if user_blob is None:</span><br><span class="line">    user = mysql.query(&quot;SELECT * FROM users WHERE user_id=\&quot;%s\&quot;&quot;, user_id)</span><br><span class="line">    if user:</span><br><span class="line">        memcache.set(key, json.dumps(user))</span><br><span class="line">    return user</span><br><span class="line">else:</span><br><span class="line">    return json.loads(user_blob)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">key = &quot;user.%s&quot; % user_id</span><br><span class="line">user_blob = memcache.get(key)</span><br><span class="line">if user_blob is None:</span><br><span class="line">    user = mysql.query(&quot;SELECT * FROM users WHERE user_id=\&quot;%s\&quot;&quot;, user_id)</span><br><span class="line">    if user:</span><br><span class="line">        memcache.set(key, json.dumps(user))</span><br><span class="line">    return user</span><br><span class="line">else:</span><br><span class="line">    return json.loads(user_blob)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Cached Objects：缓存应用程序中的数据模型，比如重新组装过的数据集，或者整个数据模型类实例 【推荐方式】</p>
 </li>
@@ -930,7 +930,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">31</span>
+                    <span class="site-state-item-count">32</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -965,7 +965,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1058,7 +1066,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">38</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1131,7 +1145,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">41k</span>
+    <span title="站点总字数">44k</span>
   
 
   
@@ -1142,7 +1156,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">37 分钟</span>
+    <span title="站点阅读时长">40 分钟</span>
   
 </div>
 
